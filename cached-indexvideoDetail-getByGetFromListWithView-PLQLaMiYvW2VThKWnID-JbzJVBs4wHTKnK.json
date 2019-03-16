@@ -1,0 +1,666 @@
+  <html>
+<head>
+      <title>Videos by List PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK</title>
+
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="icon" href="https://www.w3schools.com/tags/demo_icon.gif" type="image/gif" sizes="16x16">
+<link rel="stylesheet" type="text/css" href="views/videoDetail/mystyle.css">
+  <!-- Bootstrap v4.x stylesheet -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	<!-- bootstrap css theme -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/docs/css/bootstrap-v4.min.css">
+
+	<script src="https://mottie.github.io/tablesorter/docs/js/jquery-latest.min.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+	<!-- pager plugin -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.css">
+	<script src="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.js"></script>
+	<style>
+	.tablesorter-pager .btn-group-sm .btn {
+	  font-size: 1.2em; /* make pager arrows more visible */
+	}
+	</style>
+  <script>
+  $(function() {
+
+  $("table").tablesorter({
+    theme : "bootstrap",
+
+    widthFixed: true,
+
+    // widget code contained in the jquery.tablesorter.widgets.js file
+    // use the zebra stripe widget if you plan on hiding any rows (filter widget)
+    // the uitheme widget is NOT REQUIRED!
+    widgets : [ "filter", "columns", "zebra" ],
+
+    widgetOptions : {
+      // using the default zebra striping class name, so it actually isn't included in the theme variable above
+      // this is ONLY needed for bootstrap theming if you are using the filter widget, because rows are hidden
+      zebra : ["even", "odd"],
+
+      // class names added to columns when sorted
+      columns: [ "primary", "secondary", "tertiary" ],
+
+      // reset filters button
+      filter_reset : ".reset",
+
+      // extra css class name (string or array) added to the filter element (input or select)
+      filter_cssFilter: [
+        'form-control',
+        'form-control',
+        'form-control custom-select', // select needs custom class names :(
+        'form-control',
+        'form-control',
+        'form-control',
+        'form-control'
+      ]
+
+    }
+  })
+  .tablesorterPager({
+
+    // target the pager markup - see the HTML block below
+    container: $(".ts-pager"),
+
+    // target the pager page select dropdown - choose a page
+    cssGoto  : ".pagenum",
+
+    // remove rows from the table to speed up the sort of large tables.
+    // setting this to false, only hides the non-visible rows; needed if you plan to add/remove rows with the pager enabled.
+    removeRows: false,
+
+    // output string - default is '{page}/{totalPages}';
+    // possible variables: {page}, {totalPages}, {filteredPages}, {startRow}, {endRow}, {filteredRows} and {totalRows}
+    output: '{startRow} - {endRow} / {filteredRows} ({totalRows})'
+
+  });
+
+});
+  </script></head>
+<body>
+
+<div class="contentItem">
+	<div class="dropdown">
+       <a href="/v2/admin/"><button class="dropbtn">Home page</button></a>
+       <div class="dropdown-content">
+          <a href="?c=listDetail&a=getAllWithView&k=1">get All ListDetail</a>
+          <a title="Them list videos moi" target="_blank" href="youtube/">Add New</a>
+          <a title="Xoa trung lap video + listDetail" target="_blank" href="removeDuplicate.php">Remove Duplicate</a>
+          <a title="Them list videos moi" target="_blank" href="/v2/log/show.php">Log</a>
+      </div>
+  </div>
+  <div class="dropdown">
+   <a title="Them list videos moi" target="_blank" href="youtube/"><button class="dropbtn">Add New By Youtube</button></a>
+  </div>
+
+<div class="dropdown">
+   <a title="Tao Cache + remove cac videos va list bi trung lap" target="_blank" href="gen-cache.php"><button class="dropbtn">Gen cache</button></a>
+
+   <div class="dropdown-content">
+    <a title="Check videos playable, Khong nen thuc hien nhieu neu ko se bi khoa IP. Tuy vao DB co the chay mat 15p hoac hon" target="_blank" href="check-videos.php">Check Video playable(co the phai doi >15p)</a>
+</div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">get All VideosDetail</button>
+   <div class="dropdown-content">
+      <a href="?c=videoDetail&a=getAllWithView&k=0">get All VideosDetail(>10s)</a>
+      <a href="#">Add New</a>
+      <a href="#">Remove</a>
+  </div>
+</div>
+<div class="dropdown">
+   <button class="dropbtn">Xep theo CategoryID</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 Nuevos videos (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 Noticias (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Principiantes (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Escuchar (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Gramar (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabulario (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 En lectura (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 Escritura (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 Pronunciación (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 Hablando (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 Exámenes (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 Canciones (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 Cine (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 Español para niños (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Estudiar en el extranjero (13)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 La vida en españa (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Números (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 Compras (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 La comida (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Jobs (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 Salud (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Mira (0)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List tang dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 Nuevos videos (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Mira (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 Noticias (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 Escritura (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Números (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Jobs (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 Salud (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 Hablando (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 La vida en españa (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 Compras (4)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List giam dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Estudiar en el extranjero (13)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 En lectura (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Gramar (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 Cine (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Principiantes (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Escuchar (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabulario (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 Exámenes (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 Canciones (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 La comida (6)</a></div>
+</div>
+<br/>
+<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 new_videos L(0)</a> |<a title='Có 3 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 nachrichten L(3)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 beginnners L(9)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 listening L(9)</a> |<a title='Có 11 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 gramar L(11)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 vocabulary L(9)</a> |<a title='Có 12 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 reading L(12)</a> |<a title='Có 3 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 writing L(3)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 pronunciation L(5)</a> |<a title='Có 4 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 speaking L(4)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 exams L(9)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 songs L(9)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 film L(10)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 kids L(5)</a> |<a title='Có 13 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 study L(13)</a> |<a title='Có 4 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 spain L(4)</a> |<a title='Có 3 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 numbers L(3)</a> |<a title='Có 4 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 shopping L(4)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 food L(6)</a> |<a title='Có 3 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 jobs L(3)</a> |<a title='Có 3 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 health L(3)</a> |<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 watched L(0)</a> |<br/>Số lượng Videos trong DB: 2852 Videos<br/>Số lượng Videos trong DB: 134 Videos</div>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kw" value="" placeholder="search here">
+	<input type="submit" name="submit" value="search name videos">
+</form>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kwl" value="" placeholder="search name List here">
+	<input type="submit" name="submit" value="search name List videos">
+</form><br/>
+<h1>Tat ca video co trong co so du lieu</h1>
+
+
+<table class="table table-bordered table-striped">
+  <thead> <!-- add class="thead-inverse" for a dark header -->
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Video count</th>
+      <th>Add too</th>
+      <th>Xoa</th>
+	</tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Video Duration</th>
+      <th>Add Videos to the List</th>
+      <th>Xoa</th>
+    </tr>
+    <tr>
+      <th colspan="7" class="ts-pager">
+        <div class="form-inline">
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary first" title="first">⇤</button>
+            <button type="button" class="btn btn-secondary prev" title="previous">←</button>
+          </div>
+          <span class="pagedisplay"></span>
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary next" title="next">→</button>
+            <button type="button" class="btn btn-secondary last" title="last">⇥</button>
+          </div>
+          <select class="form-control-sm custom-select px-1 pagesize" title="Select page size">
+            <option selected="selected" value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="all">All Rows</option>
+          </select>
+          <select class="form-control-sm custom-select px-4 mx-1 pagenum" title="Select page number"></select>
+        </div>
+      </th>
+    </tr>
+  </tfoot>
+  <tbody>
+	
+   <tr>
+      <td>3021</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3021" title="Pai Kêma sê Fidju |2016|"><img width="100px" src="https://i.ytimg.com/vi/ybbCrit2K0Q/mqdefault.jpg" alt="Pai Kêma sê Fidju |2016|"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3021" title="Pai Kêma sê Fidju |2016|">Pai Kêma sê Fidju |2016|</a></td>
+      <td>00:05:53</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3021" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3022</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3022" title="Zinaida Tra Sê Fidju di Hospital [part2]"><img width="100px" src="https://i.ytimg.com/vi/d5T0QBW3qrk/mqdefault.jpg" alt="Zinaida Tra Sê Fidju di Hospital [part2]"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3022" title="Zinaida Tra Sê Fidju di Hospital [part2]">Zinaida Tra Sê Fidju di Hospital [part2]</a></td>
+      <td>00:02:06</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3022" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3024</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3024" title="Tragédia Tarrafal 2016"><img width="100px" src="https://i.ytimg.com/vi/LWCnuuRZe_c/mqdefault.jpg" alt="Tragédia Tarrafal 2016"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3024" title="Tragédia Tarrafal 2016">Tragédia Tarrafal 2016</a></td>
+      <td>00:03:12</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3024" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3025</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3025" title="[Incrível] Universitária sem Membros"><img width="100px" src="https://i.ytimg.com/vi/iZC5edwAR6A/mqdefault.jpg" alt="[Incrível] Universitária sem Membros"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3025" title="[Incrível] Universitária sem Membros">[Incrível] Universitária sem Membros</a></td>
+      <td>00:16:29</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3025" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3026</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3026" title="As 7 Maravilhas De Cabo Verde (das 400)"><img width="100px" src="https://i.ytimg.com/vi/hh_kFn20C1M/mqdefault.jpg" alt="As 7 Maravilhas De Cabo Verde (das 400)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3026" title="As 7 Maravilhas De Cabo Verde (das 400)">As 7 Maravilhas De Cabo Verde (das 400)</a></td>
+      <td>00:02:56</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3026" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3027</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3027" title="1 grógu pa relaxa (Tina dja Móri)"><img width="100px" src="https://i.ytimg.com/vi/u73Lru5ovZg/mqdefault.jpg" alt="1 grógu pa relaxa (Tina dja Móri)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3027" title="1 grógu pa relaxa (Tina dja Móri)">1 grógu pa relaxa (Tina dja Móri)</a></td>
+      <td>00:02:07</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3027" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3028</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3028" title="Tránka Fidju Dento Casa [Somáda - Cabo Verde]"><img width="100px" src="https://i.ytimg.com/vi/12IT1jrLBx4/mqdefault.jpg" alt="Tránka Fidju Dento Casa [Somáda - Cabo Verde]"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3028" title="Tránka Fidju Dento Casa [Somáda - Cabo Verde]">Tránka Fidju Dento Casa [Somáda - Cabo Verde]</a></td>
+      <td>00:03:22</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3028" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3030</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3030" title="Grogu (máta) Mininu [Cabo Verde]"><img width="100px" src="https://i.ytimg.com/vi/e64lteV7wNE/mqdefault.jpg" alt="Grogu (máta) Mininu [Cabo Verde]"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3030" title="Grogu (máta) Mininu [Cabo Verde]">Grogu (máta) Mininu [Cabo Verde]</a></td>
+      <td>00:02:41</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3030" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3031</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3031" title="dia dos namorados"><img width="100px" src="https://i.ytimg.com/vi/tPi-PUws7vA/mqdefault.jpg" alt="dia dos namorados"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3031" title="dia dos namorados">dia dos namorados</a></td>
+      <td>00:03:14</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3031" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3032</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3032" title="É ti kês Matánu? [Cabo Verde]"><img width="100px" src="https://i.ytimg.com/vi/fSVhbEw5DZo/mqdefault.jpg" alt="É ti kês Matánu? [Cabo Verde]"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3032" title="É ti kês Matánu? [Cabo Verde]">É ti kês Matánu? [Cabo Verde]</a></td>
+      <td>00:02:35</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3032" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3033</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3033" title="violencia domestica_joaninha"><img width="100px" src="https://i.ytimg.com/vi/UsghtTsX85k/mqdefault.jpg" alt="violencia domestica_joaninha"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3033" title="violencia domestica_joaninha">violencia domestica_joaninha</a></td>
+      <td>00:02:16</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3033" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3034</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3034" title="8 Mortos | Acidente Tarrafal 2016"><img width="100px" src="https://i.ytimg.com/vi/FieOibmcLDo/mqdefault.jpg" alt="8 Mortos | Acidente Tarrafal 2016"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3034" title="8 Mortos | Acidente Tarrafal 2016">8 Mortos | Acidente Tarrafal 2016</a></td>
+      <td>00:02:46</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3034" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3035</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3035" title="Vitória de Ulisses Correia e Silva (MPD)"><img width="100px" src="https://i.ytimg.com/vi/b9c-vfQ0ol4/mqdefault.jpg" alt="Vitória de Ulisses Correia e Silva (MPD)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3035" title="Vitória de Ulisses Correia e Silva (MPD)">Vitória de Ulisses Correia e Silva (MPD)</a></td>
+      <td>00:07:27</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3035" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3036</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3036" title="Janira Assume Grande Derrota (PAICV)"><img width="100px" src="https://i.ytimg.com/vi/mIfhFT2EO0I/mqdefault.jpg" alt="Janira Assume Grande Derrota (PAICV)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3036" title="Janira Assume Grande Derrota (PAICV)">Janira Assume Grande Derrota (PAICV)</a></td>
+      <td>00:03:32</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3036" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3037</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3037" title="Neves Já Esperava Derrota do PAICV"><img width="100px" src="https://i.ytimg.com/vi/XWPTxwgc_ps/mqdefault.jpg" alt="Neves Já Esperava Derrota do PAICV"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3037" title="Neves Já Esperava Derrota do PAICV">Neves Já Esperava Derrota do PAICV</a></td>
+      <td>00:01:59</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3037" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3038</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3038" title="Ulisses diz que Janira é Estúpida!"><img width="100px" src="https://i.ytimg.com/vi/gBUEwDhaFH8/mqdefault.jpg" alt="Ulisses diz que Janira é Estúpida!"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3038" title="Ulisses diz que Janira é Estúpida!">Ulisses diz que Janira é Estúpida!</a></td>
+      <td>00:02:39</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3038" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3039</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3039" title="Ulisses Contra a Doença do Poder"><img width="100px" src="https://i.ytimg.com/vi/4QD2pCLSFMQ/mqdefault.jpg" alt="Ulisses Contra a Doença do Poder"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3039" title="Ulisses Contra a Doença do Poder">Ulisses Contra a Doença do Poder</a></td>
+      <td>00:01:19</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3039" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3040</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3040" title="Igreja Católica Assaltada/Profanada"><img width="100px" src="https://i.ytimg.com/vi/ySat9U7JiHE/mqdefault.jpg" alt="Igreja Católica Assaltada/Profanada"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3040" title="Igreja Católica Assaltada/Profanada">Igreja Católica Assaltada/Profanada</a></td>
+      <td>00:04:05</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3040" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3041</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3041" title="Acidente Mortal em S.Domingos"><img width="100px" src="https://i.ytimg.com/vi/4xAtLz7xSS4/mqdefault.jpg" alt="Acidente Mortal em S.Domingos"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3041" title="Acidente Mortal em S.Domingos">Acidente Mortal em S.Domingos</a></td>
+      <td>00:03:59</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3041" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3042</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3042" title="Cadáver de Turista encontrado numa Ribeira"><img width="100px" src="https://i.ytimg.com/vi/4r77MC3AWMs/mqdefault.jpg" alt="Cadáver de Turista encontrado numa Ribeira"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3042" title="Cadáver de Turista encontrado numa Ribeira">Cadáver de Turista encontrado numa Ribeira</a></td>
+      <td>00:04:57</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3042" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3043</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3043" title="[Z-i-k-A]  1ª Microcefalia Em Cabo Verde| 2016"><img width="100px" src="https://i.ytimg.com/vi/VOgyXlvxscU/mqdefault.jpg" alt="[Z-i-k-A]  1ª Microcefalia Em Cabo Verde| 2016"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3043" title="[Z-i-k-A]  1ª Microcefalia Em Cabo Verde| 2016">[Z-i-k-A]  1ª Microcefalia Em Cabo Verde| 2016</a></td>
+      <td>00:02:21</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3043" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3044</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3044" title="Best Of Legislativas 2016"><img width="100px" src="https://i.ytimg.com/vi/XTga1Ab2A3o/mqdefault.jpg" alt="Best Of Legislativas 2016"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3044" title="Best Of Legislativas 2016">Best Of Legislativas 2016</a></td>
+      <td>00:07:31</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3044" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3045</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3045" title="Suspeito Francês Preso em Cabo Verde"><img width="100px" src="https://i.ytimg.com/vi/llku8rWymm0/mqdefault.jpg" alt="Suspeito Francês Preso em Cabo Verde"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3045" title="Suspeito Francês Preso em Cabo Verde">Suspeito Francês Preso em Cabo Verde</a></td>
+      <td>00:03:20</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3045" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3046</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3046" title="Caboverdianos exigem Mais dos Tubarões Azuis."><img width="100px" src="https://i.ytimg.com/vi/FwGxK3P7_1c/mqdefault.jpg" alt="Caboverdianos exigem Mais dos Tubarões Azuis."></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3046" title="Caboverdianos exigem Mais dos Tubarões Azuis.">Caboverdianos exigem Mais dos Tubarões Azuis.</a></td>
+      <td>00:03:38</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3046" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3047</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3047" title="Caboverdiano Campeão Em Portugal 2016"><img width="100px" src="https://i.ytimg.com/vi/j3G8Lwmrp5A/mqdefault.jpg" alt="Caboverdiano Campeão Em Portugal 2016"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3047" title="Caboverdiano Campeão Em Portugal 2016">Caboverdiano Campeão Em Portugal 2016</a></td>
+      <td>00:03:54</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3047" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3048</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3048" title="J.M. Neves: Eu ainda Sou o Primeiro Ministro!"><img width="100px" src="https://i.ytimg.com/vi/aAS3DrML-Gg/mqdefault.jpg" alt="J.M. Neves: Eu ainda Sou o Primeiro Ministro!"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3048" title="J.M. Neves: Eu ainda Sou o Primeiro Ministro!">J.M. Neves: Eu ainda Sou o Primeiro Ministro!</a></td>
+      <td>00:01:57</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3048" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3049</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3049" title="MpD em Pré-Campanha (Autárquicas 2016)"><img width="100px" src="https://i.ytimg.com/vi/ZMZmD4ivLK4/mqdefault.jpg" alt="MpD em Pré-Campanha (Autárquicas 2016)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3049" title="MpD em Pré-Campanha (Autárquicas 2016)">MpD em Pré-Campanha (Autárquicas 2016)</a></td>
+      <td>00:05:58</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3049" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3050</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3050" title="Jovem Alega ter sido Agredida  por Vizinhos |2016|"><img width="100px" src="https://i.ytimg.com/vi/fLRdMLVwyJw/mqdefault.jpg" alt="Jovem Alega ter sido Agredida  por Vizinhos |2016|"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3050" title="Jovem Alega ter sido Agredida  por Vizinhos |2016|">Jovem Alega ter sido Agredida  por Vizinhos |2016|</a></td>
+      <td>00:02:55</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3050" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3051</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3051" title="Ladron bai furta sês Avô |2016|"><img width="100px" src="https://i.ytimg.com/vi/r50Ad-YH1qk/mqdefault.jpg" alt="Ladron bai furta sês Avô |2016|"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3051" title="Ladron bai furta sês Avô |2016|">Ladron bai furta sês Avô |2016|</a></td>
+      <td>00:02:46</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3051" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3052</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3052" title="Terrorismo Sonoro na Cidade da Praia"><img width="100px" src="https://i.ytimg.com/vi/NXHQxpfMdv0/mqdefault.jpg" alt="Terrorismo Sonoro na Cidade da Praia"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3052" title="Terrorismo Sonoro na Cidade da Praia">Terrorismo Sonoro na Cidade da Praia</a></td>
+      <td>00:02:40</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3052" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3053</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3053" title="Os Novos Ministros de Cabo Verde. 2016"><img width="100px" src="https://i.ytimg.com/vi/KbFzXLW63gE/mqdefault.jpg" alt="Os Novos Ministros de Cabo Verde. 2016"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3053" title="Os Novos Ministros de Cabo Verde. 2016">Os Novos Ministros de Cabo Verde. 2016</a></td>
+      <td>00:01:59</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3053" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3054</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3054" title="Este Pai está à beira de perder a Cabeça | 2016"><img width="100px" src="https://i.ytimg.com/vi/eGgBp_wr8wQ/mqdefault.jpg" alt="Este Pai está à beira de perder a Cabeça | 2016"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3054" title="Este Pai está à beira de perder a Cabeça | 2016">Este Pai está à beira de perder a Cabeça | 2016</a></td>
+      <td>00:03:05</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3054" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3055</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3055" title="Janira Reitera a Importância Política das Peixeiras"><img width="100px" src="https://i.ytimg.com/vi/HqVkWoSMJOo/mqdefault.jpg" alt="Janira Reitera a Importância Política das Peixeiras"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3055" title="Janira Reitera a Importância Política das Peixeiras">Janira Reitera a Importância Política das Peixeiras</a></td>
+      <td>00:01:28</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3055" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3056</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3056" title="Famílias Abandonadas | D. Zulmira | Somáda | 2016"><img width="100px" src="https://i.ytimg.com/vi/xCMtXmS4M1E/mqdefault.jpg" alt="Famílias Abandonadas | D. Zulmira | Somáda | 2016"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3056" title="Famílias Abandonadas | D. Zulmira | Somáda | 2016">Famílias Abandonadas | D. Zulmira | Somáda | 2016</a></td>
+      <td>00:03:12</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3056" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3057</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3057" title="Jovem Caboverdiano Cria Negócio em Portugal"><img width="100px" src="https://i.ytimg.com/vi/emSf8An3E5U/mqdefault.jpg" alt="Jovem Caboverdiano Cria Negócio em Portugal"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3057" title="Jovem Caboverdiano Cria Negócio em Portugal">Jovem Caboverdiano Cria Negócio em Portugal</a></td>
+      <td>00:02:08</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3057" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3058</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3058" title="NEVES desmascara ULISSES e MPD"><img width="100px" src="https://i.ytimg.com/vi/HHar7RxOA0o/mqdefault.jpg" alt="NEVES desmascara ULISSES e MPD"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3058" title="NEVES desmascara ULISSES e MPD">NEVES desmascara ULISSES e MPD</a></td>
+      <td>00:03:12</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3058" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3059</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3059" title="Polícia Apreende 280Kg de Droga + Armas de Guerra. 2016"><img width="100px" src="https://i.ytimg.com/vi/cg8jniLDVdc/mqdefault.jpg" alt="Polícia Apreende 280Kg de Droga + Armas de Guerra. 2016"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3059" title="Polícia Apreende 280Kg de Droga + Armas de Guerra. 2016">Polícia Apreende 280Kg de Droga + Armas de Guerra. 2016</a></td>
+      <td>00:02:33</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3059" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3060</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3060" title="Discurso de Posse - Ulisses Correia e Silva - 2016"><img width="100px" src="https://i.ytimg.com/vi/BEiQcfkuun4/mqdefault.jpg" alt="Discurso de Posse - Ulisses Correia e Silva - 2016"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3060" title="Discurso de Posse - Ulisses Correia e Silva - 2016">Discurso de Posse - Ulisses Correia e Silva - 2016</a></td>
+      <td>00:04:27</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3060" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3061</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3061" title="Os Novos Deputados da Nação |2016|"><img width="100px" src="https://i.ytimg.com/vi/BuoFwdcOwjs/mqdefault.jpg" alt="Os Novos Deputados da Nação |2016|"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3061" title="Os Novos Deputados da Nação |2016|">Os Novos Deputados da Nação |2016|</a></td>
+      <td>00:03:52</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3061" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3062</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3062" title="Pânico Em Cabo Verde| 11 alguem ki Móri| 2016"><img width="100px" src="https://i.ytimg.com/vi/AVuuEWHkeaA/mqdefault.jpg" alt="Pânico Em Cabo Verde| 11 alguem ki Móri| 2016"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3062" title="Pânico Em Cabo Verde| 11 alguem ki Móri| 2016">Pânico Em Cabo Verde| 11 alguem ki Móri| 2016</a></td>
+      <td>00:12:21</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3062" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3063</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3063" title="Suposto Autor do Massacre já foi Capturado"><img width="100px" src="https://i.ytimg.com/vi/x25UIjiDOW0/mqdefault.jpg" alt="Suposto Autor do Massacre já foi Capturado"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3063" title="Suposto Autor do Massacre já foi Capturado">Suposto Autor do Massacre já foi Capturado</a></td>
+      <td>00:05:06</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3063" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3064</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3064" title="Caboverdianos incrédulos com o Caso Monte Tchota"><img width="100px" src="https://i.ytimg.com/vi/iqUrV-fW-QU/mqdefault.jpg" alt="Caboverdianos incrédulos com o Caso Monte Tchota"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3064" title="Caboverdianos incrédulos com o Caso Monte Tchota">Caboverdianos incrédulos com o Caso Monte Tchota</a></td>
+      <td>00:09:44</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3064" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3065</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3065" title="Monti Txóta: Taxista Konta Planos di Tirurista  |2016|"><img width="100px" src="https://i.ytimg.com/vi/r5ooQEFVotY/mqdefault.jpg" alt="Monti Txóta: Taxista Konta Planos di Tirurista  |2016|"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3065" title="Monti Txóta: Taxista Konta Planos di Tirurista  |2016|">Monti Txóta: Taxista Konta Planos di Tirurista  |2016|</a></td>
+      <td>00:09:45</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3065" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3066</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3066" title="Caso Mônti Txóta| Local Exato, Demissão e Homenagens|"><img width="100px" src="https://i.ytimg.com/vi/lekNtx5lbXo/mqdefault.jpg" alt="Caso Mônti Txóta| Local Exato, Demissão e Homenagens|"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3066" title="Caso Mônti Txóta| Local Exato, Demissão e Homenagens|">Caso Mônti Txóta| Local Exato, Demissão e Homenagens|</a></td>
+      <td>00:10:19</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3066" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3067</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3067" title="Nha ex Namorádu kre Mâtân |2016|"><img width="100px" src="https://i.ytimg.com/vi/lYnVj6Bn0uQ/mqdefault.jpg" alt="Nha ex Namorádu kre Mâtân |2016|"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3067" title="Nha ex Namorádu kre Mâtân |2016|">Nha ex Namorádu kre Mâtân |2016|</a></td>
+      <td>00:03:41</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3067" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3068</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3068" title="Hiace Óleo de Cozinha| Praia-Somáda| 2016"><img width="100px" src="https://i.ytimg.com/vi/L_el9mqBVa0/mqdefault.jpg" alt="Hiace Óleo de Cozinha| Praia-Somáda| 2016"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3068" title="Hiace Óleo de Cozinha| Praia-Somáda| 2016">Hiace Óleo de Cozinha| Praia-Somáda| 2016</a></td>
+      <td>00:02:10</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3068" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3069</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=3069" title="Professor ta Dádji na sê Aluno |2016|"><img width="100px" src="https://i.ytimg.com/vi/ADSaC_yKLbo/mqdefault.jpg" alt="Professor ta Dádji na sê Aluno |2016|"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=3069" title="Professor ta Dádji na sê Aluno |2016|">Professor ta Dádji na sê Aluno |2016|</a></td>
+      <td>00:10:03</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLQLaMiYvW2VThKWnID-JbzJVBs4wHTKnK" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=3069" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   </tbody>
+
+</table>
+</div>
+</body></html>

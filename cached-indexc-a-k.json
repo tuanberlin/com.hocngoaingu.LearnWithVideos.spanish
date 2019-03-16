@@ -1,0 +1,1595 @@
+  <html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="icon" href="https://www.w3schools.com/tags/demo_icon.gif" type="image/gif" sizes="16x16">
+<link rel="stylesheet" type="text/css" href="views/videoDetail/mystyle.css">
+  <!-- Bootstrap v4.x stylesheet -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	<!-- bootstrap css theme -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/docs/css/bootstrap-v4.min.css">
+
+	<script src="https://mottie.github.io/tablesorter/docs/js/jquery-latest.min.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+	<!-- pager plugin -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.css">
+	<script src="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.js"></script>
+	<style>
+	.tablesorter-pager .btn-group-sm .btn {
+	  font-size: 1.2em; /* make pager arrows more visible */
+	}
+	</style>
+  <script>
+  $(function() {
+
+  $("table").tablesorter({
+    theme : "bootstrap",
+
+    widthFixed: true,
+
+    // widget code contained in the jquery.tablesorter.widgets.js file
+    // use the zebra stripe widget if you plan on hiding any rows (filter widget)
+    // the uitheme widget is NOT REQUIRED!
+    widgets : [ "filter", "columns", "zebra" ],
+
+    widgetOptions : {
+      // using the default zebra striping class name, so it actually isn't included in the theme variable above
+      // this is ONLY needed for bootstrap theming if you are using the filter widget, because rows are hidden
+      zebra : ["even", "odd"],
+
+      // class names added to columns when sorted
+      columns: [ "primary", "secondary", "tertiary" ],
+
+      // reset filters button
+      filter_reset : ".reset",
+
+      // extra css class name (string or array) added to the filter element (input or select)
+      filter_cssFilter: [
+        'form-control',
+        'form-control',
+        'form-control custom-select', // select needs custom class names :(
+        'form-control',
+        'form-control',
+        'form-control',
+        'form-control'
+      ]
+
+    }
+  })
+  .tablesorterPager({
+
+    // target the pager markup - see the HTML block below
+    container: $(".ts-pager"),
+
+    // target the pager page select dropdown - choose a page
+    cssGoto  : ".pagenum",
+
+    // remove rows from the table to speed up the sort of large tables.
+    // setting this to false, only hides the non-visible rows; needed if you plan to add/remove rows with the pager enabled.
+    removeRows: false,
+
+    // output string - default is '{page}/{totalPages}';
+    // possible variables: {page}, {totalPages}, {filteredPages}, {startRow}, {endRow}, {filteredRows} and {totalRows}
+    output: '{startRow} - {endRow} / {filteredRows} ({totalRows})'
+
+  });
+
+});
+  </script>  <title>Home</title>
+
+</head>
+<body>
+
+<div class="contentItem">
+	<div class="dropdown">
+       <a href="/v2/admin/"><button class="dropbtn">Home page</button></a>
+       <div class="dropdown-content">
+          <a href="?c=listDetail&a=getAllWithView&k=1">get All ListDetail</a>
+          <a title="Them list videos moi" target="_blank" href="youtube/">Add New</a>
+          <a title="Xoa trung lap video + listDetail" target="_blank" href="removeDuplicate.php">Remove Duplicate</a>
+          <a title="Them list videos moi" target="_blank" href="/v2/log/show.php">Log</a>
+      </div>
+  </div>
+  <div class="dropdown">
+   <a title="Them list videos moi" target="_blank" href="youtube/"><button class="dropbtn">Add New By Youtube</button></a>
+  </div>
+
+<div class="dropdown">
+   <a title="Tao Cache + remove cac videos va list bi trung lap" target="_blank" href="gen-cache.php"><button class="dropbtn">Gen cache</button></a>
+
+   <div class="dropdown-content">
+    <a title="Check videos playable, Khong nen thuc hien nhieu neu ko se bi khoa IP. Tuy vao DB co the chay mat 15p hoac hon" target="_blank" href="check-videos.php">Check Video playable(co the phai doi >15p)</a>
+</div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">get All VideosDetail</button>
+   <div class="dropdown-content">
+      <a href="?c=videoDetail&a=getAllWithView&k=0">get All VideosDetail(>10s)</a>
+      <a href="#">Add New</a>
+      <a href="#">Remove</a>
+  </div>
+</div>
+<div class="dropdown">
+   <button class="dropbtn">Xep theo CategoryID</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 Nuevos videos (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 Noticias (2)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Principiantes (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Escuchar (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Gramar (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabulario (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 En lectura (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 Escritura (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 Pronunciación (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 Hablando (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 Exámenes (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 Canciones (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 Cine (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 Español para niños (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Estudiar en el extranjero (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 La vida en españa (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Números (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 Compras (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 La comida (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Jobs (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 Salud (2)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Mira (0)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List tang dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 Nuevos videos (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Mira (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 Noticias (2)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 Salud (2)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 Escritura (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 Español para niños (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Números (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Jobs (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 Hablando (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 La vida en españa (4)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List giam dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 En lectura (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Estudiar en el extranjero (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Gramar (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Principiantes (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Escuchar (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabulario (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 Canciones (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 Cine (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 Exámenes (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 La comida (6)</a></div>
+</div>
+<br/>
+<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 new_videos L(0)</a> |<a title='Có 2 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 nachrichten L(2)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 beginnners L(9)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 listening L(9)</a> |<a title='Có 11 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 gramar L(11)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 vocabulary L(9)</a> |<a title='Có 12 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 reading L(12)</a> |<a title='Có 3 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 writing L(3)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 pronunciation L(5)</a> |<a title='Có 4 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 speaking L(4)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 exams L(8)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 songs L(9)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 film L(9)</a> |<a title='Có 3 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 kids L(3)</a> |<a title='Có 12 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 study L(12)</a> |<a title='Có 4 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 spain L(4)</a> |<a title='Có 3 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 numbers L(3)</a> |<a title='Có 4 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 shopping L(4)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 food L(6)</a> |<a title='Có 3 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 jobs L(3)</a> |<a title='Có 2 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 health L(2)</a> |<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 watched L(0)</a> |<br/>Số lượng Videos trong DB: 2331 Videos<br/>Số lượng Videos trong DB: 127 Videos</div>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kw" value="" placeholder="search here">
+	<input type="submit" name="submit" value="search name videos">
+</form>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kwl" value="" placeholder="search name List here">
+	<input type="submit" name="submit" value="search name List videos">
+</form><br/>
+<h1>Home</h1>
+
+
+<table class="table table-bordered table-striped">
+  <thead> <!-- add class="thead-inverse" for a dark header -->
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>CategoryID</th>
+      <th>ListVideo count</th>
+      <th>Add More List to this Category</th>
+      <th>Xoa</th>
+	</tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+	  <th>CategoryID</th>
+      <th>ListVideo count</th>
+      <th>Add More List to this Category</th>
+      <th>Xoa</th>
+    </tr>
+    <tr>
+      <th colspan="7" class="ts-pager">
+        <div class="form-inline">
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary first" title="first">⇤</button>
+            <button type="button" class="btn btn-secondary prev" title="previous">←</button>
+          </div>
+          <span class="pagedisplay"></span>
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary next" title="next">→</button>
+            <button type="button" class="btn btn-secondary last" title="last">⇥</button>
+          </div>
+          <select class="form-control-sm custom-select px-1 pagesize" title="Select page size">
+            <option selected="selected" value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="all">All Rows</option>
+          </select>
+          <select class="form-control-sm custom-select px-4 mx-1 pagenum" title="Select page number"></select>
+        </div>
+      </th>
+    </tr>
+  </tfoot>
+  <tbody>
+	
+   <tr>
+      <td>137</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLyn1hHBi1B-SlKX_Ywmgij70JIlocCx16" title="Sandra Annenberg chora ao comentar notícia da morte de Beatriz Thielmann no Jornal Hoje"><img width="100px" src="https://i.ytimg.com/vi/TxzQYt6yzzI/mqdefault.jpg" alt="Sandra Annenberg chora ao comentar notícia da morte de Beatriz Thielmann no Jornal Hoje"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLyn1hHBi1B-SlKX_Ywmgij70JIlocCx16" title="Sandra Annenberg chora ao comentar notícia da morte de Beatriz Thielmann no Jornal Hoje">Sandra Annenberg chora ao comentar notícia da morte de Beatriz Thielmann no Jornal Hoje</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=2" title="see 2">2</a></td>
+	  <td>13</td>
+      <td><a target="_blank" href="youtube/?CategoryID=2" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLyn1hHBi1B-SlKX_Ywmgij70JIlocCx16" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>136</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLIX4v5wUj48VubRevgQske-y6rl8uW03A" title="Hallados restos de planeta desaparecido | Noticias 23/04/2018"><img width="100px" src="https://i.ytimg.com/vi/MPHLWVHrxGI/mqdefault.jpg" alt="Hallados restos de planeta desaparecido | Noticias 23/04/2018"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLIX4v5wUj48VubRevgQske-y6rl8uW03A" title="Hallados restos de planeta desaparecido | Noticias 23/04/2018">Hallados restos de planeta desaparecido | Noticias 23/04/2018</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=2" title="see 2">2</a></td>
+	  <td>50</td>
+      <td><a target="_blank" href="youtube/?CategoryID=2" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLIX4v5wUj48VubRevgQske-y6rl8uW03A" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>134</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLTypB9eOHphdJvBLQGroOLs3crdDtPrxL" title="indo ao medico"><img width="100px" src="https://i.ytimg.com/vi/6TVnB9ZGaok/mqdefault.jpg" alt="indo ao medico"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLTypB9eOHphdJvBLQGroOLs3crdDtPrxL" title="indo ao medico">indo ao medico</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=22" title="see 22">22</a></td>
+	  <td>7</td>
+      <td><a target="_blank" href="youtube/?CategoryID=22" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLTypB9eOHphdJvBLQGroOLs3crdDtPrxL" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>133</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLO1bCDvafSqLYf_9yxiLOUlA4F9_SoNA-" title="MÉDICO LOUCO!!"><img width="100px" src="https://i.ytimg.com/vi/NOhnz6bx5Rg/mqdefault.jpg" alt="MÉDICO LOUCO!!"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLO1bCDvafSqLYf_9yxiLOUlA4F9_SoNA-" title="MÉDICO LOUCO!!">MÉDICO LOUCO!!</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=22" title="see 22">22</a></td>
+	  <td>9</td>
+      <td><a target="_blank" href="youtube/?CategoryID=22" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLO1bCDvafSqLYf_9yxiLOUlA4F9_SoNA-" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>132</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLYYlAWHuB54b-CyDRMGyjnaKPsvvF0b63" title="¿Te Gusta El Helado De Brócoli? | Canciones Infantiles | Super Simple Español"><img width="100px" src="https://i.ytimg.com/vi/OonqrUZCef4/mqdefault.jpg" alt="¿Te Gusta El Helado De Brócoli? | Canciones Infantiles | Super Simple Español"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLYYlAWHuB54b-CyDRMGyjnaKPsvvF0b63" title="¿Te Gusta El Helado De Brócoli? | Canciones Infantiles | Super Simple Español">¿Te Gusta El Helado De Brócoli? | Canciones Infantiles | Super Simple Español</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=20" title="see 20">20</a></td>
+	  <td>4</td>
+      <td><a target="_blank" href="youtube/?CategoryID=20" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLYYlAWHuB54b-CyDRMGyjnaKPsvvF0b63" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>131</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL6u5D-9r3PFxF_TGxkXGRFELWwY4jd9de" title="Capirotada de Tres Leches con Annette Moreno"><img width="100px" src="https://i.ytimg.com/vi/5MPdClLHUL8/mqdefault.jpg" alt="Capirotada de Tres Leches con Annette Moreno"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL6u5D-9r3PFxF_TGxkXGRFELWwY4jd9de" title="Capirotada de Tres Leches con Annette Moreno">Capirotada de Tres Leches con Annette Moreno</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=20" title="see 20">20</a></td>
+	  <td>4</td>
+      <td><a target="_blank" href="youtube/?CategoryID=20" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL6u5D-9r3PFxF_TGxkXGRFELWwY4jd9de" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>130</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLI1BjzWiQXgX2VjgOo9jWj_H9vMtDZuFi" title="Pastel De Pollo"><img width="100px" src="https://i.ytimg.com/vi/zfkBiKZIlnQ/mqdefault.jpg" alt="Pastel De Pollo"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLI1BjzWiQXgX2VjgOo9jWj_H9vMtDZuFi" title="Pastel De Pollo">Pastel De Pollo</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=20" title="see 20">20</a></td>
+	  <td>9</td>
+      <td><a target="_blank" href="youtube/?CategoryID=20" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLI1BjzWiQXgX2VjgOo9jWj_H9vMtDZuFi" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>129</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL0Glm-cYKGLQJsO1ye5dIuDrq2hBxnT70" title="Маша и Медведь (Masha and The Bear) - Приятного аппетита (24 Серия)"><img width="100px" src="https://i.ytimg.com/vi/x1fe8-Qli9E/mqdefault.jpg" alt="Маша и Медведь (Masha and The Bear) - Приятного аппетита (24 Серия)"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL0Glm-cYKGLQJsO1ye5dIuDrq2hBxnT70" title="Маша и Медведь (Masha and The Bear) - Приятного аппетита (24 Серия)">Маша и Медведь (Masha and The Bear) - Приятного аппетита (24 Серия)</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=20" title="see 20">20</a></td>
+	  <td>6</td>
+      <td><a target="_blank" href="youtube/?CategoryID=20" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL0Glm-cYKGLQJsO1ye5dIuDrq2hBxnT70" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>128</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL3xnlunjEixhf9a7O0AW6yJZKdGF43_ay" title="Vocabulario español: la verdura"><img width="100px" src="https://i.ytimg.com/vi/-kXUfj_SaLU/mqdefault.jpg" alt="Vocabulario español: la verdura"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL3xnlunjEixhf9a7O0AW6yJZKdGF43_ay" title="Vocabulario español: la verdura">Vocabulario español: la verdura</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=20" title="see 20">20</a></td>
+	  <td>6</td>
+      <td><a target="_blank" href="youtube/?CategoryID=20" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL3xnlunjEixhf9a7O0AW6yJZKdGF43_ay" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>127</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL_0jAerHsjXH2O0m1Tk7woHZV3t3wgsFg" title="Pollo en Pipián Rojo"><img width="100px" src="https://i.ytimg.com/vi/R65MRN0QUE8/mqdefault.jpg" alt="Pollo en Pipián Rojo"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL_0jAerHsjXH2O0m1Tk7woHZV3t3wgsFg" title="Pollo en Pipián Rojo">Pollo en Pipián Rojo</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=20" title="see 20">20</a></td>
+	  <td>47</td>
+      <td><a target="_blank" href="youtube/?CategoryID=20" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL_0jAerHsjXH2O0m1Tk7woHZV3t3wgsFg" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>126</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL-9hbTehRUSFhsooojIAbb8h0HYxksbMY" title="Cómo encontrar prácticas como ingeniero técnico industrial"><img width="100px" src="https://i.ytimg.com/vi/sZJhgh5UeAc/mqdefault.jpg" alt="Cómo encontrar prácticas como ingeniero técnico industrial"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL-9hbTehRUSFhsooojIAbb8h0HYxksbMY" title="Cómo encontrar prácticas como ingeniero técnico industrial">Cómo encontrar prácticas como ingeniero técnico industrial</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=21" title="see 21">21</a></td>
+	  <td>49</td>
+      <td><a target="_blank" href="youtube/?CategoryID=21" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL-9hbTehRUSFhsooojIAbb8h0HYxksbMY" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>125</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLu8oYUgikMGQKH9q7yL3PGXbVElCNCBHw" title="Aprender español: Profesiones y oficios I (nivel básico)"><img width="100px" src="https://i.ytimg.com/vi/4Mk6Yi9H1FU/mqdefault.jpg" alt="Aprender español: Profesiones y oficios I (nivel básico)"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLu8oYUgikMGQKH9q7yL3PGXbVElCNCBHw" title="Aprender español: Profesiones y oficios I (nivel básico)">Aprender español: Profesiones y oficios I (nivel básico)</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=21" title="see 21">21</a></td>
+	  <td>7</td>
+      <td><a target="_blank" href="youtube/?CategoryID=21" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLu8oYUgikMGQKH9q7yL3PGXbVElCNCBHw" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>124</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL_FRqbZY3Q1kKUi4saDGyykTuWtYWY5y5" title="CÓMO GANAR DINERO POR INTERNET 600 DÓLARES POR MES - Tati Uribe"><img width="100px" src="https://i.ytimg.com/vi/bPpeg_nldL4/mqdefault.jpg" alt="CÓMO GANAR DINERO POR INTERNET 600 DÓLARES POR MES - Tati Uribe"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL_FRqbZY3Q1kKUi4saDGyykTuWtYWY5y5" title="CÓMO GANAR DINERO POR INTERNET 600 DÓLARES POR MES - Tati Uribe">CÓMO GANAR DINERO POR INTERNET 600 DÓLARES POR MES - Tati Uribe</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=21" title="see 21">21</a></td>
+	  <td>10</td>
+      <td><a target="_blank" href="youtube/?CategoryID=21" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL_FRqbZY3Q1kKUi4saDGyykTuWtYWY5y5" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>123</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLCoR_CMTb3oVPLxZ6gas1StQYYP8uwJT4" title="Visitando un SUPERMERCADO EN CHINA!"><img width="100px" src="https://i.ytimg.com/vi/XvrngnRhOis/mqdefault.jpg" alt="Visitando un SUPERMERCADO EN CHINA!"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLCoR_CMTb3oVPLxZ6gas1StQYYP8uwJT4" title="Visitando un SUPERMERCADO EN CHINA!">Visitando un SUPERMERCADO EN CHINA!</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=19" title="see 19">19</a></td>
+	  <td>5</td>
+      <td><a target="_blank" href="youtube/?CategoryID=19" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLCoR_CMTb3oVPLxZ6gas1StQYYP8uwJT4" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>122</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL4dlQl26Io6QdFIPb30zr--8Tlc5vwEC2" title="TAG del SUPERMERCADO en ESPAñA! Caro o Barato? SandraCiresArt"><img width="100px" src="https://i.ytimg.com/vi/IvAr_vSN7q0/mqdefault.jpg" alt="TAG del SUPERMERCADO en ESPAñA! Caro o Barato? SandraCiresArt"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL4dlQl26Io6QdFIPb30zr--8Tlc5vwEC2" title="TAG del SUPERMERCADO en ESPAñA! Caro o Barato? SandraCiresArt">TAG del SUPERMERCADO en ESPAñA! Caro o Barato? SandraCiresArt</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=19" title="see 19">19</a></td>
+	  <td>44</td>
+      <td><a target="_blank" href="youtube/?CategoryID=19" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL4dlQl26Io6QdFIPb30zr--8Tlc5vwEC2" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>121</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL816-1v6fDMGaMzUzthzOUQh3UQfJU7pQ" title="Visitando un SUPERMERCADO EN JAPÓN"><img width="100px" src="https://i.ytimg.com/vi/gI2FBnL88mE/mqdefault.jpg" alt="Visitando un SUPERMERCADO EN JAPÓN"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL816-1v6fDMGaMzUzthzOUQh3UQfJU7pQ" title="Visitando un SUPERMERCADO EN JAPÓN">Visitando un SUPERMERCADO EN JAPÓN</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=19" title="see 19">19</a></td>
+	  <td>2</td>
+      <td><a target="_blank" href="youtube/?CategoryID=19" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL816-1v6fDMGaMzUzthzOUQh3UQfJU7pQ" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>120</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLMY-ZjMYCYg4zfZgDhne4W_1t2ydxp2qU" title="TAG DEL SUPERMERCADO  | RETO POLINESIO LOS POLINESIOS"><img width="100px" src="https://i.ytimg.com/vi/GNgS2KeuynA/mqdefault.jpg" alt="TAG DEL SUPERMERCADO  | RETO POLINESIO LOS POLINESIOS"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLMY-ZjMYCYg4zfZgDhne4W_1t2ydxp2qU" title="TAG DEL SUPERMERCADO  | RETO POLINESIO LOS POLINESIOS">TAG DEL SUPERMERCADO  | RETO POLINESIO LOS POLINESIOS</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=19" title="see 19">19</a></td>
+	  <td>6</td>
+      <td><a target="_blank" href="youtube/?CategoryID=19" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLMY-ZjMYCYg4zfZgDhne4W_1t2ydxp2qU" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>119</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL4LOhGbGLbzAwZOVtVOLv07-S7HG6whR5" title="Los Números en RUSO — Ruso básico para los principiantes"><img width="100px" src="https://i.ytimg.com/vi/rVQJPcdrDP4/mqdefault.jpg" alt="Los Números en RUSO — Ruso básico para los principiantes"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL4LOhGbGLbzAwZOVtVOLv07-S7HG6whR5" title="Los Números en RUSO — Ruso básico para los principiantes">Los Números en RUSO — Ruso básico para los principiantes</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=18" title="see 18">18</a></td>
+	  <td>26</td>
+      <td><a target="_blank" href="youtube/?CategoryID=18" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL4LOhGbGLbzAwZOVtVOLv07-S7HG6whR5" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>118</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLHP6XmGEwKzKLotQiQwdFn6-0s2jmKud9" title="The Big Numbers Song"><img width="100px" src="https://i.ytimg.com/vi/e0dJWfQHF8Y/mqdefault.jpg" alt="The Big Numbers Song"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLHP6XmGEwKzKLotQiQwdFn6-0s2jmKud9" title="The Big Numbers Song">The Big Numbers Song</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=18" title="see 18">18</a></td>
+	  <td>44</td>
+      <td><a target="_blank" href="youtube/?CategoryID=18" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLHP6XmGEwKzKLotQiQwdFn6-0s2jmKud9" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>117</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLtSammRPzYcMxCRGQp2g-L6f_MwOU7Ck9" title="Los números en español para niños. Como hacer los números del 0 al 9 en plastilina Play-Doh."><img width="100px" src="https://i.ytimg.com/vi/UgNkDKAkl0g/mqdefault.jpg" alt="Los números en español para niños. Como hacer los números del 0 al 9 en plastilina Play-Doh."></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLtSammRPzYcMxCRGQp2g-L6f_MwOU7Ck9" title="Los números en español para niños. Como hacer los números del 0 al 9 en plastilina Play-Doh.">Los números en español para niños. Como hacer los números del 0 al 9 en plastilina Play-Doh.</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=18" title="see 18">18</a></td>
+	  <td>26</td>
+      <td><a target="_blank" href="youtube/?CategoryID=18" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLtSammRPzYcMxCRGQp2g-L6f_MwOU7Ck9" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>116</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLSXGfg6XHVB5b00m4yY-E5czhVOnynSui" title="La Vida Secreta de los Niños: Grandes descubrimientos - Los mejores momentos | #0"><img width="100px" src="https://i.ytimg.com/vi/UskgUaB8x6U/mqdefault.jpg" alt="La Vida Secreta de los Niños: Grandes descubrimientos - Los mejores momentos | #0"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLSXGfg6XHVB5b00m4yY-E5czhVOnynSui" title="La Vida Secreta de los Niños: Grandes descubrimientos - Los mejores momentos | #0">La Vida Secreta de los Niños: Grandes descubrimientos - Los mejores momentos | #0</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=17" title="see 17">17</a></td>
+	  <td>43</td>
+      <td><a target="_blank" href="youtube/?CategoryID=17" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLSXGfg6XHVB5b00m4yY-E5czhVOnynSui" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>115</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLOkbL2QR4aeM0C0UhlIJksQCOciL5PpVP" title="Historia de España: La ciudad medieval"><img width="100px" src="https://i.ytimg.com/vi/0l3TnxKs_C8/mqdefault.jpg" alt="Historia de España: La ciudad medieval"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLOkbL2QR4aeM0C0UhlIJksQCOciL5PpVP" title="Historia de España: La ciudad medieval">Historia de España: La ciudad medieval</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=17" title="see 17">17</a></td>
+	  <td>3</td>
+      <td><a target="_blank" href="youtube/?CategoryID=17" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLOkbL2QR4aeM0C0UhlIJksQCOciL5PpVP" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>114</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL7QnllOaafJikn0pLS2_0Rd4uVfZO5SXB" title="¡ME ESTOY QUEDANDO CALVA!???? + ¡PARA ÉSTO ESTÁN LOS HERMANOS! ????... | Mi vida en España"><img width="100px" src="https://i.ytimg.com/vi/RJgSwRvEloc/mqdefault.jpg" alt="¡ME ESTOY QUEDANDO CALVA!???? + ¡PARA ÉSTO ESTÁN LOS HERMANOS! ????... | Mi vida en España"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL7QnllOaafJikn0pLS2_0Rd4uVfZO5SXB" title="¡ME ESTOY QUEDANDO CALVA!???? + ¡PARA ÉSTO ESTÁN LOS HERMANOS! ????... | Mi vida en España">¡ME ESTOY QUEDANDO CALVA!???? + ¡PARA ÉSTO ESTÁN LOS HERMANOS! ????... | Mi vida en España</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=17" title="see 17">17</a></td>
+	  <td>12</td>
+      <td><a target="_blank" href="youtube/?CategoryID=17" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL7QnllOaafJikn0pLS2_0Rd4uVfZO5SXB" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>113</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLpAa3cCo3mWFeeI_f0U-JDnaBDGwLsxV0" title="El hijo de los Duques de Cambridge, el príncipe George de Inglaterra, ha sido bautizado"><img width="100px" src="https://i.ytimg.com/vi/JxV3dxjrl9s/mqdefault.jpg" alt="El hijo de los Duques de Cambridge, el príncipe George de Inglaterra, ha sido bautizado"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLpAa3cCo3mWFeeI_f0U-JDnaBDGwLsxV0" title="El hijo de los Duques de Cambridge, el príncipe George de Inglaterra, ha sido bautizado">El hijo de los Duques de Cambridge, el príncipe George de Inglaterra, ha sido bautizado</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=17" title="see 17">17</a></td>
+	  <td>1</td>
+      <td><a target="_blank" href="youtube/?CategoryID=17" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLpAa3cCo3mWFeeI_f0U-JDnaBDGwLsxV0" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>111</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLUya1g-dOmjXrGXDLfzfc4ULHLP33tMO5" title="DELE A2 - Tarea 1. Monólogo: el coche"><img width="100px" src="https://i.ytimg.com/vi/zm3vosImvEY/mqdefault.jpg" alt="DELE A2 - Tarea 1. Monólogo: el coche"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLUya1g-dOmjXrGXDLfzfc4ULHLP33tMO5" title="DELE A2 - Tarea 1. Monólogo: el coche">DELE A2 - Tarea 1. Monólogo: el coche</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=11" title="see 11">11</a></td>
+	  <td>6</td>
+      <td><a target="_blank" href="youtube/?CategoryID=11" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLUya1g-dOmjXrGXDLfzfc4ULHLP33tMO5" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>110</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLdd0bHB0dWsw2EE-qO0OsdNkyNSGYI-jP" title="Listening DELE A2 Examen 5 Tarea 5"><img width="100px" src="https://i.ytimg.com/vi/XU5ZJdHgwdc/mqdefault.jpg" alt="Listening DELE A2 Examen 5 Tarea 5"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLdd0bHB0dWsw2EE-qO0OsdNkyNSGYI-jP" title="Listening DELE A2 Examen 5 Tarea 5">Listening DELE A2 Examen 5 Tarea 5</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=11" title="see 11">11</a></td>
+	  <td>5</td>
+      <td><a target="_blank" href="youtube/?CategoryID=11" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLdd0bHB0dWsw2EE-qO0OsdNkyNSGYI-jP" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>109</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLdd0bHB0dWsy4BXfEF4E9Iy7TVns8FY3X" title="DELE B1   1-3"><img width="100px" src="https://i.ytimg.com/vi/ryPVfHic_ok/mqdefault.jpg" alt="DELE B1   1-3"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLdd0bHB0dWsy4BXfEF4E9Iy7TVns8FY3X" title="DELE B1   1-3">DELE B1   1-3</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=11" title="see 11">11</a></td>
+	  <td>6</td>
+      <td><a target="_blank" href="youtube/?CategoryID=11" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLdd0bHB0dWsy4BXfEF4E9Iy7TVns8FY3X" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>108</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLsrYaExktN4O4keQVzhwBgmOb-2Ewx2BN" title="I Forgot My Phone"><img width="100px" src="https://i.ytimg.com/vi/OINa46HeWg8/mqdefault.jpg" alt="I Forgot My Phone"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLsrYaExktN4O4keQVzhwBgmOb-2Ewx2BN" title="I Forgot My Phone">I Forgot My Phone</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=11" title="see 11">11</a></td>
+	  <td>27</td>
+      <td><a target="_blank" href="youtube/?CategoryID=11" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLsrYaExktN4O4keQVzhwBgmOb-2Ewx2BN" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>107</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLUya1g-dOmjX_jaFECPYnSVypOxer57Zc" title="DELE B1 - Tarea 1. Exposición: ¿Dónde te gustaría vivir?"><img width="100px" src="https://i.ytimg.com/vi/NrhKqi4BrnA/mqdefault.jpg" alt="DELE B1 - Tarea 1. Exposición: ¿Dónde te gustaría vivir?"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLUya1g-dOmjX_jaFECPYnSVypOxer57Zc" title="DELE B1 - Tarea 1. Exposición: ¿Dónde te gustaría vivir?">DELE B1 - Tarea 1. Exposición: ¿Dónde te gustaría vivir?</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=11" title="see 11">11</a></td>
+	  <td>3</td>
+      <td><a target="_blank" href="youtube/?CategoryID=11" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLUya1g-dOmjX_jaFECPYnSVypOxer57Zc" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>106</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLHVjlacTRIv1E84-EfSmuoByIRkiVP09d" title="Diplomas de español DELE - Instituto Cervantes"><img width="100px" src="https://i.ytimg.com/vi/oRebHy-fX2Q/mqdefault.jpg" alt="Diplomas de español DELE - Instituto Cervantes"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLHVjlacTRIv1E84-EfSmuoByIRkiVP09d" title="Diplomas de español DELE - Instituto Cervantes">Diplomas de español DELE - Instituto Cervantes</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=11" title="see 11">11</a></td>
+	  <td>9</td>
+      <td><a target="_blank" href="youtube/?CategoryID=11" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLHVjlacTRIv1E84-EfSmuoByIRkiVP09d" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>105</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLe1z4NQHQKCkC1MtDYP4VP1X03Ttqr-nO" title="Comer fuera. Nivel B1"><img width="100px" src="https://i.ytimg.com/vi/z-CS3hAuOxs/mqdefault.jpg" alt="Comer fuera. Nivel B1"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLe1z4NQHQKCkC1MtDYP4VP1X03Ttqr-nO" title="Comer fuera. Nivel B1">Comer fuera. Nivel B1</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=11" title="see 11">11</a></td>
+	  <td>46</td>
+      <td><a target="_blank" href="youtube/?CategoryID=11" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLe1z4NQHQKCkC1MtDYP4VP1X03Ttqr-nO" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>104</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLnFUmaOm9VAbderj55CqhbsoHO3tBwlPU" title="Primera clase de español. Nivel A1"><img width="100px" src="https://i.ytimg.com/vi/YqAY5RyV-Zg/mqdefault.jpg" alt="Primera clase de español. Nivel A1"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLnFUmaOm9VAbderj55CqhbsoHO3tBwlPU" title="Primera clase de español. Nivel A1">Primera clase de español. Nivel A1</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=11" title="see 11">11</a></td>
+	  <td>49</td>
+      <td><a target="_blank" href="youtube/?CategoryID=11" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLnFUmaOm9VAbderj55CqhbsoHO3tBwlPU" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>101</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL5Io-m_Gl69OIb11M7R0MyKyQO1G7QxSU" title="Canción de los Colores en Inglés y Español - Canción para niños - Songs for Kids in spanish"><img width="100px" src="https://i.ytimg.com/vi/c6BVOQfgMP8/mqdefault.jpg" alt="Canción de los Colores en Inglés y Español - Canción para niños - Songs for Kids in spanish"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL5Io-m_Gl69OIb11M7R0MyKyQO1G7QxSU" title="Canción de los Colores en Inglés y Español - Canción para niños - Songs for Kids in spanish">Canción de los Colores en Inglés y Español - Canción para niños - Songs for Kids in spanish</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=14" title="see 14">14</a></td>
+	  <td>11</td>
+      <td><a target="_blank" href="youtube/?CategoryID=14" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL5Io-m_Gl69OIb11M7R0MyKyQO1G7QxSU" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>100</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL7hO4Cxpj-uLthx9gEOEGsQbmoP3uZgJl" title="Coplas y rimas para primer grado de primaria"><img width="100px" src="https://i.ytimg.com/vi/vsAj1jlU7t8/mqdefault.jpg" alt="Coplas y rimas para primer grado de primaria"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL7hO4Cxpj-uLthx9gEOEGsQbmoP3uZgJl" title="Coplas y rimas para primer grado de primaria">Coplas y rimas para primer grado de primaria</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=14" title="see 14">14</a></td>
+	  <td>21</td>
+      <td><a target="_blank" href="youtube/?CategoryID=14" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL7hO4Cxpj-uLthx9gEOEGsQbmoP3uZgJl" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>99</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL15F38085E9DDFB69" title="CantaJuego - Piececitos"><img width="100px" src="https://i.ytimg.com/vi/npVYtlKALlU/mqdefault.jpg" alt="CantaJuego - Piececitos"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL15F38085E9DDFB69" title="CantaJuego - Piececitos">CantaJuego - Piececitos</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=14" title="see 14">14</a></td>
+	  <td>49</td>
+      <td><a target="_blank" href="youtube/?CategoryID=14" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL15F38085E9DDFB69" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>98</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLPLOw0cyMeZhf5Cy4wc3nKrDVLJa9iKoA" title="????SELENA GOMEZ HABLANDO Y CANTANDO EN ESPAÑOL | SELENA GOMEZ SPEAKING SPANISH."><img width="100px" src="https://i.ytimg.com/vi/XXbB7x8_l-Y/mqdefault.jpg" alt="????SELENA GOMEZ HABLANDO Y CANTANDO EN ESPAÑOL | SELENA GOMEZ SPEAKING SPANISH."></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLPLOw0cyMeZhf5Cy4wc3nKrDVLJa9iKoA" title="????SELENA GOMEZ HABLANDO Y CANTANDO EN ESPAÑOL | SELENA GOMEZ SPEAKING SPANISH.">????SELENA GOMEZ HABLANDO Y CANTANDO EN ESPAÑOL | SELENA GOMEZ SPEAKING SPANISH.</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=10" title="see 10">10</a></td>
+	  <td>6</td>
+      <td><a target="_blank" href="youtube/?CategoryID=10" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLPLOw0cyMeZhf5Cy4wc3nKrDVLJa9iKoA" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>97</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL4S50Jyukeecljv0Rl6kgiSCv0l4tjrZ9" title="victoria justice  hablando español."><img width="100px" src="https://i.ytimg.com/vi/6HCPn55O4lE/mqdefault.jpg" alt="victoria justice  hablando español."></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL4S50Jyukeecljv0Rl6kgiSCv0l4tjrZ9" title="victoria justice  hablando español.">victoria justice  hablando español.</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=10" title="see 10">10</a></td>
+	  <td>13</td>
+      <td><a target="_blank" href="youtube/?CategoryID=10" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL4S50Jyukeecljv0Rl6kgiSCv0l4tjrZ9" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>96</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLjAF6zJtHDpU-aIZhZTyEzKjFqdjJe2mS" title="FAMOSOS HABLANDO EN ESPAÑOL - PARTE 1 ★"><img width="100px" src="https://i.ytimg.com/vi/WwmtoRrgmy8/mqdefault.jpg" alt="FAMOSOS HABLANDO EN ESPAÑOL - PARTE 1 ★"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLjAF6zJtHDpU-aIZhZTyEzKjFqdjJe2mS" title="FAMOSOS HABLANDO EN ESPAÑOL - PARTE 1 ★">FAMOSOS HABLANDO EN ESPAÑOL - PARTE 1 ★</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=10" title="see 10">10</a></td>
+	  <td>3</td>
+      <td><a target="_blank" href="youtube/?CategoryID=10" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLjAF6zJtHDpU-aIZhZTyEzKjFqdjJe2mS" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>95</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLblPhFSAUzsG8k2PvqJrJHYt1y5FwCcuA" title="Ariana Grande Hablando español INCREIBLE ???? Parte 2"><img width="100px" src="https://i.ytimg.com/vi/V6i5kvLKubY/mqdefault.jpg" alt="Ariana Grande Hablando español INCREIBLE ???? Parte 2"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLblPhFSAUzsG8k2PvqJrJHYt1y5FwCcuA" title="Ariana Grande Hablando español INCREIBLE ???? Parte 2">Ariana Grande Hablando español INCREIBLE ???? Parte 2</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=10" title="see 10">10</a></td>
+	  <td>19</td>
+      <td><a target="_blank" href="youtube/?CategoryID=10" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLblPhFSAUzsG8k2PvqJrJHYt1y5FwCcuA" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>93</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLUOIG7K5uAaTwQCFHofAKRKtIdbjGEPdp" title="Adele - Someone Like You Con Pronunciacion"><img width="100px" src="https://i.ytimg.com/vi/s54wuDdj62g/mqdefault.jpg" alt="Adele - Someone Like You Con Pronunciacion"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLUOIG7K5uAaTwQCFHofAKRKtIdbjGEPdp" title="Adele - Someone Like You Con Pronunciacion">Adele - Someone Like You Con Pronunciacion</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=9" title="see 9">9</a></td>
+	  <td>25</td>
+      <td><a target="_blank" href="youtube/?CategoryID=9" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLUOIG7K5uAaTwQCFHofAKRKtIdbjGEPdp" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>92</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLawp_EYXnWcOQ2wgyv492V7SIxPT8Syc4" title="Fools Garden - Lemon Tree Lyrics (subtitulada y traducida al español)"><img width="100px" src="https://i.ytimg.com/vi/i-7mRwCjpfk/mqdefault.jpg" alt="Fools Garden - Lemon Tree Lyrics (subtitulada y traducida al español)"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLawp_EYXnWcOQ2wgyv492V7SIxPT8Syc4" title="Fools Garden - Lemon Tree Lyrics (subtitulada y traducida al español)">Fools Garden - Lemon Tree Lyrics (subtitulada y traducida al español)</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=9" title="see 9">9</a></td>
+	  <td>43</td>
+      <td><a target="_blank" href="youtube/?CategoryID=9" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLawp_EYXnWcOQ2wgyv492V7SIxPT8Syc4" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>91</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLYmkYcRpIeHMYHEJydrjhthtd-rgY4bga" title="Vocabulario vuelta al colegio, vocabulario español"><img width="100px" src="https://i.ytimg.com/vi/dcC2YW2CZRM/mqdefault.jpg" alt="Vocabulario vuelta al colegio, vocabulario español"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLYmkYcRpIeHMYHEJydrjhthtd-rgY4bga" title="Vocabulario vuelta al colegio, vocabulario español">Vocabulario vuelta al colegio, vocabulario español</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=9" title="see 9">9</a></td>
+	  <td>4</td>
+      <td><a target="_blank" href="youtube/?CategoryID=9" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLYmkYcRpIeHMYHEJydrjhthtd-rgY4bga" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>90</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL9b0r6mKRv8mhC7BZC-jy4VapdrBLcjVj" title="Let Her Go | Passenger ( Sub. English / Español ) Official video"><img width="100px" src="https://i.ytimg.com/vi/mJm8HTcTc4o/mqdefault.jpg" alt="Let Her Go | Passenger ( Sub. English / Español ) Official video"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL9b0r6mKRv8mhC7BZC-jy4VapdrBLcjVj" title="Let Her Go | Passenger ( Sub. English / Español ) Official video">Let Her Go | Passenger ( Sub. English / Español ) Official video</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=9" title="see 9">9</a></td>
+	  <td>39</td>
+      <td><a target="_blank" href="youtube/?CategoryID=9" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL9b0r6mKRv8mhC7BZC-jy4VapdrBLcjVj" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>89</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLeDb4mVO05QX-6qQ6yRZG336TNiTAHn74" title="Práctica de pronunciación del español. Fonema, alófono y articuladores."><img width="100px" src="https://i.ytimg.com/vi/vRODsqqY500/mqdefault.jpg" alt="Práctica de pronunciación del español. Fonema, alófono y articuladores."></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLeDb4mVO05QX-6qQ6yRZG336TNiTAHn74" title="Práctica de pronunciación del español. Fonema, alófono y articuladores.">Práctica de pronunciación del español. Fonema, alófono y articuladores.</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=9" title="see 9">9</a></td>
+	  <td>35</td>
+      <td><a target="_blank" href="youtube/?CategoryID=9" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLeDb4mVO05QX-6qQ6yRZG336TNiTAHn74" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>88</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLqzfKbeJB0saSTqPOi_tOm-3f97DQLnsJ" title="Como hacer una carta de solicitud de vacaciones en word 2010"><img width="100px" src="https://i.ytimg.com/vi/XXbh7hDjfqc/mqdefault.jpg" alt="Como hacer una carta de solicitud de vacaciones en word 2010"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLqzfKbeJB0saSTqPOi_tOm-3f97DQLnsJ" title="Como hacer una carta de solicitud de vacaciones en word 2010">Como hacer una carta de solicitud de vacaciones en word 2010</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=8" title="see 8">8</a></td>
+	  <td>4</td>
+      <td><a target="_blank" href="youtube/?CategoryID=8" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLqzfKbeJB0saSTqPOi_tOm-3f97DQLnsJ" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>87</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLsbmh5LWoRQq_XFYE_pYrP1hwLrW5ZOtR" title="Ser vs Estar - Usos de ser y estar en español | Aprender español"><img width="100px" src="https://i.ytimg.com/vi/Bm6PBcMfgFs/mqdefault.jpg" alt="Ser vs Estar - Usos de ser y estar en español | Aprender español"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLsbmh5LWoRQq_XFYE_pYrP1hwLrW5ZOtR" title="Ser vs Estar - Usos de ser y estar en español | Aprender español">Ser vs Estar - Usos de ser y estar en español | Aprender español</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=8" title="see 8">8</a></td>
+	  <td>6</td>
+      <td><a target="_blank" href="youtube/?CategoryID=8" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLsbmh5LWoRQq_XFYE_pYrP1hwLrW5ZOtR" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>86</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL6z4GpwRGEPeWvxmjxsWW2wHE1f5Ly5UP" title="Cómo hacer una monografía"><img width="100px" src="https://i.ytimg.com/vi/k2H1jLEViHg/mqdefault.jpg" alt="Cómo hacer una monografía"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL6z4GpwRGEPeWvxmjxsWW2wHE1f5Ly5UP" title="Cómo hacer una monografía">Cómo hacer una monografía</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=8" title="see 8">8</a></td>
+	  <td>32</td>
+      <td><a target="_blank" href="youtube/?CategoryID=8" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL6z4GpwRGEPeWvxmjxsWW2wHE1f5Ly5UP" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>85</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLzIF0nsT85Q35s4uLEVlItBoi7G0mzo8U" title="The Past Perfect or Pluperfect Subjunctive in Spanish: Forms and Uses"><img width="100px" src="https://i.ytimg.com/vi/aAQCodqWhkU/mqdefault.jpg" alt="The Past Perfect or Pluperfect Subjunctive in Spanish: Forms and Uses"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLzIF0nsT85Q35s4uLEVlItBoi7G0mzo8U" title="The Past Perfect or Pluperfect Subjunctive in Spanish: Forms and Uses">The Past Perfect or Pluperfect Subjunctive in Spanish: Forms and Uses</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=5" title="see 5">5</a></td>
+	  <td>18</td>
+      <td><a target="_blank" href="youtube/?CategoryID=5" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLzIF0nsT85Q35s4uLEVlItBoi7G0mzo8U" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>84</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLu7LqiwwgdmE2vdWA7sy1hCaEozshsbJ0" title="Spanish gender - MASCULINE & FEMININE - 1 (00510)"><img width="100px" src="https://i.ytimg.com/vi/unqucIwhjCA/mqdefault.jpg" alt="Spanish gender - MASCULINE & FEMININE - 1 (00510)"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLu7LqiwwgdmE2vdWA7sy1hCaEozshsbJ0" title="Spanish gender - MASCULINE & FEMININE - 1 (00510)">Spanish gender - MASCULINE & FEMININE - 1 (00510)</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=5" title="see 5">5</a></td>
+	  <td>20</td>
+      <td><a target="_blank" href="youtube/?CategoryID=5" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLu7LqiwwgdmE2vdWA7sy1hCaEozshsbJ0" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>83</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLdqTbVIIJjTufHE06rtkxPndsCxSN1K1M" title="Spanish adjectives | Beginner Spanish Lessons for Children"><img width="100px" src="https://i.ytimg.com/vi/Pp4LKBhRzmU/mqdefault.jpg" alt="Spanish adjectives | Beginner Spanish Lessons for Children"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLdqTbVIIJjTufHE06rtkxPndsCxSN1K1M" title="Spanish adjectives | Beginner Spanish Lessons for Children">Spanish adjectives | Beginner Spanish Lessons for Children</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=5" title="see 5">5</a></td>
+	  <td>6</td>
+      <td><a target="_blank" href="youtube/?CategoryID=5" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLdqTbVIIJjTufHE06rtkxPndsCxSN1K1M" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>82</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLCOOJUFIj7MS2rEHm4TgCVvE0Qwlo8e9a" title="Spanish Subjunctive  Uses (Learn How and When to Use the Subjunctive)"><img width="100px" src="https://i.ytimg.com/vi/FpguQJQLhHE/mqdefault.jpg" alt="Spanish Subjunctive  Uses (Learn How and When to Use the Subjunctive)"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLCOOJUFIj7MS2rEHm4TgCVvE0Qwlo8e9a" title="Spanish Subjunctive  Uses (Learn How and When to Use the Subjunctive)">Spanish Subjunctive  Uses (Learn How and When to Use the Subjunctive)</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=5" title="see 5">5</a></td>
+	  <td>24</td>
+      <td><a target="_blank" href="youtube/?CategoryID=5" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLCOOJUFIj7MS2rEHm4TgCVvE0Qwlo8e9a" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>81</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLzIlkwYKWK1XLbzNNFqnqV7NnWdGJLcqy" title="01 - Singular Nouns: Gender and Articles"><img width="100px" src="https://i.ytimg.com/vi/wmPmzRkdYHM/mqdefault.jpg" alt="01 - Singular Nouns: Gender and Articles"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLzIlkwYKWK1XLbzNNFqnqV7NnWdGJLcqy" title="01 - Singular Nouns: Gender and Articles">01 - Singular Nouns: Gender and Articles</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=5" title="see 5">5</a></td>
+	  <td>50</td>
+      <td><a target="_blank" href="youtube/?CategoryID=5" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLzIlkwYKWK1XLbzNNFqnqV7NnWdGJLcqy" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>80</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLe3Uxmga5UvFJk9UHM2CJoXQ7qmI47yMN" title="Learn Spanish Grammar - Reflexive Verbs in Spanish"><img width="100px" src="https://i.ytimg.com/vi/TnFLuQPPoYg/mqdefault.jpg" alt="Learn Spanish Grammar - Reflexive Verbs in Spanish"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLe3Uxmga5UvFJk9UHM2CJoXQ7qmI47yMN" title="Learn Spanish Grammar - Reflexive Verbs in Spanish">Learn Spanish Grammar - Reflexive Verbs in Spanish</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=5" title="see 5">5</a></td>
+	  <td>42</td>
+      <td><a target="_blank" href="youtube/?CategoryID=5" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLe3Uxmga5UvFJk9UHM2CJoXQ7qmI47yMN" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>79</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLwCd2CQaZmeTqLGzjFnnLgNupLV3xqGxT" title="Spanish Grammar Review #30  Preterite tense of -ir verbs"><img width="100px" src="https://i.ytimg.com/vi/dadwOosGvGc/mqdefault.jpg" alt="Spanish Grammar Review #30  Preterite tense of -ir verbs"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLwCd2CQaZmeTqLGzjFnnLgNupLV3xqGxT" title="Spanish Grammar Review #30  Preterite tense of -ir verbs">Spanish Grammar Review #30  Preterite tense of -ir verbs</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=5" title="see 5">5</a></td>
+	  <td>47</td>
+      <td><a target="_blank" href="youtube/?CategoryID=5" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLwCd2CQaZmeTqLGzjFnnLgNupLV3xqGxT" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>78</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL7B9AE3BE5681B866" title="Spanish Past Perfect - Intermediate Spanish Lessons"><img width="100px" src="https://i.ytimg.com/vi/Hk2qwWOeuyY/mqdefault.jpg" alt="Spanish Past Perfect - Intermediate Spanish Lessons"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL7B9AE3BE5681B866" title="Spanish Past Perfect - Intermediate Spanish Lessons">Spanish Past Perfect - Intermediate Spanish Lessons</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=5" title="see 5">5</a></td>
+	  <td>28</td>
+      <td><a target="_blank" href="youtube/?CategoryID=5" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL7B9AE3BE5681B866" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>77</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLS0Z_G7-cH5RDhBZqoZqRbNnvAknNep4i" title="Spanish Relative Pronouns (Simplified Version): Using Que and Quien/es"><img width="100px" src="https://i.ytimg.com/vi/aOrOc9OQNFA/mqdefault.jpg" alt="Spanish Relative Pronouns (Simplified Version): Using Que and Quien/es"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLS0Z_G7-cH5RDhBZqoZqRbNnvAknNep4i" title="Spanish Relative Pronouns (Simplified Version): Using Que and Quien/es">Spanish Relative Pronouns (Simplified Version): Using Que and Quien/es</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=5" title="see 5">5</a></td>
+	  <td>34</td>
+      <td><a target="_blank" href="youtube/?CategoryID=5" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLS0Z_G7-cH5RDhBZqoZqRbNnvAknNep4i" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>76</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL5719D69EE7A3BF54" title="Gramática 01 - Singular Nouns: Gender and Articles"><img width="100px" src="https://i.ytimg.com/vi/G7uWK9WUFzs/mqdefault.jpg" alt="Gramática 01 - Singular Nouns: Gender and Articles"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL5719D69EE7A3BF54" title="Gramática 01 - Singular Nouns: Gender and Articles">Gramática 01 - Singular Nouns: Gender and Articles</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=5" title="see 5">5</a></td>
+	  <td>50</td>
+      <td><a target="_blank" href="youtube/?CategoryID=5" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL5719D69EE7A3BF54" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>75</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLjOCmMHcxTWWE7jP0r5Ugex4MgJOANUzN" title="Spanish verb conjugation #1. Present tense. Regular verbs ending in -AR."><img width="100px" src="https://i.ytimg.com/vi/1Of86bGjlf8/mqdefault.jpg" alt="Spanish verb conjugation #1. Present tense. Regular verbs ending in -AR."></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLjOCmMHcxTWWE7jP0r5Ugex4MgJOANUzN" title="Spanish verb conjugation #1. Present tense. Regular verbs ending in -AR.">Spanish verb conjugation #1. Present tense. Regular verbs ending in -AR.</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=5" title="see 5">5</a></td>
+	  <td>48</td>
+      <td><a target="_blank" href="youtube/?CategoryID=5" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLjOCmMHcxTWWE7jP0r5Ugex4MgJOANUzN" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>73</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLCGOneb1JA4-7FASO20Q5Po7S7Ju7m07S" title="Lectura Final - Lectura Continuada del Quijote - Koubek Center"><img width="100px" src="https://i.ytimg.com/vi/1HcMqfBY4zI/mqdefault.jpg" alt="Lectura Final - Lectura Continuada del Quijote - Koubek Center"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLCGOneb1JA4-7FASO20Q5Po7S7Ju7m07S" title="Lectura Final - Lectura Continuada del Quijote - Koubek Center">Lectura Final - Lectura Continuada del Quijote - Koubek Center</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=7" title="see 7">7</a></td>
+	  <td>3</td>
+      <td><a target="_blank" href="youtube/?CategoryID=7" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLCGOneb1JA4-7FASO20Q5Po7S7Ju7m07S" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>72</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL2A0CCE94B2D69D26" title="Introducción"><img width="100px" src="https://i.ytimg.com/vi/Cv6RIA6S94M/mqdefault.jpg" alt="Introducción"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL2A0CCE94B2D69D26" title="Introducción">Introducción</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=7" title="see 7">7</a></td>
+	  <td>15</td>
+      <td><a target="_blank" href="youtube/?CategoryID=7" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL2A0CCE94B2D69D26" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>71</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLHTsIYcLRhGGuXPC2-l9i2Jt_IAuaydTm" title="Coherencia y cohesión - Lengua - Educatina"><img width="100px" src="https://i.ytimg.com/vi/hmLP1MjOodM/mqdefault.jpg" alt="Coherencia y cohesión - Lengua - Educatina"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLHTsIYcLRhGGuXPC2-l9i2Jt_IAuaydTm" title="Coherencia y cohesión - Lengua - Educatina">Coherencia y cohesión - Lengua - Educatina</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=7" title="see 7">7</a></td>
+	  <td>15</td>
+      <td><a target="_blank" href="youtube/?CategoryID=7" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLHTsIYcLRhGGuXPC2-l9i2Jt_IAuaydTm" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>70</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLJiZqcD_T1XhZxPcYqc44mh9fshBwaQ7H" title="Tipos de rimas, versos y poemas"><img width="100px" src="https://i.ytimg.com/vi/BVliuz2JpKw/mqdefault.jpg" alt="Tipos de rimas, versos y poemas"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLJiZqcD_T1XhZxPcYqc44mh9fshBwaQ7H" title="Tipos de rimas, versos y poemas">Tipos de rimas, versos y poemas</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=7" title="see 7">7</a></td>
+	  <td>8</td>
+      <td><a target="_blank" href="youtube/?CategoryID=7" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLJiZqcD_T1XhZxPcYqc44mh9fshBwaQ7H" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>69</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL1Z5aRYlmnjrTei5j1dR4TYr4QFMOqQ6s" title="¿Qué se evaluará en Lectura Crítica en SABER 11° 2014-2?"><img width="100px" src="https://i.ytimg.com/vi/OAqsW7dZjv8/mqdefault.jpg" alt="¿Qué se evaluará en Lectura Crítica en SABER 11° 2014-2?"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL1Z5aRYlmnjrTei5j1dR4TYr4QFMOqQ6s" title="¿Qué se evaluará en Lectura Crítica en SABER 11° 2014-2?">¿Qué se evaluará en Lectura Crítica en SABER 11° 2014-2?</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=7" title="see 7">7</a></td>
+	  <td>7</td>
+      <td><a target="_blank" href="youtube/?CategoryID=7" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL1Z5aRYlmnjrTei5j1dR4TYr4QFMOqQ6s" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>68</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLNNwXfT59XbTG2AmrCfYp3pDyzfP3dQwU" title="4to puesto del III Premio Nacional al Docente BBVA | BBVA Colombia"><img width="100px" src="https://i.ytimg.com/vi/Rq87W6lhrXE/mqdefault.jpg" alt="4to puesto del III Premio Nacional al Docente BBVA | BBVA Colombia"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLNNwXfT59XbTG2AmrCfYp3pDyzfP3dQwU" title="4to puesto del III Premio Nacional al Docente BBVA | BBVA Colombia">4to puesto del III Premio Nacional al Docente BBVA | BBVA Colombia</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=7" title="see 7">7</a></td>
+	  <td>42</td>
+      <td><a target="_blank" href="youtube/?CategoryID=7" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLNNwXfT59XbTG2AmrCfYp3pDyzfP3dQwU" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>67</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLxLzQYraT_VEf4Ku7PMjArjb-yW2QJ_cw" title="Nacho: Libro Inicial de Lectura - 06 07 Mi Mama"><img width="100px" src="https://i.ytimg.com/vi/ss_7KGmdjkQ/mqdefault.jpg" alt="Nacho: Libro Inicial de Lectura - 06 07 Mi Mama"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLxLzQYraT_VEf4Ku7PMjArjb-yW2QJ_cw" title="Nacho: Libro Inicial de Lectura - 06 07 Mi Mama">Nacho: Libro Inicial de Lectura - 06 07 Mi Mama</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=7" title="see 7">7</a></td>
+	  <td>22</td>
+      <td><a target="_blank" href="youtube/?CategoryID=7" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLxLzQYraT_VEf4Ku7PMjArjb-yW2QJ_cw" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>66</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLd5M6rSlrm8Cd7P76RXIN8rZIcMM5u26R" title="Día del Libro parte 1 - Nicolás Maduro"><img width="100px" src="https://i.ytimg.com/vi/jmkqG6DpAoQ/mqdefault.jpg" alt="Día del Libro parte 1 - Nicolás Maduro"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLd5M6rSlrm8Cd7P76RXIN8rZIcMM5u26R" title="Día del Libro parte 1 - Nicolás Maduro">Día del Libro parte 1 - Nicolás Maduro</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=7" title="see 7">7</a></td>
+	  <td>8</td>
+      <td><a target="_blank" href="youtube/?CategoryID=7" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLd5M6rSlrm8Cd7P76RXIN8rZIcMM5u26R" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>65</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLsRGQ2_IMSBOYBwv1SuWFQXz4o9V488KQ" title="Geschichte für Anfänger #1 | Deutsch lernen"><img width="100px" src="https://i.ytimg.com/vi/Ez0QyozJbEU/mqdefault.jpg" alt="Geschichte für Anfänger #1 | Deutsch lernen"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLsRGQ2_IMSBOYBwv1SuWFQXz4o9V488KQ" title="Geschichte für Anfänger #1 | Deutsch lernen">Geschichte für Anfänger #1 | Deutsch lernen</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=7" title="see 7">7</a></td>
+	  <td>3</td>
+      <td><a target="_blank" href="youtube/?CategoryID=7" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLsRGQ2_IMSBOYBwv1SuWFQXz4o9V488KQ" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>64</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLFWjZKAk-4vHjqvDonU8qSh2ix_UymLM0" title="Ordenanza del Impuesto sobre Bienes Inmuebles del Ayuntamiento de Málaga en Lectura Fácil"><img width="100px" src="https://i.ytimg.com/vi/UDSSk2YB864/mqdefault.jpg" alt="Ordenanza del Impuesto sobre Bienes Inmuebles del Ayuntamiento de Málaga en Lectura Fácil"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLFWjZKAk-4vHjqvDonU8qSh2ix_UymLM0" title="Ordenanza del Impuesto sobre Bienes Inmuebles del Ayuntamiento de Málaga en Lectura Fácil">Ordenanza del Impuesto sobre Bienes Inmuebles del Ayuntamiento de Málaga en Lectura Fácil</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=7" title="see 7">7</a></td>
+	  <td>10</td>
+      <td><a target="_blank" href="youtube/?CategoryID=7" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLFWjZKAk-4vHjqvDonU8qSh2ix_UymLM0" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>63</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLB771AA0D74B88F9B" title="garbage- bleed like me"><img width="100px" src="https://i.ytimg.com/vi/690k85FQNXs/mqdefault.jpg" alt="garbage- bleed like me"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLB771AA0D74B88F9B" title="garbage- bleed like me">garbage- bleed like me</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=7" title="see 7">7</a></td>
+	  <td>9</td>
+      <td><a target="_blank" href="youtube/?CategoryID=7" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLB771AA0D74B88F9B" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>62</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLdXMjgXjJIEZylWNNrbWrMDEXiEV5HrLq" title="Ejemplos Preguntas Icfes Saber 11 - Lectura crítica"><img width="100px" src="https://i.ytimg.com/vi/p9omGa8Qqjc/mqdefault.jpg" alt="Ejemplos Preguntas Icfes Saber 11 - Lectura crítica"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLdXMjgXjJIEZylWNNrbWrMDEXiEV5HrLq" title="Ejemplos Preguntas Icfes Saber 11 - Lectura crítica">Ejemplos Preguntas Icfes Saber 11 - Lectura crítica</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=7" title="see 7">7</a></td>
+	  <td>14</td>
+      <td><a target="_blank" href="youtube/?CategoryID=7" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLdXMjgXjJIEZylWNNrbWrMDEXiEV5HrLq" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>61</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLnNH-ry7VPzEojuVccffFlc9Jfc38s1U_" title="Historias en español: marzo | Spanish storytelling"><img width="100px" src="https://i.ytimg.com/vi/s_oJYdRlrv0/mqdefault.jpg" alt="Historias en español: marzo | Spanish storytelling"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLnNH-ry7VPzEojuVccffFlc9Jfc38s1U_" title="Historias en español: marzo | Spanish storytelling">Historias en español: marzo | Spanish storytelling</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=6" title="see 6">6</a></td>
+	  <td>11</td>
+      <td><a target="_blank" href="youtube/?CategoryID=6" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLnNH-ry7VPzEojuVccffFlc9Jfc38s1U_" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>60</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLhKnrz7gbJ0EFnD0DPobw4zrrB8Drrvqk" title="TEST PSICOTECNICO # 5 Vocabulario Sinonimos"><img width="100px" src="https://i.ytimg.com/vi/u9LhSDUIco4/mqdefault.jpg" alt="TEST PSICOTECNICO # 5 Vocabulario Sinonimos"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLhKnrz7gbJ0EFnD0DPobw4zrrB8Drrvqk" title="TEST PSICOTECNICO # 5 Vocabulario Sinonimos">TEST PSICOTECNICO # 5 Vocabulario Sinonimos</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=6" title="see 6">6</a></td>
+	  <td>5</td>
+      <td><a target="_blank" href="youtube/?CategoryID=6" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLhKnrz7gbJ0EFnD0DPobw4zrrB8Drrvqk" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>59</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL22CDBD6DCA5AB0F8" title="No pude soportar - Pablo Cordero"><img width="100px" src="https://i.ytimg.com/vi/xLJYnd8d384/mqdefault.jpg" alt="No pude soportar - Pablo Cordero"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL22CDBD6DCA5AB0F8" title="No pude soportar - Pablo Cordero">No pude soportar - Pablo Cordero</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=6" title="see 6">6</a></td>
+	  <td>10</td>
+      <td><a target="_blank" href="youtube/?CategoryID=6" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL22CDBD6DCA5AB0F8" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>58</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLgwKdiLrrTkPUPvZJ7zCxVdkXw6nHFqzy" title="2000 palabras. Video 1. Advanced level"><img width="100px" src="https://i.ytimg.com/vi/G503csvnifc/mqdefault.jpg" alt="2000 palabras. Video 1. Advanced level"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLgwKdiLrrTkPUPvZJ7zCxVdkXw6nHFqzy" title="2000 palabras. Video 1. Advanced level">2000 palabras. Video 1. Advanced level</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=6" title="see 6">6</a></td>
+	  <td>5</td>
+      <td><a target="_blank" href="youtube/?CategoryID=6" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLgwKdiLrrTkPUPvZJ7zCxVdkXw6nHFqzy" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>57</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLL3mxcyER5WldsecvLT8VeK_eOZIn4z4T" title="Vocabulary Booklet 1 Completo"><img width="100px" src="https://i.ytimg.com/vi/gYc18XkiSBk/mqdefault.jpg" alt="Vocabulary Booklet 1 Completo"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLL3mxcyER5WldsecvLT8VeK_eOZIn4z4T" title="Vocabulary Booklet 1 Completo">Vocabulary Booklet 1 Completo</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=6" title="see 6">6</a></td>
+	  <td>6</td>
+      <td><a target="_blank" href="youtube/?CategoryID=6" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLL3mxcyER5WldsecvLT8VeK_eOZIn4z4T" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>56</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL8lTv2K5Bn4SA25sx0uc7VxPM7l4XykWX" title="Vocabulario: datos personales"><img width="100px" src="https://i.ytimg.com/vi/-2D8xA7DeLc/mqdefault.jpg" alt="Vocabulario: datos personales"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL8lTv2K5Bn4SA25sx0uc7VxPM7l4XykWX" title="Vocabulario: datos personales">Vocabulario: datos personales</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=6" title="see 6">6</a></td>
+	  <td>11</td>
+      <td><a target="_blank" href="youtube/?CategoryID=6" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL8lTv2K5Bn4SA25sx0uc7VxPM7l4XykWX" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>55</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLaRqtyxPwptRttIGK2us2E2M6xY4KyNNw" title="Family Words for Toddlers! - My Family Vocabulary - ELF Kids VIdeos"><img width="100px" src="https://i.ytimg.com/vi/oEWXE_V4Mqw/mqdefault.jpg" alt="Family Words for Toddlers! - My Family Vocabulary - ELF Kids VIdeos"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLaRqtyxPwptRttIGK2us2E2M6xY4KyNNw" title="Family Words for Toddlers! - My Family Vocabulary - ELF Kids VIdeos">Family Words for Toddlers! - My Family Vocabulary - ELF Kids VIdeos</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=6" title="see 6">6</a></td>
+	  <td>47</td>
+      <td><a target="_blank" href="youtube/?CategoryID=6" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLaRqtyxPwptRttIGK2us2E2M6xY4KyNNw" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>54</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLOcP8dbFyhsiMvnO8AtSOns55v-sri9S-" title="Los verbos básicos en inglés"><img width="100px" src="https://i.ytimg.com/vi/GFmNZHr5qlA/mqdefault.jpg" alt="Los verbos básicos en inglés"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLOcP8dbFyhsiMvnO8AtSOns55v-sri9S-" title="Los verbos básicos en inglés">Los verbos básicos en inglés</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=6" title="see 6">6</a></td>
+	  <td>15</td>
+      <td><a target="_blank" href="youtube/?CategoryID=6" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLOcP8dbFyhsiMvnO8AtSOns55v-sri9S-" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>53</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL_XMUpZO_zAg0ZyoZIucbloCy4l-aD8qq" title="Palabras que inician con la letra A en español para niños - Videos Aprende"><img width="100px" src="https://i.ytimg.com/vi/riTxr8y-eVE/mqdefault.jpg" alt="Palabras que inician con la letra A en español para niños - Videos Aprende"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL_XMUpZO_zAg0ZyoZIucbloCy4l-aD8qq" title="Palabras que inician con la letra A en español para niños - Videos Aprende">Palabras que inician con la letra A en español para niños - Videos Aprende</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=6" title="see 6">6</a></td>
+	  <td>41</td>
+      <td><a target="_blank" href="youtube/?CategoryID=6" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL_XMUpZO_zAg0ZyoZIucbloCy4l-aD8qq" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>52</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLtmENW6u_C95I-VeLeBEHtSjdJDW2vMOw" title="GUÍA: Cómo estudiar en el extranjero, aplicación a universidades | Valeria Basurco"><img width="100px" src="https://i.ytimg.com/vi/j3Q4I1Naink/mqdefault.jpg" alt="GUÍA: Cómo estudiar en el extranjero, aplicación a universidades | Valeria Basurco"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLtmENW6u_C95I-VeLeBEHtSjdJDW2vMOw" title="GUÍA: Cómo estudiar en el extranjero, aplicación a universidades | Valeria Basurco">GUÍA: Cómo estudiar en el extranjero, aplicación a universidades | Valeria Basurco</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=16" title="see 16">16</a></td>
+	  <td>9</td>
+      <td><a target="_blank" href="youtube/?CategoryID=16" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLtmENW6u_C95I-VeLeBEHtSjdJDW2vMOw" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>51</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLOVyggMAEmdmUg4jgN6axNgpDqqCrOTHF" title="Estudiar en el Extranjero | Inglés y universidad"><img width="100px" src="https://i.ytimg.com/vi/QGbaDh-lqOM/mqdefault.jpg" alt="Estudiar en el Extranjero | Inglés y universidad"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLOVyggMAEmdmUg4jgN6axNgpDqqCrOTHF" title="Estudiar en el Extranjero | Inglés y universidad">Estudiar en el Extranjero | Inglés y universidad</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=16" title="see 16">16</a></td>
+	  <td>6</td>
+      <td><a target="_blank" href="youtube/?CategoryID=16" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLOVyggMAEmdmUg4jgN6axNgpDqqCrOTHF" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>50</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLv2O-J4WAGbQK0iOY3WcxJdKvwaVx4I5g" title="Conoce Rusia - Estudiar GRATIS en Rusia?"><img width="100px" src="https://i.ytimg.com/vi/53t80BPg0DM/mqdefault.jpg" alt="Conoce Rusia - Estudiar GRATIS en Rusia?"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLv2O-J4WAGbQK0iOY3WcxJdKvwaVx4I5g" title="Conoce Rusia - Estudiar GRATIS en Rusia?">Conoce Rusia - Estudiar GRATIS en Rusia?</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=16" title="see 16">16</a></td>
+	  <td>20</td>
+      <td><a target="_blank" href="youtube/?CategoryID=16" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLv2O-J4WAGbQK0iOY3WcxJdKvwaVx4I5g" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>49</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLqMW-JgH-UyWGEP518mnjhi3mLiEHIm6p" title="SI HACES ESTAS 7 PREGUNTAS, ENCONTRARÁS LA HOST FAMILY de tus sueños! -AlejaMoreno"><img width="100px" src="https://i.ytimg.com/vi/MdrP8Dwx-nE/mqdefault.jpg" alt="SI HACES ESTAS 7 PREGUNTAS, ENCONTRARÁS LA HOST FAMILY de tus sueños! -AlejaMoreno"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLqMW-JgH-UyWGEP518mnjhi3mLiEHIm6p" title="SI HACES ESTAS 7 PREGUNTAS, ENCONTRARÁS LA HOST FAMILY de tus sueños! -AlejaMoreno">SI HACES ESTAS 7 PREGUNTAS, ENCONTRARÁS LA HOST FAMILY de tus sueños! -AlejaMoreno</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=16" title="see 16">16</a></td>
+	  <td>6</td>
+      <td><a target="_blank" href="youtube/?CategoryID=16" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLqMW-JgH-UyWGEP518mnjhi3mLiEHIm6p" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>48</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL4v_9rMAWPCAHTyx0rx5LUs3w0WtW6PLx" title="Los 10 mejores países para aprender inglés"><img width="100px" src="https://i.ytimg.com/vi/irUgInFdvw8/mqdefault.jpg" alt="Los 10 mejores países para aprender inglés"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL4v_9rMAWPCAHTyx0rx5LUs3w0WtW6PLx" title="Los 10 mejores países para aprender inglés">Los 10 mejores países para aprender inglés</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=16" title="see 16">16</a></td>
+	  <td>4</td>
+      <td><a target="_blank" href="youtube/?CategoryID=16" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL4v_9rMAWPCAHTyx0rx5LUs3w0WtW6PLx" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>47</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLJR8Sjno7BnnsjUSRqJOs2Ubzv0vzJECb" title="Como aprender un idioma en 3 meses | Alziur"><img width="100px" src="https://i.ytimg.com/vi/V4aKsYf9xAE/mqdefault.jpg" alt="Como aprender un idioma en 3 meses | Alziur"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLJR8Sjno7BnnsjUSRqJOs2Ubzv0vzJECb" title="Como aprender un idioma en 3 meses | Alziur">Como aprender un idioma en 3 meses | Alziur</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=16" title="see 16">16</a></td>
+	  <td>42</td>
+      <td><a target="_blank" href="youtube/?CategoryID=16" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLJR8Sjno7BnnsjUSRqJOs2Ubzv0vzJECb" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>46</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLdLshrLlGOcPjpGwfOq0NImixhNGp6eB-" title="APUNTES ORGANIZADOS Y LINDOS | Mejora tu letra, doodles y mas!"><img width="100px" src="https://i.ytimg.com/vi/3H-T_ayjppc/mqdefault.jpg" alt="APUNTES ORGANIZADOS Y LINDOS | Mejora tu letra, doodles y mas!"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLdLshrLlGOcPjpGwfOq0NImixhNGp6eB-" title="APUNTES ORGANIZADOS Y LINDOS | Mejora tu letra, doodles y mas!">APUNTES ORGANIZADOS Y LINDOS | Mejora tu letra, doodles y mas!</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=16" title="see 16">16</a></td>
+	  <td>27</td>
+      <td><a target="_blank" href="youtube/?CategoryID=16" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLdLshrLlGOcPjpGwfOq0NImixhNGp6eB-" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>45</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLf09kOE6_zaKoS3M2sBj4tqIA0JNXu2K2" title="Um americano fala sobre a experiência incrível de aprender português"><img width="100px" src="https://i.ytimg.com/vi/-matnEk_SEY/mqdefault.jpg" alt="Um americano fala sobre a experiência incrível de aprender português"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLf09kOE6_zaKoS3M2sBj4tqIA0JNXu2K2" title="Um americano fala sobre a experiência incrível de aprender português">Um americano fala sobre a experiência incrível de aprender português</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=16" title="see 16">16</a></td>
+	  <td>16</td>
+      <td><a target="_blank" href="youtube/?CategoryID=16" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLf09kOE6_zaKoS3M2sBj4tqIA0JNXu2K2" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>44</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLf09kOE6_zaJQxfLEOyIsYnXv8kQsiiXS" title="???????? Aprender Portugués sin abrir un libro de gramática ????  - Philipe Brazuca"><img width="100px" src="https://i.ytimg.com/vi/pZZQLhlMivY/mqdefault.jpg" alt="???????? Aprender Portugués sin abrir un libro de gramática ????  - Philipe Brazuca"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLf09kOE6_zaJQxfLEOyIsYnXv8kQsiiXS" title="???????? Aprender Portugués sin abrir un libro de gramática ????  - Philipe Brazuca">???????? Aprender Portugués sin abrir un libro de gramática ????  - Philipe Brazuca</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=16" title="see 16">16</a></td>
+	  <td>10</td>
+      <td><a target="_blank" href="youtube/?CategoryID=16" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLf09kOE6_zaJQxfLEOyIsYnXv8kQsiiXS" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>43</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLgKI73TlzdWWrvn3e0o41P4N7e6TiKLwd" title="Tom Jobim e Elis Regina águas de Março - Legendado"><img width="100px" src="https://i.ytimg.com/vi/t4EeMTmDAJ0/mqdefault.jpg" alt="Tom Jobim e Elis Regina águas de Março - Legendado"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLgKI73TlzdWWrvn3e0o41P4N7e6TiKLwd" title="Tom Jobim e Elis Regina águas de Março - Legendado">Tom Jobim e Elis Regina águas de Março - Legendado</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=16" title="see 16">16</a></td>
+	  <td>12</td>
+      <td><a target="_blank" href="youtube/?CategoryID=16" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLgKI73TlzdWWrvn3e0o41P4N7e6TiKLwd" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>41</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLf09kOE6_zaIhSn4AaRkC1B2hRUw8-mY2" title="Mini Curso gratis de Portugués para empezar desde cero - Duración 7 días"><img width="100px" src="https://i.ytimg.com/vi/4tsvY3oSLuk/mqdefault.jpg" alt="Mini Curso gratis de Portugués para empezar desde cero - Duración 7 días"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLf09kOE6_zaIhSn4AaRkC1B2hRUw8-mY2" title="Mini Curso gratis de Portugués para empezar desde cero - Duración 7 días">Mini Curso gratis de Portugués para empezar desde cero - Duración 7 días</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=16" title="see 16">16</a></td>
+	  <td>26</td>
+      <td><a target="_blank" href="youtube/?CategoryID=16" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLf09kOE6_zaIhSn4AaRkC1B2hRUw8-mY2" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>40</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLgXzk50PHvvXAVhFkXT8nhhHT753eeFjP" title="Cómo funciona Tus Clases de Portugués - Curso gratis de portugués"><img width="100px" src="https://i.ytimg.com/vi/TyiAN14pmVE/mqdefault.jpg" alt="Cómo funciona Tus Clases de Portugués - Curso gratis de portugués"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLgXzk50PHvvXAVhFkXT8nhhHT753eeFjP" title="Cómo funciona Tus Clases de Portugués - Curso gratis de portugués">Cómo funciona Tus Clases de Portugués - Curso gratis de portugués</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=16" title="see 16">16</a></td>
+	  <td>49</td>
+      <td><a target="_blank" href="youtube/?CategoryID=16" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLgXzk50PHvvXAVhFkXT8nhhHT753eeFjP" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>39</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLE17n6cpwW2A9b1aMVFzo3CQOCRM7vbul" title="Hillsong - Here In My Life - [ Legenda Inglês e Português ]"><img width="100px" src="https://i.ytimg.com/vi/3le29C3qI2E/mqdefault.jpg" alt="Hillsong - Here In My Life - [ Legenda Inglês e Português ]"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLE17n6cpwW2A9b1aMVFzo3CQOCRM7vbul" title="Hillsong - Here In My Life - [ Legenda Inglês e Português ]">Hillsong - Here In My Life - [ Legenda Inglês e Português ]</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=13" title="see 13">13</a></td>
+	  <td>48</td>
+      <td><a target="_blank" href="youtube/?CategoryID=13" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLE17n6cpwW2A9b1aMVFzo3CQOCRM7vbul" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>37</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLjtcFcqU7OOJgWBv4glxCvGa-uOulPOjB" title="Aprender inglés cantando canciones infantiles"><img width="100px" src="https://i.ytimg.com/vi/DdeVCQNXsL0/mqdefault.jpg" alt="Aprender inglés cantando canciones infantiles"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLjtcFcqU7OOJgWBv4glxCvGa-uOulPOjB" title="Aprender inglés cantando canciones infantiles">Aprender inglés cantando canciones infantiles</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=13" title="see 13">13</a></td>
+	  <td>16</td>
+      <td><a target="_blank" href="youtube/?CategoryID=13" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLjtcFcqU7OOJgWBv4glxCvGa-uOulPOjB" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>36</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLVpyb76rpacyvKLdbLwAgBUhyTL0ckNgD" title="Brincando com Poesia - Quintal da Cultura - 23/04/2015"><img width="100px" src="https://i.ytimg.com/vi/QibboKBJTis/mqdefault.jpg" alt="Brincando com Poesia - Quintal da Cultura - 23/04/2015"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLVpyb76rpacyvKLdbLwAgBUhyTL0ckNgD" title="Brincando com Poesia - Quintal da Cultura - 23/04/2015">Brincando com Poesia - Quintal da Cultura - 23/04/2015</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=13" title="see 13">13</a></td>
+	  <td>28</td>
+      <td><a target="_blank" href="youtube/?CategoryID=13" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLVpyb76rpacyvKLdbLwAgBUhyTL0ckNgD" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>35</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLOrgUHxcbo1Nx6KwQlDPbiHUOSKKVLneC" title="Las frutas en inglés para niños - Videos Aprende"><img width="100px" src="https://i.ytimg.com/vi/O3mnIGT_Ifg/mqdefault.jpg" alt="Las frutas en inglés para niños - Videos Aprende"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLOrgUHxcbo1Nx6KwQlDPbiHUOSKKVLneC" title="Las frutas en inglés para niños - Videos Aprende">Las frutas en inglés para niños - Videos Aprende</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=13" title="see 13">13</a></td>
+	  <td>18</td>
+      <td><a target="_blank" href="youtube/?CategoryID=13" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLOrgUHxcbo1Nx6KwQlDPbiHUOSKKVLneC" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>34</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL8Rc1yBqfHFnvJZR-wfsv3HcRBs_W7z3V" title="3 Porquinhos e Um Bebe 2015"><img width="100px" src="https://i.ytimg.com/vi/lFQfu3W2xWU/mqdefault.jpg" alt="3 Porquinhos e Um Bebe 2015"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL8Rc1yBqfHFnvJZR-wfsv3HcRBs_W7z3V" title="3 Porquinhos e Um Bebe 2015">3 Porquinhos e Um Bebe 2015</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=13" title="see 13">13</a></td>
+	  <td>46</td>
+      <td><a target="_blank" href="youtube/?CategoryID=13" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL8Rc1yBqfHFnvJZR-wfsv3HcRBs_W7z3V" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>33</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL7ijd_kpyVBAVpK0jvcRuEXeMdD6m4r2w" title="Meu Pé de Laranja Lima - COMPLETO HD"><img width="100px" src="https://i.ytimg.com/vi/g9lKYPpsh4c/mqdefault.jpg" alt="Meu Pé de Laranja Lima - COMPLETO HD"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL7ijd_kpyVBAVpK0jvcRuEXeMdD6m4r2w" title="Meu Pé de Laranja Lima - COMPLETO HD">Meu Pé de Laranja Lima - COMPLETO HD</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=13" title="see 13">13</a></td>
+	  <td>40</td>
+      <td><a target="_blank" href="youtube/?CategoryID=13" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL7ijd_kpyVBAVpK0jvcRuEXeMdD6m4r2w" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>32</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLK-QEY18Oe8TDMtysGMXWJIGHsQ5N8Q6K" title="Extr@ (German) - 1 Episode: Sams Ankunft"><img width="100px" src="https://i.ytimg.com/vi/4lWQW5_CPGQ/mqdefault.jpg" alt="Extr@ (German) - 1 Episode: Sams Ankunft"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLK-QEY18Oe8TDMtysGMXWJIGHsQ5N8Q6K" title="Extr@ (German) - 1 Episode: Sams Ankunft">Extr@ (German) - 1 Episode: Sams Ankunft</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=13" title="see 13">13</a></td>
+	  <td>9</td>
+      <td><a target="_blank" href="youtube/?CategoryID=13" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLK-QEY18Oe8TDMtysGMXWJIGHsQ5N8Q6K" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>30</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLOrgUHxcbo1PmFhsdUoiAmN9tKnLvuQT3" title="Las frutas en inglés para niños - Videos Aprende"><img width="100px" src="https://i.ytimg.com/vi/O3mnIGT_Ifg/mqdefault.jpg" alt="Las frutas en inglés para niños - Videos Aprende"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLOrgUHxcbo1PmFhsdUoiAmN9tKnLvuQT3" title="Las frutas en inglés para niños - Videos Aprende">Las frutas en inglés para niños - Videos Aprende</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=13" title="see 13">13</a></td>
+	  <td>16</td>
+      <td><a target="_blank" href="youtube/?CategoryID=13" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLOrgUHxcbo1PmFhsdUoiAmN9tKnLvuQT3" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>28</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLgssh1adFzeDTP6FRCFp81scgp9impLs3" title="A Bela e a Fera dublado completo"><img width="100px" src="https://i.ytimg.com/vi/hwCALCYh-gI/mqdefault.jpg" alt="A Bela e a Fera dublado completo"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLgssh1adFzeDTP6FRCFp81scgp9impLs3" title="A Bela e a Fera dublado completo">A Bela e a Fera dublado completo</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=13" title="see 13">13</a></td>
+	  <td>28</td>
+      <td><a target="_blank" href="youtube/?CategoryID=13" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLgssh1adFzeDTP6FRCFp81scgp9impLs3" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>27</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLi-XQ6Occlf0zU1-9EiDaCXWwFcxarjAC" title="Verbos Parte 2 - Aprende Portugués - Learn Brazilian Portuguese with Philipe Brazuca"><img width="100px" src="https://i.ytimg.com/vi/X7lRgxMe334/mqdefault.jpg" alt="Verbos Parte 2 - Aprende Portugués - Learn Brazilian Portuguese with Philipe Brazuca"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLi-XQ6Occlf0zU1-9EiDaCXWwFcxarjAC" title="Verbos Parte 2 - Aprende Portugués - Learn Brazilian Portuguese with Philipe Brazuca">Verbos Parte 2 - Aprende Portugués - Learn Brazilian Portuguese with Philipe Brazuca</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=4" title="see 4">4</a></td>
+	  <td>34</td>
+      <td><a target="_blank" href="youtube/?CategoryID=4" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLi-XQ6Occlf0zU1-9EiDaCXWwFcxarjAC" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>26</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLdKPxxoBJn1qTOsiX_T-4ufD0geAghbw7" title="???????? Kékicêké? Hablar Portugués más rápido? ⚡ ???? - Aumenta tu nivel y habla fluido"><img width="100px" src="https://i.ytimg.com/vi/Hbmx4WVZ94c/mqdefault.jpg" alt="???????? Kékicêké? Hablar Portugués más rápido? ⚡ ???? - Aumenta tu nivel y habla fluido"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLdKPxxoBJn1qTOsiX_T-4ufD0geAghbw7" title="???????? Kékicêké? Hablar Portugués más rápido? ⚡ ???? - Aumenta tu nivel y habla fluido">???????? Kékicêké? Hablar Portugués más rápido? ⚡ ???? - Aumenta tu nivel y habla fluido</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=4" title="see 4">4</a></td>
+	  <td>22</td>
+      <td><a target="_blank" href="youtube/?CategoryID=4" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLdKPxxoBJn1qTOsiX_T-4ufD0geAghbw7" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>25</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLYysBbp87uPZUmKyFyIUNihWgLZzniPfY" title="Portugués - El Modo Imperativo (Lección 16)"><img width="100px" src="https://i.ytimg.com/vi/Y-7euBbDTgs/mqdefault.jpg" alt="Portugués - El Modo Imperativo (Lección 16)"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLYysBbp87uPZUmKyFyIUNihWgLZzniPfY" title="Portugués - El Modo Imperativo (Lección 16)">Portugués - El Modo Imperativo (Lección 16)</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=4" title="see 4">4</a></td>
+	  <td>6</td>
+      <td><a target="_blank" href="youtube/?CategoryID=4" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLYysBbp87uPZUmKyFyIUNihWgLZzniPfY" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>24</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLspHjyzM4MvE3wmASrDmGPfeof1-ARvvc" title="Clases de Portugués - Pronunciación Básica : Alfabeto y Acentos Ortográficos Brasil"><img width="100px" src="https://i.ytimg.com/vi/NJIo0dxFDEM/mqdefault.jpg" alt="Clases de Portugués - Pronunciación Básica : Alfabeto y Acentos Ortográficos Brasil"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLspHjyzM4MvE3wmASrDmGPfeof1-ARvvc" title="Clases de Portugués - Pronunciación Básica : Alfabeto y Acentos Ortográficos Brasil">Clases de Portugués - Pronunciación Básica : Alfabeto y Acentos Ortográficos Brasil</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=4" title="see 4">4</a></td>
+	  <td>14</td>
+      <td><a target="_blank" href="youtube/?CategoryID=4" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLspHjyzM4MvE3wmASrDmGPfeof1-ARvvc" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>23</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLKN-F4A-38cdeHOAjaeRg3szz_Z5k3yBU" title="Musica infantil portuguesa | Se você está contente bata palmas y | 9 canções Tinyschool Português"><img width="100px" src="https://i.ytimg.com/vi/01XK-zB_CNc/mqdefault.jpg" alt="Musica infantil portuguesa | Se você está contente bata palmas y | 9 canções Tinyschool Português"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLKN-F4A-38cdeHOAjaeRg3szz_Z5k3yBU" title="Musica infantil portuguesa | Se você está contente bata palmas y | 9 canções Tinyschool Português">Musica infantil portuguesa | Se você está contente bata palmas y | 9 canções Tinyschool Português</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=4" title="see 4">4</a></td>
+	  <td>18</td>
+      <td><a target="_blank" href="youtube/?CategoryID=4" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLKN-F4A-38cdeHOAjaeRg3szz_Z5k3yBU" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>22</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLOJH3mi_UqCLznNOBNsRoHTcLoo5aMPjJ" title="Aprende a Pronunciar el Portugués Brasileño 1"><img width="100px" src="https://i.ytimg.com/vi/QbODQI--duY/mqdefault.jpg" alt="Aprende a Pronunciar el Portugués Brasileño 1"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLOJH3mi_UqCLznNOBNsRoHTcLoo5aMPjJ" title="Aprende a Pronunciar el Portugués Brasileño 1">Aprende a Pronunciar el Portugués Brasileño 1</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=4" title="see 4">4</a></td>
+	  <td>5</td>
+      <td><a target="_blank" href="youtube/?CategoryID=4" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLOJH3mi_UqCLznNOBNsRoHTcLoo5aMPjJ" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>21</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLf09kOE6_zaL4MDBMjI6GDCs4vHKlvNSB" title="Lectura en Portugués - (Pronunciación) Parte 1 - Tema: La Escuela"><img width="100px" src="https://i.ytimg.com/vi/TmoF453td84/mqdefault.jpg" alt="Lectura en Portugués - (Pronunciación) Parte 1 - Tema: La Escuela"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLf09kOE6_zaL4MDBMjI6GDCs4vHKlvNSB" title="Lectura en Portugués - (Pronunciación) Parte 1 - Tema: La Escuela">Lectura en Portugués - (Pronunciación) Parte 1 - Tema: La Escuela</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=4" title="see 4">4</a></td>
+	  <td>11</td>
+      <td><a target="_blank" href="youtube/?CategoryID=4" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLf09kOE6_zaL4MDBMjI6GDCs4vHKlvNSB" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>20</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLf09kOE6_zaJf_20XDSBMe9C90W4zkSz3" title="???? Aprender Portugués con canciones de Brasil  - Expresiones y Palabras"><img width="100px" src="https://i.ytimg.com/vi/Sava8z3nLZk/mqdefault.jpg" alt="???? Aprender Portugués con canciones de Brasil  - Expresiones y Palabras"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLf09kOE6_zaJf_20XDSBMe9C90W4zkSz3" title="???? Aprender Portugués con canciones de Brasil  - Expresiones y Palabras">???? Aprender Portugués con canciones de Brasil  - Expresiones y Palabras</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=4" title="see 4">4</a></td>
+	  <td>2</td>
+      <td><a target="_blank" href="youtube/?CategoryID=4" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLf09kOE6_zaJf_20XDSBMe9C90W4zkSz3" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>19</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL8CBR89AR-e6SIh7r5tAa7UVVzNs2BMb9" title="Clases de Portugués - Pronunciación Básica : Alfabeto y Acentos Ortográficos Brasil"><img width="100px" src="https://i.ytimg.com/vi/NJIo0dxFDEM/mqdefault.jpg" alt="Clases de Portugués - Pronunciación Básica : Alfabeto y Acentos Ortográficos Brasil"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL8CBR89AR-e6SIh7r5tAa7UVVzNs2BMb9" title="Clases de Portugués - Pronunciación Básica : Alfabeto y Acentos Ortográficos Brasil">Clases de Portugués - Pronunciación Básica : Alfabeto y Acentos Ortográficos Brasil</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=4" title="see 4">4</a></td>
+	  <td>21</td>
+      <td><a target="_blank" href="youtube/?CategoryID=4" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL8CBR89AR-e6SIh7r5tAa7UVVzNs2BMb9" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>18</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLpmtr01Oh-d6GrrnwF9vtdqNjA03v4Ebi" title="Marina Elali Encontrei Trilha Sonora Em Família (Legendado) HD 2014"><img width="100px" src="https://i.ytimg.com/vi/9ScokZME3HM/mqdefault.jpg" alt="Marina Elali Encontrei Trilha Sonora Em Família (Legendado) HD 2014"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLpmtr01Oh-d6GrrnwF9vtdqNjA03v4Ebi" title="Marina Elali Encontrei Trilha Sonora Em Família (Legendado) HD 2014">Marina Elali Encontrei Trilha Sonora Em Família (Legendado) HD 2014</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=12" title="see 12">12</a></td>
+	  <td>5</td>
+      <td><a target="_blank" href="youtube/?CategoryID=12" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLpmtr01Oh-d6GrrnwF9vtdqNjA03v4Ebi" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>17</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL7RVQyT9-wSaZpUi7pXOMjeue-hrUvn6q" title="Aprende los colores en portugués. idiomas para niños."><img width="100px" src="https://i.ytimg.com/vi/ftG01Kwt6-4/mqdefault.jpg" alt="Aprende los colores en portugués. idiomas para niños."></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL7RVQyT9-wSaZpUi7pXOMjeue-hrUvn6q" title="Aprende los colores en portugués. idiomas para niños.">Aprende los colores en portugués. idiomas para niños.</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=12" title="see 12">12</a></td>
+	  <td>4</td>
+      <td><a target="_blank" href="youtube/?CategoryID=12" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL7RVQyT9-wSaZpUi7pXOMjeue-hrUvn6q" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>16</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL401EEC34940A0865" title="Borboletinha - DVD Galinha Pintadinha 2 - Desenho Infantil"><img width="100px" src="https://i.ytimg.com/vi/28iW_O5qWfU/mqdefault.jpg" alt="Borboletinha - DVD Galinha Pintadinha 2 - Desenho Infantil"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL401EEC34940A0865" title="Borboletinha - DVD Galinha Pintadinha 2 - Desenho Infantil">Borboletinha - DVD Galinha Pintadinha 2 - Desenho Infantil</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=12" title="see 12">12</a></td>
+	  <td>14</td>
+      <td><a target="_blank" href="youtube/?CategoryID=12" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL401EEC34940A0865" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>15</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLdGCEdGYzEeNH9vroOE5zYjJXqMj_igwu" title="???? Palabras difíciles en Portugués - Philipe Brazuca ????????"><img width="100px" src="https://i.ytimg.com/vi/YwQi_SyiASA/mqdefault.jpg" alt="???? Palabras difíciles en Portugués - Philipe Brazuca ????????"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLdGCEdGYzEeNH9vroOE5zYjJXqMj_igwu" title="???? Palabras difíciles en Portugués - Philipe Brazuca ????????">???? Palabras difíciles en Portugués - Philipe Brazuca ????????</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=12" title="see 12">12</a></td>
+	  <td>1</td>
+      <td><a target="_blank" href="youtube/?CategoryID=12" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLdGCEdGYzEeNH9vroOE5zYjJXqMj_igwu" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>14</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLW_5GrNJG1WiQL1hRsS-HHrLOQl4yE817" title="Se você Quer Muito ♫ Um Herói do Coração ♫ Musica Infantil"><img width="100px" src="https://i.ytimg.com/vi/-aZhJ3ZZN4E/mqdefault.jpg" alt="Se você Quer Muito ♫ Um Herói do Coração ♫ Musica Infantil"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLW_5GrNJG1WiQL1hRsS-HHrLOQl4yE817" title="Se você Quer Muito ♫ Um Herói do Coração ♫ Musica Infantil">Se você Quer Muito ♫ Um Herói do Coração ♫ Musica Infantil</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=12" title="see 12">12</a></td>
+	  <td>23</td>
+      <td><a target="_blank" href="youtube/?CategoryID=12" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLW_5GrNJG1WiQL1hRsS-HHrLOQl4yE817" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLf09kOE6_zaLMyrLXXs6Oytu2MK0dVFhN" title="Learn Portuguese with Music - Aprende Portugués con canciones - Philipe Brazuca"><img width="100px" src="https://i.ytimg.com/vi/n3KMso0FiAQ/mqdefault.jpg" alt="Learn Portuguese with Music - Aprende Portugués con canciones - Philipe Brazuca"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLf09kOE6_zaLMyrLXXs6Oytu2MK0dVFhN" title="Learn Portuguese with Music - Aprende Portugués con canciones - Philipe Brazuca">Learn Portuguese with Music - Aprende Portugués con canciones - Philipe Brazuca</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=12" title="see 12">12</a></td>
+	  <td>3</td>
+      <td><a target="_blank" href="youtube/?CategoryID=12" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLf09kOE6_zaLMyrLXXs6Oytu2MK0dVFhN" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>12</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLrrB0Z1UlKw9imDjP6KaKOJJ_NpAwu2md" title="Clase de portugués frutas y otras"><img width="100px" src="https://i.ytimg.com/vi/HFN5B4q1hao/mqdefault.jpg" alt="Clase de portugués frutas y otras"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLrrB0Z1UlKw9imDjP6KaKOJJ_NpAwu2md" title="Clase de portugués frutas y otras">Clase de portugués frutas y otras</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=12" title="see 12">12</a></td>
+	  <td>9</td>
+      <td><a target="_blank" href="youtube/?CategoryID=12" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLrrB0Z1UlKw9imDjP6KaKOJJ_NpAwu2md" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>11</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLtl-fIYxx-lsKCcpUTGTLnIrLCqTKDswt" title="Roberto Carlos - Lady Laura (com letra em Portugues)"><img width="100px" src="https://i.ytimg.com/vi/mmUAhTbjCL4/mqdefault.jpg" alt="Roberto Carlos - Lady Laura (com letra em Portugues)"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLtl-fIYxx-lsKCcpUTGTLnIrLCqTKDswt" title="Roberto Carlos - Lady Laura (com letra em Portugues)">Roberto Carlos - Lady Laura (com letra em Portugues)</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=12" title="see 12">12</a></td>
+	  <td>48</td>
+      <td><a target="_blank" href="youtube/?CategoryID=12" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLtl-fIYxx-lsKCcpUTGTLnIrLCqTKDswt" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>10</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL7A18930B71E817D4" title="Marina elali - Eu vou seguir - Legenda"><img width="100px" src="https://i.ytimg.com/vi/gPujTH554F0/mqdefault.jpg" alt="Marina elali - Eu vou seguir - Legenda"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL7A18930B71E817D4" title="Marina elali - Eu vou seguir - Legenda">Marina elali - Eu vou seguir - Legenda</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=12" title="see 12">12</a></td>
+	  <td>13</td>
+      <td><a target="_blank" href="youtube/?CategoryID=12" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL7A18930B71E817D4" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>9</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLNB20mIvUbTxzHb-s5g6OhF7Gy0UhMk92" title="Aprende a Pronunciar el Portugués Brasileño 1"><img width="100px" src="https://i.ytimg.com/vi/QbODQI--duY/mqdefault.jpg" alt="Aprende a Pronunciar el Portugués Brasileño 1"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLNB20mIvUbTxzHb-s5g6OhF7Gy0UhMk92" title="Aprende a Pronunciar el Portugués Brasileño 1">Aprende a Pronunciar el Portugués Brasileño 1</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=3" title="see 3">3</a></td>
+	  <td>19</td>
+      <td><a target="_blank" href="youtube/?CategoryID=3" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLNB20mIvUbTxzHb-s5g6OhF7Gy0UhMk92" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>8</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLLaWByq3YZxCkfzDmFd_uuehUykdUt_R0" title="Aprender Portugues: 150 Frases en Portugues Basicas"><img width="100px" src="https://i.ytimg.com/vi/GhVZNoxcbWM/mqdefault.jpg" alt="Aprender Portugues: 150 Frases en Portugues Basicas"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLLaWByq3YZxCkfzDmFd_uuehUykdUt_R0" title="Aprender Portugues: 150 Frases en Portugues Basicas">Aprender Portugues: 150 Frases en Portugues Basicas</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=3" title="see 3">3</a></td>
+	  <td>0</td>
+      <td><a target="_blank" href="youtube/?CategoryID=3" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLLaWByq3YZxCkfzDmFd_uuehUykdUt_R0" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>7</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLy-eYtnk_ykkJdFHPcTP_4jdwOrxjtvsM" title="Aprender portugués en 5 días - Conversación para principiantes"><img width="100px" src="https://i.ytimg.com/vi/yu83wKxFByk/mqdefault.jpg" alt="Aprender portugués en 5 días - Conversación para principiantes"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLy-eYtnk_ykkJdFHPcTP_4jdwOrxjtvsM" title="Aprender portugués en 5 días - Conversación para principiantes">Aprender portugués en 5 días - Conversación para principiantes</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=3" title="see 3">3</a></td>
+	  <td>5</td>
+      <td><a target="_blank" href="youtube/?CategoryID=3" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLy-eYtnk_ykkJdFHPcTP_4jdwOrxjtvsM" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>6</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLqZfJXbRo-zQmtufnD8juNrqL4kkQt7le" title="Aprender Ingles: 600 Frases en Ingles Para Principiantes"><img width="100px" src="https://i.ytimg.com/vi/4d6JYb-58Z8/mqdefault.jpg" alt="Aprender Ingles: 600 Frases en Ingles Para Principiantes"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLqZfJXbRo-zQmtufnD8juNrqL4kkQt7le" title="Aprender Ingles: 600 Frases en Ingles Para Principiantes">Aprender Ingles: 600 Frases en Ingles Para Principiantes</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=3" title="see 3">3</a></td>
+	  <td>7</td>
+      <td><a target="_blank" href="youtube/?CategoryID=3" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLqZfJXbRo-zQmtufnD8juNrqL4kkQt7le" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLw40QPEr6dokGiA_7GYALfMHXQdGAl407" title="Aprender Portugués Mientras Duermes ???? 130 Frases Básicas ???? Portugués Español"><img width="100px" src="https://i.ytimg.com/vi/rZJC-0mMY6I/mqdefault.jpg" alt="Aprender Portugués Mientras Duermes ???? 130 Frases Básicas ???? Portugués Español"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLw40QPEr6dokGiA_7GYALfMHXQdGAl407" title="Aprender Portugués Mientras Duermes ???? 130 Frases Básicas ???? Portugués Español">Aprender Portugués Mientras Duermes ???? 130 Frases Básicas ???? Portugués Español</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=3" title="see 3">3</a></td>
+	  <td>0</td>
+      <td><a target="_blank" href="youtube/?CategoryID=3" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLw40QPEr6dokGiA_7GYALfMHXQdGAl407" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>4</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLy5iLQSr3CvSXBhEUP8Kd6U37fnt4YDO1" title="Aprender portugués en 5 días - Conversación para principiantes"><img width="100px" src="https://i.ytimg.com/vi/yu83wKxFByk/mqdefault.jpg" alt="Aprender portugués en 5 días - Conversación para principiantes"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLy5iLQSr3CvSXBhEUP8Kd6U37fnt4YDO1" title="Aprender portugués en 5 días - Conversación para principiantes">Aprender portugués en 5 días - Conversación para principiantes</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=3" title="see 3">3</a></td>
+	  <td>0</td>
+      <td><a target="_blank" href="youtube/?CategoryID=3" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLy5iLQSr3CvSXBhEUP8Kd6U37fnt4YDO1" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL1mw9MNravOlCVHg090_ttIPOwqZVf3d4" title="Aprender Portugues: 500 Frases en Portugues Para Principiantes"><img width="100px" src="https://i.ytimg.com/vi/A6hJ8ux4gU8/mqdefault.jpg" alt="Aprender Portugues: 500 Frases en Portugues Para Principiantes"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL1mw9MNravOlCVHg090_ttIPOwqZVf3d4" title="Aprender Portugues: 500 Frases en Portugues Para Principiantes">Aprender Portugues: 500 Frases en Portugues Para Principiantes</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=3" title="see 3">3</a></td>
+	  <td>3</td>
+      <td><a target="_blank" href="youtube/?CategoryID=3" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL1mw9MNravOlCVHg090_ttIPOwqZVf3d4" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLNJ8jH42wp3hTMtyBSUhJrobfT4XGWji7" title="Aprender Portugues: 150 Frases en Portugues Basicas"><img width="100px" src="https://i.ytimg.com/vi/GhVZNoxcbWM/mqdefault.jpg" alt="Aprender Portugues: 150 Frases en Portugues Basicas"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLNJ8jH42wp3hTMtyBSUhJrobfT4XGWji7" title="Aprender Portugues: 150 Frases en Portugues Basicas">Aprender Portugues: 150 Frases en Portugues Basicas</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=3" title="see 3">3</a></td>
+	  <td>0</td>
+      <td><a target="_blank" href="youtube/?CategoryID=3" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLNJ8jH42wp3hTMtyBSUhJrobfT4XGWji7" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLPY1DK6xj2zqbVTjJkRk90JsaMRZd9MST" title="Aprender Portugues: 500 Frases en Portugues Para Principiantes"><img width="100px" src="https://i.ytimg.com/vi/A6hJ8ux4gU8/mqdefault.jpg" alt="Aprender Portugues: 500 Frases en Portugues Para Principiantes"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLPY1DK6xj2zqbVTjJkRk90JsaMRZd9MST" title="Aprender Portugues: 500 Frases en Portugues Para Principiantes">Aprender Portugues: 500 Frases en Portugues Para Principiantes</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=3" title="see 3">3</a></td>
+	  <td>0</td>
+      <td><a target="_blank" href="youtube/?CategoryID=3" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLPY1DK6xj2zqbVTjJkRk90JsaMRZd9MST" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   </tbody>
+
+</table>
+</div>
+</body></html>

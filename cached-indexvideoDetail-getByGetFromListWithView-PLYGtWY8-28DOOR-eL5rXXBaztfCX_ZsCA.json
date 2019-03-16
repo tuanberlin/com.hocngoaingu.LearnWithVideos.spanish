@@ -1,0 +1,696 @@
+  <html>
+<head>
+      <title>Videos by List PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA</title>
+
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="icon" href="https://www.w3schools.com/tags/demo_icon.gif" type="image/gif" sizes="16x16">
+<link rel="stylesheet" type="text/css" href="views/videoDetail/mystyle.css">
+  <!-- Bootstrap v4.x stylesheet -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	<!-- bootstrap css theme -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/docs/css/bootstrap-v4.min.css">
+
+	<script src="https://mottie.github.io/tablesorter/docs/js/jquery-latest.min.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+	<!-- pager plugin -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.css">
+	<script src="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.js"></script>
+	<style>
+	.tablesorter-pager .btn-group-sm .btn {
+	  font-size: 1.2em; /* make pager arrows more visible */
+	}
+	</style>
+  <script>
+  $(function() {
+
+  $("table").tablesorter({
+    theme : "bootstrap",
+
+    widthFixed: true,
+
+    // widget code contained in the jquery.tablesorter.widgets.js file
+    // use the zebra stripe widget if you plan on hiding any rows (filter widget)
+    // the uitheme widget is NOT REQUIRED!
+    widgets : [ "filter", "columns", "zebra" ],
+
+    widgetOptions : {
+      // using the default zebra striping class name, so it actually isn't included in the theme variable above
+      // this is ONLY needed for bootstrap theming if you are using the filter widget, because rows are hidden
+      zebra : ["even", "odd"],
+
+      // class names added to columns when sorted
+      columns: [ "primary", "secondary", "tertiary" ],
+
+      // reset filters button
+      filter_reset : ".reset",
+
+      // extra css class name (string or array) added to the filter element (input or select)
+      filter_cssFilter: [
+        'form-control',
+        'form-control',
+        'form-control custom-select', // select needs custom class names :(
+        'form-control',
+        'form-control',
+        'form-control',
+        'form-control'
+      ]
+
+    }
+  })
+  .tablesorterPager({
+
+    // target the pager markup - see the HTML block below
+    container: $(".ts-pager"),
+
+    // target the pager page select dropdown - choose a page
+    cssGoto  : ".pagenum",
+
+    // remove rows from the table to speed up the sort of large tables.
+    // setting this to false, only hides the non-visible rows; needed if you plan to add/remove rows with the pager enabled.
+    removeRows: false,
+
+    // output string - default is '{page}/{totalPages}';
+    // possible variables: {page}, {totalPages}, {filteredPages}, {startRow}, {endRow}, {filteredRows} and {totalRows}
+    output: '{startRow} - {endRow} / {filteredRows} ({totalRows})'
+
+  });
+
+});
+  </script></head>
+<body>
+
+<div class="contentItem">
+	<div class="dropdown">
+       <a href="/v2/admin/"><button class="dropbtn">Home page</button></a>
+       <div class="dropdown-content">
+          <a href="?c=listDetail&a=getAllWithView&k=1">get All ListDetail</a>
+          <a title="Them list videos moi" target="_blank" href="youtube/">Add New</a>
+          <a title="Xoa trung lap video + listDetail" target="_blank" href="removeDuplicate.php">Remove Duplicate</a>
+          <a title="Them list videos moi" target="_blank" href="/v2/log/show.php">Log</a>
+      </div>
+  </div>
+  <div class="dropdown">
+   <a title="Them list videos moi" target="_blank" href="youtube/"><button class="dropbtn">Add New By Youtube</button></a>
+  </div>
+
+<div class="dropdown">
+   <a title="Tao Cache + remove cac videos va list bi trung lap" target="_blank" href="gen-cache.php"><button class="dropbtn">Gen cache</button></a>
+
+   <div class="dropdown-content">
+    <a title="Check videos playable, Khong nen thuc hien nhieu neu ko se bi khoa IP. Tuy vao DB co the chay mat 15p hoac hon" target="_blank" href="check-videos.php">Check Video playable(co the phai doi >15p)</a>
+</div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">get All VideosDetail</button>
+   <div class="dropdown-content">
+      <a href="?c=videoDetail&a=getAllWithView&k=0">get All VideosDetail(>10s)</a>
+      <a href="#">Add New</a>
+      <a href="#">Remove</a>
+  </div>
+</div>
+<div class="dropdown">
+   <button class="dropbtn">Xep theo CategoryID</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 Nuovi video (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 News (2)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Principianti (13)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Ascolta (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Gramar (26)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabolario (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 Nella lettura (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 Scrittura (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 Pronuncia (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 Parlando (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 Esami (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 Canzoni  (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 Film (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 Italiano per bambini (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Studiare all'estero (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 La vita in Italia (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Numeri (7)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 Acquisti (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 Il cibo (7)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Jobs (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 Salute (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Guarda (0)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List tang dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 Nuovi video (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Guarda (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 News (2)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 Nella lettura (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 Salute (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 Acquisti (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Jobs (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Numeri (7)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 Il cibo (7)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 La vita in Italia (8)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List giam dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Gramar (26)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Principianti (13)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 Italiano per bambini (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 Canzoni  (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Studiare all'estero (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Ascolta (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabolario (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 Scrittura (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 Pronuncia (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 Parlando (10)</a></div>
+</div>
+<br/>
+<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 new_videos L(0)</a> |<a title='Có 2 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 nachrichten L(2)</a> |<a title='Có 13 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 beginnners L(13)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 listening L(10)</a> |<a title='Có 26 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 gramar L(26)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 vocabulary L(10)</a> |<a title='Có 4 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 reading L(4)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 writing L(10)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 pronunciation L(10)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 speaking L(10)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 exams L(10)</a> |<a title='Có 11 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 songs L(11)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 film L(10)</a> |<a title='Có 12 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 kids L(12)</a> |<a title='Có 11 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 study L(11)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 italy L(8)</a> |<a title='Có 7 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 numbers L(7)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 shopping L(5)</a> |<a title='Có 7 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 food L(7)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 jobs L(6)</a> |<a title='Có 4 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 health L(4)</a> |<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 watched L(0)</a> |<br/>Số lượng Videos trong DB: 5427 Videos<br/>Số lượng Videos trong DB: 186 Videos</div>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kw" value="" placeholder="search here">
+	<input type="submit" name="submit" value="search name videos">
+</form>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kwl" value="" placeholder="search name List here">
+	<input type="submit" name="submit" value="search name List videos">
+</form><br/>
+<h1>Tat ca video co trong co so du lieu</h1>
+
+
+<table class="table table-bordered table-striped">
+  <thead> <!-- add class="thead-inverse" for a dark header -->
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Video count</th>
+      <th>Add too</th>
+      <th>Xoa</th>
+	</tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Video Duration</th>
+      <th>Add Videos to the List</th>
+      <th>Xoa</th>
+    </tr>
+    <tr>
+      <th colspan="7" class="ts-pager">
+        <div class="form-inline">
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary first" title="first">⇤</button>
+            <button type="button" class="btn btn-secondary prev" title="previous">←</button>
+          </div>
+          <span class="pagedisplay"></span>
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary next" title="next">→</button>
+            <button type="button" class="btn btn-secondary last" title="last">⇥</button>
+          </div>
+          <select class="form-control-sm custom-select px-1 pagesize" title="Select page size">
+            <option selected="selected" value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="all">All Rows</option>
+          </select>
+          <select class="form-control-sm custom-select px-4 mx-1 pagenum" title="Select page number"></select>
+        </div>
+      </th>
+    </tr>
+  </tfoot>
+  <tbody>
+	
+   <tr>
+      <td>5222</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5222" title="Salvini alla festa della Lega di Grumello Del Monte (Bg) - Sul palco Sergio Bramini"><img width="100px" src="https://i.ytimg.com/vi/vbLTk2ibfH8/mqdefault.jpg" alt="Salvini alla festa della Lega di Grumello Del Monte (Bg) - Sul palco Sergio Bramini"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5222" title="Salvini alla festa della Lega di Grumello Del Monte (Bg) - Sul palco Sergio Bramini">Salvini alla festa della Lega di Grumello Del Monte (Bg) - Sul palco Sergio Bramini</a></td>
+      <td>00:22:35</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5222" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5223</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5223" title="Primo Maggio, i leader dei sindacati: Troppe irregolarità. Inaccettabile morire in nome del profitto"><img width="100px" src="https://i.ytimg.com/vi/-bS_qU71In4/mqdefault.jpg" alt="Primo Maggio, i leader dei sindacati: Troppe irregolarità. Inaccettabile morire in nome del profitto"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5223" title="Primo Maggio, i leader dei sindacati: Troppe irregolarità. Inaccettabile morire in nome del profitto">Primo Maggio, i leader dei sindacati: Troppe irregolarità. Inaccettabile morire in nome del profitto</a></td>
+      <td>00:01:07</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5223" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5224</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5224" title="Primo Maggio, sindacati contro il cottimo digitale: È nuovo caporalato, altro che impresa 4.0"><img width="100px" src="https://i.ytimg.com/vi/QEIusncfB-0/mqdefault.jpg" alt="Primo Maggio, sindacati contro il cottimo digitale: È nuovo caporalato, altro che impresa 4.0"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5224" title="Primo Maggio, sindacati contro il cottimo digitale: È nuovo caporalato, altro che impresa 4.0">Primo Maggio, sindacati contro il cottimo digitale: È nuovo caporalato, altro che impresa 4.0</a></td>
+      <td>00:02:22</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5224" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5225</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5225" title="Primo maggio, Mattarella: Sicurezza sul lavoro è tema di civiltà e impegno da non trascurare"><img width="100px" src="https://i.ytimg.com/vi/k8Lnr55q38Q/mqdefault.jpg" alt="Primo maggio, Mattarella: Sicurezza sul lavoro è tema di civiltà e impegno da non trascurare"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5225" title="Primo maggio, Mattarella: Sicurezza sul lavoro è tema di civiltà e impegno da non trascurare">Primo maggio, Mattarella: Sicurezza sul lavoro è tema di civiltà e impegno da non trascurare</a></td>
+      <td>00:00:47</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5225" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5226</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5226" title="Primo maggio, Mattarella: Sicurezza sul lavoro è tema di civiltà e impegno da non trascurare"><img width="100px" src="https://i.ytimg.com/vi/k8Lnr55q38Q/mqdefault.jpg" alt="Primo maggio, Mattarella: Sicurezza sul lavoro è tema di civiltà e impegno da non trascurare"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5226" title="Primo maggio, Mattarella: Sicurezza sul lavoro è tema di civiltà e impegno da non trascurare">Primo maggio, Mattarella: Sicurezza sul lavoro è tema di civiltà e impegno da non trascurare</a></td>
+      <td>00:00:47</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5226" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5227</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5227" title="Governo, Camusso: PD-M5S? Non ci interessa dibattito ma lavoro e programmi"><img width="100px" src="https://i.ytimg.com/vi/HKVYKiKX0AA/mqdefault.jpg" alt="Governo, Camusso: PD-M5S? Non ci interessa dibattito ma lavoro e programmi"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5227" title="Governo, Camusso: PD-M5S? Non ci interessa dibattito ma lavoro e programmi">Governo, Camusso: PD-M5S? Non ci interessa dibattito ma lavoro e programmi</a></td>
+      <td>00:01:41</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5227" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5228</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5228" title="Consultazioni, Roberto Fico: Al lavoro da subito per linteresse del Paese"><img width="100px" src="https://i.ytimg.com/vi/7prPToVRSOI/mqdefault.jpg" alt="Consultazioni, Roberto Fico: Al lavoro da subito per linteresse del Paese"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5228" title="Consultazioni, Roberto Fico: Al lavoro da subito per linteresse del Paese">Consultazioni, Roberto Fico: Al lavoro da subito per linteresse del Paese</a></td>
+      <td>00:00:49</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5228" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5229</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5229" title="Salone del Mobile, Di Maio (M5S) tra selfie e baci. Gli imprenditori: Fate subito un governo"><img width="100px" src="https://i.ytimg.com/vi/X2EmPLgfka4/mqdefault.jpg" alt="Salone del Mobile, Di Maio (M5S) tra selfie e baci. Gli imprenditori: Fate subito un governo"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5229" title="Salone del Mobile, Di Maio (M5S) tra selfie e baci. Gli imprenditori: Fate subito un governo">Salone del Mobile, Di Maio (M5S) tra selfie e baci. Gli imprenditori: Fate subito un governo</a></td>
+      <td>00:24:06</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5229" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5230</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5230" title="Salvini (Lega) sul governo: Casellati può fare un buon lavoro. Basta veti tra Di Maio e Berlusconi"><img width="100px" src="https://i.ytimg.com/vi/6iksbhlVuHg/mqdefault.jpg" alt="Salvini (Lega) sul governo: Casellati può fare un buon lavoro. Basta veti tra Di Maio e Berlusconi"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5230" title="Salvini (Lega) sul governo: Casellati può fare un buon lavoro. Basta veti tra Di Maio e Berlusconi">Salvini (Lega) sul governo: Casellati può fare un buon lavoro. Basta veti tra Di Maio e Berlusconi</a></td>
+      <td>00:01:11</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5230" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5231</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5231" title="Regione Friuli Venezia Giulia, al Casinò in orario di lavoro: indagati 14 furbetti del cartellino"><img width="100px" src="https://i.ytimg.com/vi/Xm-ZOfz5c4o/mqdefault.jpg" alt="Regione Friuli Venezia Giulia, al Casinò in orario di lavoro: indagati 14 furbetti del cartellino"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5231" title="Regione Friuli Venezia Giulia, al Casinò in orario di lavoro: indagati 14 furbetti del cartellino">Regione Friuli Venezia Giulia, al Casinò in orario di lavoro: indagati 14 furbetti del cartellino</a></td>
+      <td>00:02:53</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5231" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5232</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5232" title="Vinitaly, Vespa viticoltore su Gentiloni: Il premier non ha finito la sua carriera politica"><img width="100px" src="https://i.ytimg.com/vi/QKeJXWbXxj4/mqdefault.jpg" alt="Vinitaly, Vespa viticoltore su Gentiloni: Il premier non ha finito la sua carriera politica"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5232" title="Vinitaly, Vespa viticoltore su Gentiloni: Il premier non ha finito la sua carriera politica">Vinitaly, Vespa viticoltore su Gentiloni: Il premier non ha finito la sua carriera politica</a></td>
+      <td>00:01:52</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5232" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5233</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5233" title="Salvini (Lega), sì a reddito cittadinanza ma solo se a termine"><img width="100px" src="https://i.ytimg.com/vi/vYf0BtTINR8/mqdefault.jpg" alt="Salvini (Lega), sì a reddito cittadinanza ma solo se a termine"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5233" title="Salvini (Lega), sì a reddito cittadinanza ma solo se a termine">Salvini (Lega), sì a reddito cittadinanza ma solo se a termine</a></td>
+      <td>00:01:10</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5233" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5234</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5234" title="Briatore: Al mio amico Berlusconi dico di lasciar governare Di Maio e Salvini, largo ai giovani"><img width="100px" src="https://i.ytimg.com/vi/gUVu-9-i5lI/mqdefault.jpg" alt="Briatore: Al mio amico Berlusconi dico di lasciar governare Di Maio e Salvini, largo ai giovani"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5234" title="Briatore: Al mio amico Berlusconi dico di lasciar governare Di Maio e Salvini, largo ai giovani">Briatore: Al mio amico Berlusconi dico di lasciar governare Di Maio e Salvini, largo ai giovani</a></td>
+      <td>00:01:56</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5234" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5235</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5235" title="Milano, gelataia si rifiuta di servire il leader della Lega Matteo Salvini"><img width="100px" src="https://i.ytimg.com/vi/i5lFHt1bJ0M/mqdefault.jpg" alt="Milano, gelataia si rifiuta di servire il leader della Lega Matteo Salvini"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5235" title="Milano, gelataia si rifiuta di servire il leader della Lega Matteo Salvini">Milano, gelataia si rifiuta di servire il leader della Lega Matteo Salvini</a></td>
+      <td>00:02:44</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5235" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5236</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5236" title="Napoli, Maurizio Martina: Dal Pd più impegno per Sud, giovani e lavoro"><img width="100px" src="https://i.ytimg.com/vi/U6auL3B90rw/mqdefault.jpg" alt="Napoli, Maurizio Martina: Dal Pd più impegno per Sud, giovani e lavoro"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5236" title="Napoli, Maurizio Martina: Dal Pd più impegno per Sud, giovani e lavoro">Napoli, Maurizio Martina: Dal Pd più impegno per Sud, giovani e lavoro</a></td>
+      <td>00:02:16</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5236" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5237</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5237" title="Napoli, Elio e Le Storie Tese per un giorno Pizzaioli da Gino Sorbillo"><img width="100px" src="https://i.ytimg.com/vi/MN9AfIBmoJY/mqdefault.jpg" alt="Napoli, Elio e Le Storie Tese per un giorno Pizzaioli da Gino Sorbillo"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5237" title="Napoli, Elio e Le Storie Tese per un giorno Pizzaioli da Gino Sorbillo">Napoli, Elio e Le Storie Tese per un giorno Pizzaioli da Gino Sorbillo</a></td>
+      <td>00:00:08</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5237" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5238</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5238" title="Luigi Di Maio (M5S) sul Reddito cittadinanza: Nessuno verrà pagato per stare sul divano"><img width="100px" src="https://i.ytimg.com/vi/MeZzin2iLPU/mqdefault.jpg" alt="Luigi Di Maio (M5S) sul Reddito cittadinanza: Nessuno verrà pagato per stare sul divano"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5238" title="Luigi Di Maio (M5S) sul Reddito cittadinanza: Nessuno verrà pagato per stare sul divano">Luigi Di Maio (M5S) sul Reddito cittadinanza: Nessuno verrà pagato per stare sul divano</a></td>
+      <td>00:02:02</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5238" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5239</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5239" title="Milano, Livini: Di Maio (M5S) il moderato cerca la benedizione degli imprenditori"><img width="100px" src="https://i.ytimg.com/vi/vAZ8Wc_TnRE/mqdefault.jpg" alt="Milano, Livini: Di Maio (M5S) il moderato cerca la benedizione degli imprenditori"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5239" title="Milano, Livini: Di Maio (M5S) il moderato cerca la benedizione degli imprenditori">Milano, Livini: Di Maio (M5S) il moderato cerca la benedizione degli imprenditori</a></td>
+      <td>00:02:30</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5239" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5240</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5240" title="Italia, Lavoro: Noi sfruttati nel Paese dei raccomandati"><img width="100px" src="https://i.ytimg.com/vi/55BPEiY5W9o/mqdefault.jpg" alt="Italia, Lavoro: Noi sfruttati nel Paese dei raccomandati"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5240" title="Italia, Lavoro: Noi sfruttati nel Paese dei raccomandati">Italia, Lavoro: Noi sfruttati nel Paese dei raccomandati</a></td>
+      <td>00:04:57</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5240" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5241</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5241" title="Italia, Lavoro: Noi sfruttati nel Paese dei raccomandati"><img width="100px" src="https://i.ytimg.com/vi/55BPEiY5W9o/mqdefault.jpg" alt="Italia, Lavoro: Noi sfruttati nel Paese dei raccomandati"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5241" title="Italia, Lavoro: Noi sfruttati nel Paese dei raccomandati">Italia, Lavoro: Noi sfruttati nel Paese dei raccomandati</a></td>
+      <td>00:04:57</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5241" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5242</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5242" title="Palermo, in un patronato spunta un cartello: Qui niente reddito di cittadinanza"><img width="100px" src="https://i.ytimg.com/vi/1xxIVwbmPFo/mqdefault.jpg" alt="Palermo, in un patronato spunta un cartello: Qui niente reddito di cittadinanza"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5242" title="Palermo, in un patronato spunta un cartello: Qui niente reddito di cittadinanza">Palermo, in un patronato spunta un cartello: Qui niente reddito di cittadinanza</a></td>
+      <td>00:01:48</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5242" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5243</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5243" title="Bari, decine di persone al Caf: Dateci i moduli per il reddito di cittadinanza del M5s"><img width="100px" src="https://i.ytimg.com/vi/8UsjyHgMNB0/mqdefault.jpg" alt="Bari, decine di persone al Caf: Dateci i moduli per il reddito di cittadinanza del M5s"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5243" title="Bari, decine di persone al Caf: Dateci i moduli per il reddito di cittadinanza del M5s">Bari, decine di persone al Caf: Dateci i moduli per il reddito di cittadinanza del M5s</a></td>
+      <td>00:01:19</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5243" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5244</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5244" title="Embraco, ministro Calenda incontra gli operai: Stipendi assicurati, troveremo un investitore"><img width="100px" src="https://i.ytimg.com/vi/M2-Wj3EnIiY/mqdefault.jpg" alt="Embraco, ministro Calenda incontra gli operai: Stipendi assicurati, troveremo un investitore"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5244" title="Embraco, ministro Calenda incontra gli operai: Stipendi assicurati, troveremo un investitore">Embraco, ministro Calenda incontra gli operai: Stipendi assicurati, troveremo un investitore</a></td>
+      <td>00:03:03</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5244" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5245</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5245" title="Boccia (Confindustria): Non ci spaventa un governo guidato da Di Maio (M5S)"><img width="100px" src="https://i.ytimg.com/vi/VYQR0XqoaJc/mqdefault.jpg" alt="Boccia (Confindustria): Non ci spaventa un governo guidato da Di Maio (M5S)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5245" title="Boccia (Confindustria): Non ci spaventa un governo guidato da Di Maio (M5S)">Boccia (Confindustria): Non ci spaventa un governo guidato da Di Maio (M5S)</a></td>
+      <td>00:02:02</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5245" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5246</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5246" title="Istat, Gentiloni: Su Pil e debito dati incoraggianti, ora cerchiamo di non andare fuori strada"><img width="100px" src="https://i.ytimg.com/vi/xscQVY5-7ZQ/mqdefault.jpg" alt="Istat, Gentiloni: Su Pil e debito dati incoraggianti, ora cerchiamo di non andare fuori strada"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5246" title="Istat, Gentiloni: Su Pil e debito dati incoraggianti, ora cerchiamo di non andare fuori strada">Istat, Gentiloni: Su Pil e debito dati incoraggianti, ora cerchiamo di non andare fuori strada</a></td>
+      <td>00:02:46</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5246" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5247</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5247" title="Economia, Renzi: Cresce produzione industriale, alla facciaccia di chi non ci credeva"><img width="100px" src="https://i.ytimg.com/vi/3GP1UGUBuKA/mqdefault.jpg" alt="Economia, Renzi: Cresce produzione industriale, alla facciaccia di chi non ci credeva"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5247" title="Economia, Renzi: Cresce produzione industriale, alla facciaccia di chi non ci credeva">Economia, Renzi: Cresce produzione industriale, alla facciaccia di chi non ci credeva</a></td>
+      <td>00:01:27</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5247" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5248</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5248" title="Bologna, Prodi lancia Insieme e sostiene Gentiloni: Bisogna riconoscere il suo grande lavoro"><img width="100px" src="https://i.ytimg.com/vi/8ahZAMto7Yk/mqdefault.jpg" alt="Bologna, Prodi lancia Insieme e sostiene Gentiloni: Bisogna riconoscere il suo grande lavoro"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5248" title="Bologna, Prodi lancia Insieme e sostiene Gentiloni: Bisogna riconoscere il suo grande lavoro">Bologna, Prodi lancia Insieme e sostiene Gentiloni: Bisogna riconoscere il suo grande lavoro</a></td>
+      <td>00:00:01</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5248" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5249</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5249" title="De Luca (pd): La legge sulleditoria è unopportunità per tanti"><img width="100px" src="https://i.ytimg.com/vi/MDhPg9MJ6IQ/mqdefault.jpg" alt="De Luca (pd): La legge sulleditoria è unopportunità per tanti"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5249" title="De Luca (pd): La legge sulleditoria è unopportunità per tanti">De Luca (pd): La legge sulleditoria è unopportunità per tanti</a></td>
+      <td>00:01:36</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5249" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5250</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5250" title="Roma, sinti e rom in Campidoglio: Basta campi e degrado, vogliamo casa e lavoro"><img width="100px" src="https://i.ytimg.com/vi/6jTgAnvlU2c/mqdefault.jpg" alt="Roma, sinti e rom in Campidoglio: Basta campi e degrado, vogliamo casa e lavoro"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5250" title="Roma, sinti e rom in Campidoglio: Basta campi e degrado, vogliamo casa e lavoro">Roma, sinti e rom in Campidoglio: Basta campi e degrado, vogliamo casa e lavoro</a></td>
+      <td>00:02:18</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5250" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5251</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5251" title="Legge elettorale, Boccia (Confindustria): Il sistema attuale non garantisce stabilità"><img width="100px" src="https://i.ytimg.com/vi/jS3RPBG9uec/mqdefault.jpg" alt="Legge elettorale, Boccia (Confindustria): Il sistema attuale non garantisce stabilità"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5251" title="Legge elettorale, Boccia (Confindustria): Il sistema attuale non garantisce stabilità">Legge elettorale, Boccia (Confindustria): Il sistema attuale non garantisce stabilità</a></td>
+      <td>00:00:31</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5251" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5252</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5252" title="Roma, Sindaco Raggi: Grazie Colomban, il lavoro alle partecipate continua con Gennaro"><img width="100px" src="https://i.ytimg.com/vi/wWBOHLrapNI/mqdefault.jpg" alt="Roma, Sindaco Raggi: Grazie Colomban, il lavoro alle partecipate continua con Gennaro"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5252" title="Roma, Sindaco Raggi: Grazie Colomban, il lavoro alle partecipate continua con Gennaro">Roma, Sindaco Raggi: Grazie Colomban, il lavoro alle partecipate continua con Gennaro</a></td>
+      <td>00:02:42</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5252" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5253</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5253" title="Giuliano Poletti, Franchi, Fatali e Ciulli: Il lavoro al tempo del 4.0  / #TerrazzaPD"><img width="100px" src="https://i.ytimg.com/vi/xBfWwTi0qrY/mqdefault.jpg" alt="Giuliano Poletti, Franchi, Fatali e Ciulli: Il lavoro al tempo del 4.0  / #TerrazzaPD"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5253" title="Giuliano Poletti, Franchi, Fatali e Ciulli: Il lavoro al tempo del 4.0  / #TerrazzaPD">Giuliano Poletti, Franchi, Fatali e Ciulli: Il lavoro al tempo del 4.0  / #TerrazzaPD</a></td>
+      <td>00:49:30</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5253" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5254</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5254" title="Giuliano Poletti, Franchi, Fatali e Ciulli: Il lavoro al tempo del 4.0  / #TerrazzaPD"><img width="100px" src="https://i.ytimg.com/vi/xBfWwTi0qrY/mqdefault.jpg" alt="Giuliano Poletti, Franchi, Fatali e Ciulli: Il lavoro al tempo del 4.0  / #TerrazzaPD"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5254" title="Giuliano Poletti, Franchi, Fatali e Ciulli: Il lavoro al tempo del 4.0  / #TerrazzaPD">Giuliano Poletti, Franchi, Fatali e Ciulli: Il lavoro al tempo del 4.0  / #TerrazzaPD</a></td>
+      <td>00:49:30</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5254" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5255</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5255" title="Giannuli: Con la riforma Fornero andrò in pensione con mille euro al mese"><img width="100px" src="https://i.ytimg.com/vi/HIk0dn1QG9o/mqdefault.jpg" alt="Giannuli: Con la riforma Fornero andrò in pensione con mille euro al mese"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5255" title="Giannuli: Con la riforma Fornero andrò in pensione con mille euro al mese">Giannuli: Con la riforma Fornero andrò in pensione con mille euro al mese</a></td>
+      <td>00:01:21</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5255" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5256</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5256" title="Quintavalle: io, assunta in ATAC grazie ai sindacati dico che sono il cancro dellazienda"><img width="100px" src="https://i.ytimg.com/vi/-8gbRk_Kx2U/mqdefault.jpg" alt="Quintavalle: io, assunta in ATAC grazie ai sindacati dico che sono il cancro dellazienda"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5256" title="Quintavalle: io, assunta in ATAC grazie ai sindacati dico che sono il cancro dellazienda">Quintavalle: io, assunta in ATAC grazie ai sindacati dico che sono il cancro dellazienda</a></td>
+      <td>00:02:33</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5256" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5257</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5257" title="Maria Elena Boschi (Pd): Il tempo delle opportunità: diritti a confronto"><img width="100px" src="https://i.ytimg.com/vi/ByLSPHOPM1k/mqdefault.jpg" alt="Maria Elena Boschi (Pd): Il tempo delle opportunità: diritti a confronto"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5257" title="Maria Elena Boschi (Pd): Il tempo delle opportunità: diritti a confronto">Maria Elena Boschi (Pd): Il tempo delle opportunità: diritti a confronto</a></td>
+      <td>00:45:32</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5257" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5258</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5258" title="Pensioni e disoccupazione giovanile: videoforum con Giuliano Poletti"><img width="100px" src="https://i.ytimg.com/vi/hecKeN7NXLY/mqdefault.jpg" alt="Pensioni e disoccupazione giovanile: videoforum con Giuliano Poletti"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5258" title="Pensioni e disoccupazione giovanile: videoforum con Giuliano Poletti">Pensioni e disoccupazione giovanile: videoforum con Giuliano Poletti</a></td>
+      <td>00:38:18</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5258" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5259</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5259" title="Incendi, Mattarella: Azioni criminali che vanno punite con severità"><img width="100px" src="https://i.ytimg.com/vi/hgZnnZA9zF8/mqdefault.jpg" alt="Incendi, Mattarella: Azioni criminali che vanno punite con severità"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5259" title="Incendi, Mattarella: Azioni criminali che vanno punite con severità">Incendi, Mattarella: Azioni criminali che vanno punite con severità</a></td>
+      <td>00:01:09</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5259" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5260</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5260" title="Pensioni, Poletti: Sbagliata lausterità, la riforma Fornero andava fatta in maniera diversa"><img width="100px" src="https://i.ytimg.com/vi/ohVZZ3jvDxY/mqdefault.jpg" alt="Pensioni, Poletti: Sbagliata lausterità, la riforma Fornero andava fatta in maniera diversa"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5260" title="Pensioni, Poletti: Sbagliata lausterità, la riforma Fornero andava fatta in maniera diversa">Pensioni, Poletti: Sbagliata lausterità, la riforma Fornero andava fatta in maniera diversa</a></td>
+      <td>00:05:07</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5260" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5261</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5261" title="Poletti: Lavoro, allo studio taglio stabile del cuneo contributivo"><img width="100px" src="https://i.ytimg.com/vi/0DtAnE_HiBI/mqdefault.jpg" alt="Poletti: Lavoro, allo studio taglio stabile del cuneo contributivo"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5261" title="Poletti: Lavoro, allo studio taglio stabile del cuneo contributivo">Poletti: Lavoro, allo studio taglio stabile del cuneo contributivo</a></td>
+      <td>00:01:14</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5261" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5262</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5262" title="Occupazione giovanile, Poletti: Dati ancora negativi ma siamo sulla strada giusta"><img width="100px" src="https://i.ytimg.com/vi/LsfhEn8zXzs/mqdefault.jpg" alt="Occupazione giovanile, Poletti: Dati ancora negativi ma siamo sulla strada giusta"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5262" title="Occupazione giovanile, Poletti: Dati ancora negativi ma siamo sulla strada giusta">Occupazione giovanile, Poletti: Dati ancora negativi ma siamo sulla strada giusta</a></td>
+      <td>00:02:41</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5262" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5263</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5263" title="Tutti in coda per un posto di lavoro"><img width="100px" src="https://i.ytimg.com/vi/QNTgl04RmTM/mqdefault.jpg" alt="Tutti in coda per un posto di lavoro"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5263" title="Tutti in coda per un posto di lavoro">Tutti in coda per un posto di lavoro</a></td>
+      <td>00:01:26</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5263" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5264</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5264" title="12mila persone per 100 posti da infermiere"><img width="100px" src="https://i.ytimg.com/vi/0B14yCjCb1E/mqdefault.jpg" alt="12mila persone per 100 posti da infermiere"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5264" title="12mila persone per 100 posti da infermiere">12mila persone per 100 posti da infermiere</a></td>
+      <td>00:02:38</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5264" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5265</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5265" title="Via la toga, lavvocato diventa pescatore"><img width="100px" src="https://i.ytimg.com/vi/6wepf_q3Czs/mqdefault.jpg" alt="Via la toga, lavvocato diventa pescatore"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5265" title="Via la toga, lavvocato diventa pescatore">Via la toga, lavvocato diventa pescatore</a></td>
+      <td>00:02:26</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5265" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5266</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5266" title="Giammanco (FI): Ottimismo fuori luogo, dati economici tutti peggiorati"><img width="100px" src="https://i.ytimg.com/vi/yXoGtUvgrNY/mqdefault.jpg" alt="Giammanco (FI): Ottimismo fuori luogo, dati economici tutti peggiorati"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5266" title="Giammanco (FI): Ottimismo fuori luogo, dati economici tutti peggiorati">Giammanco (FI): Ottimismo fuori luogo, dati economici tutti peggiorati</a></td>
+      <td>00:02:19</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5266" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5267</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5267" title="Operai contro operai, la lotta di classe 2.0"><img width="100px" src="https://i.ytimg.com/vi/MJtZShvxV_k/mqdefault.jpg" alt="Operai contro operai, la lotta di classe 2.0"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5267" title="Operai contro operai, la lotta di classe 2.0">Operai contro operai, la lotta di classe 2.0</a></td>
+      <td>00:02:56</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5267" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5268</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5268" title="Imprenditore lascia 4 milioni di Euro in eredità agli operai"><img width="100px" src="https://i.ytimg.com/vi/mWD_-D2krzM/mqdefault.jpg" alt="Imprenditore lascia 4 milioni di Euro in eredità agli operai"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5268" title="Imprenditore lascia 4 milioni di Euro in eredità agli operai">Imprenditore lascia 4 milioni di Euro in eredità agli operai</a></td>
+      <td>00:02:23</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5268" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5269</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5269" title="Autocertificazione malattia, Scotti (Medici di Famiglia): Rischiamo di diventare postini"><img width="100px" src="https://i.ytimg.com/vi/E4jejJqzwlw/mqdefault.jpg" alt="Autocertificazione malattia, Scotti (Medici di Famiglia): Rischiamo di diventare postini"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5269" title="Autocertificazione malattia, Scotti (Medici di Famiglia): Rischiamo di diventare postini">Autocertificazione malattia, Scotti (Medici di Famiglia): Rischiamo di diventare postini</a></td>
+      <td>00:02:57</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5269" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5270</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5270" title="Santanchè vs Bianchi, turismo: Basta cazzate, mettete in ginocchio gli imprenditori"><img width="100px" src="https://i.ytimg.com/vi/6vPtLYK5K20/mqdefault.jpg" alt="Santanchè vs Bianchi, turismo: Basta cazzate, mettete in ginocchio gli imprenditori"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5270" title="Santanchè vs Bianchi, turismo: Basta cazzate, mettete in ginocchio gli imprenditori">Santanchè vs Bianchi, turismo: Basta cazzate, mettete in ginocchio gli imprenditori</a></td>
+      <td>00:05:03</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5270" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5271</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5271" title="Fedeli, Min.Istruzione: Gli insegnanti dovrebbero guadagnare il doppio"><img width="100px" src="https://i.ytimg.com/vi/dB4IywvO5yE/mqdefault.jpg" alt="Fedeli, Min.Istruzione: Gli insegnanti dovrebbero guadagnare il doppio"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5271" title="Fedeli, Min.Istruzione: Gli insegnanti dovrebbero guadagnare il doppio">Fedeli, Min.Istruzione: Gli insegnanti dovrebbero guadagnare il doppio</a></td>
+      <td>00:06:39</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLYGtWY8-28DOOR-eL5rXXBaztfCX_ZsCA" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5271" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   </tbody>
+
+</table>
+</div>
+</body></html>

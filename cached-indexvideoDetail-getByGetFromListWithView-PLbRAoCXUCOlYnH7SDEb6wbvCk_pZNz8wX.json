@@ -1,0 +1,556 @@
+  <html>
+<head>
+      <title>Videos by List PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX</title>
+
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="icon" href="https://www.w3schools.com/tags/demo_icon.gif" type="image/gif" sizes="16x16">
+<link rel="stylesheet" type="text/css" href="views/videoDetail/mystyle.css">
+  <!-- Bootstrap v4.x stylesheet -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	<!-- bootstrap css theme -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/docs/css/bootstrap-v4.min.css">
+
+	<script src="https://mottie.github.io/tablesorter/docs/js/jquery-latest.min.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+	<!-- pager plugin -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.css">
+	<script src="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.js"></script>
+	<style>
+	.tablesorter-pager .btn-group-sm .btn {
+	  font-size: 1.2em; /* make pager arrows more visible */
+	}
+	</style>
+  <script>
+  $(function() {
+
+  $("table").tablesorter({
+    theme : "bootstrap",
+
+    widthFixed: true,
+
+    // widget code contained in the jquery.tablesorter.widgets.js file
+    // use the zebra stripe widget if you plan on hiding any rows (filter widget)
+    // the uitheme widget is NOT REQUIRED!
+    widgets : [ "filter", "columns", "zebra" ],
+
+    widgetOptions : {
+      // using the default zebra striping class name, so it actually isn't included in the theme variable above
+      // this is ONLY needed for bootstrap theming if you are using the filter widget, because rows are hidden
+      zebra : ["even", "odd"],
+
+      // class names added to columns when sorted
+      columns: [ "primary", "secondary", "tertiary" ],
+
+      // reset filters button
+      filter_reset : ".reset",
+
+      // extra css class name (string or array) added to the filter element (input or select)
+      filter_cssFilter: [
+        'form-control',
+        'form-control',
+        'form-control custom-select', // select needs custom class names :(
+        'form-control',
+        'form-control',
+        'form-control',
+        'form-control'
+      ]
+
+    }
+  })
+  .tablesorterPager({
+
+    // target the pager markup - see the HTML block below
+    container: $(".ts-pager"),
+
+    // target the pager page select dropdown - choose a page
+    cssGoto  : ".pagenum",
+
+    // remove rows from the table to speed up the sort of large tables.
+    // setting this to false, only hides the non-visible rows; needed if you plan to add/remove rows with the pager enabled.
+    removeRows: false,
+
+    // output string - default is '{page}/{totalPages}';
+    // possible variables: {page}, {totalPages}, {filteredPages}, {startRow}, {endRow}, {filteredRows} and {totalRows}
+    output: '{startRow} - {endRow} / {filteredRows} ({totalRows})'
+
+  });
+
+});
+  </script></head>
+<body>
+
+<div class="contentItem">
+	<div class="dropdown">
+       <a href="/v2/admin/"><button class="dropbtn">Home page</button></a>
+       <div class="dropdown-content">
+          <a href="?c=listDetail&a=getAllWithView&k=1">get All ListDetail</a>
+          <a title="Them list videos moi" target="_blank" href="youtube/">Add New</a>
+          <a title="Xoa trung lap video + listDetail" target="_blank" href="removeDuplicate.php">Remove Duplicate</a>
+          <a title="Them list videos moi" target="_blank" href="/v2/log/show.php">Log</a>
+      </div>
+  </div>
+  <div class="dropdown">
+   <a title="Them list videos moi" target="_blank" href="youtube/"><button class="dropbtn">Add New By Youtube</button></a>
+  </div>
+
+<div class="dropdown">
+   <a title="Tao Cache + remove cac videos va list bi trung lap" target="_blank" href="gen-cache.php"><button class="dropbtn">Gen cache</button></a>
+
+   <div class="dropdown-content">
+    <a title="Check videos playable, Khong nen thuc hien nhieu neu ko se bi khoa IP. Tuy vao DB co the chay mat 15p hoac hon" target="_blank" href="check-videos.php">Check Video playable(co the phai doi >15p)</a>
+</div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">get All VideosDetail</button>
+   <div class="dropdown-content">
+      <a href="?c=videoDetail&a=getAllWithView&k=0">get All VideosDetail(>10s)</a>
+      <a href="#">Add New</a>
+      <a href="#">Remove</a>
+  </div>
+</div>
+<div class="dropdown">
+   <button class="dropbtn">Xep theo CategoryID</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 Nuevos videos (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 Noticias (2)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Principiantes (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Escuchar (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Gramar (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabulario (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 En lectura (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 Escritura (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 Pronunciación (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 Hablando (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 Exámenes (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 Canciones (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 Cine (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 Español para niños (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Estudiar en el extranjero (13)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 La vida en españa (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Números (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 Compras (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 La comida (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Jobs (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 Salud (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Mira (0)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List tang dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 Nuevos videos (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Mira (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 Noticias (2)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 Escritura (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Números (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Jobs (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 Salud (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 Hablando (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 La vida en españa (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 Compras (4)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List giam dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Estudiar en el extranjero (13)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 En lectura (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Gramar (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 Cine (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Principiantes (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Escuchar (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabulario (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 Exámenes (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 Canciones (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 La comida (6)</a></div>
+</div>
+<br/>
+<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 new_videos L(0)</a> |<a title='Có 2 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 nachrichten L(2)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 beginnners L(9)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 listening L(9)</a> |<a title='Có 11 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 gramar L(11)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 vocabulary L(9)</a> |<a title='Có 12 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 reading L(12)</a> |<a title='Có 3 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 writing L(3)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 pronunciation L(5)</a> |<a title='Có 4 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 speaking L(4)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 exams L(9)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 songs L(9)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 film L(10)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 kids L(5)</a> |<a title='Có 13 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 study L(13)</a> |<a title='Có 4 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 spain L(4)</a> |<a title='Có 3 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 numbers L(3)</a> |<a title='Có 4 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 shopping L(4)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 food L(6)</a> |<a title='Có 3 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 jobs L(3)</a> |<a title='Có 3 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 health L(3)</a> |<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 watched L(0)</a> |<br/>Số lượng Videos trong DB: 2805 Videos<br/>Số lượng Videos trong DB: 133 Videos</div>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kw" value="" placeholder="search here">
+	<input type="submit" name="submit" value="search name videos">
+</form>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kwl" value="" placeholder="search name List here">
+	<input type="submit" name="submit" value="search name List videos">
+</form><br/>
+<h1>Tat ca video co trong co so du lieu</h1>
+
+
+<table class="table table-bordered table-striped">
+  <thead> <!-- add class="thead-inverse" for a dark header -->
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Video count</th>
+      <th>Add too</th>
+      <th>Xoa</th>
+	</tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Video Duration</th>
+      <th>Add Videos to the List</th>
+      <th>Xoa</th>
+    </tr>
+    <tr>
+      <th colspan="7" class="ts-pager">
+        <div class="form-inline">
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary first" title="first">⇤</button>
+            <button type="button" class="btn btn-secondary prev" title="previous">←</button>
+          </div>
+          <span class="pagedisplay"></span>
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary next" title="next">→</button>
+            <button type="button" class="btn btn-secondary last" title="last">⇥</button>
+          </div>
+          <select class="form-control-sm custom-select px-1 pagesize" title="Select page size">
+            <option selected="selected" value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="all">All Rows</option>
+          </select>
+          <select class="form-control-sm custom-select px-4 mx-1 pagenum" title="Select page number"></select>
+        </div>
+      </th>
+    </tr>
+  </tfoot>
+  <tbody>
+	
+   <tr>
+      <td>2921</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2921" title="Centro Médico - 12/09/16 (1)"><img width="100px" src="https://i.ytimg.com/vi/1POnMbPfrtU/mqdefault.jpg" alt="Centro Médico - 12/09/16 (1)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2921" title="Centro Médico - 12/09/16 (1)">Centro Médico - 12/09/16 (1)</a></td>
+      <td>00:28:27</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2921" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2922</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2922" title="Centro Médico  - 12/09/16 (2)"><img width="100px" src="https://i.ytimg.com/vi/6S_aykHji8I/mqdefault.jpg" alt="Centro Médico  - 12/09/16 (2)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2922" title="Centro Médico  - 12/09/16 (2)">Centro Médico  - 12/09/16 (2)</a></td>
+      <td>00:32:44</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2922" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2923</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2923" title="Centro Médico - 13/09/16 (1)"><img width="100px" src="https://i.ytimg.com/vi/s-_Go2iKlbk/mqdefault.jpg" alt="Centro Médico - 13/09/16 (1)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2923" title="Centro Médico - 13/09/16 (1)">Centro Médico - 13/09/16 (1)</a></td>
+      <td>00:31:46</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2923" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2924</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2924" title="Centro médico -13/09/16 (2)"><img width="100px" src="https://i.ytimg.com/vi/spraPA4bd48/mqdefault.jpg" alt="Centro médico -13/09/16 (2)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2924" title="Centro médico -13/09/16 (2)">Centro médico -13/09/16 (2)</a></td>
+      <td>00:32:25</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2924" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2925</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2925" title="Centro médico - 14/09/16 (1)"><img width="100px" src="https://i.ytimg.com/vi/0PTpW9wQ0nA/mqdefault.jpg" alt="Centro médico - 14/09/16 (1)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2925" title="Centro médico - 14/09/16 (1)">Centro médico - 14/09/16 (1)</a></td>
+      <td>00:32:16</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2925" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2926</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2926" title="Centro médico - 14/09/16 (2)"><img width="100px" src="https://i.ytimg.com/vi/OlqszZIYMeY/mqdefault.jpg" alt="Centro médico - 14/09/16 (2)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2926" title="Centro médico - 14/09/16 (2)">Centro médico - 14/09/16 (2)</a></td>
+      <td>00:33:13</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2926" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2927</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2927" title="Centro médico - 15/09/16 (1)"><img width="100px" src="https://i.ytimg.com/vi/PTvT8ktnUBY/mqdefault.jpg" alt="Centro médico - 15/09/16 (1)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2927" title="Centro médico - 15/09/16 (1)">Centro médico - 15/09/16 (1)</a></td>
+      <td>00:32:09</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2927" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2929</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2929" title="Centro médico - 16/09/16 (1)"><img width="100px" src="https://i.ytimg.com/vi/mzXs34O0fdY/mqdefault.jpg" alt="Centro médico - 16/09/16 (1)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2929" title="Centro médico - 16/09/16 (1)">Centro médico - 16/09/16 (1)</a></td>
+      <td>00:32:30</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2929" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2930</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2930" title="Centro médico - 16/09/16 (2)"><img width="100px" src="https://i.ytimg.com/vi/WHMI-GRQXM4/mqdefault.jpg" alt="Centro médico - 16/09/16 (2)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2930" title="Centro médico - 16/09/16 (2)">Centro médico - 16/09/16 (2)</a></td>
+      <td>00:31:50</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2930" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2931</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2931" title="Centro médico - 19/09/16 (1)"><img width="100px" src="https://i.ytimg.com/vi/GPNQZzHnwm8/mqdefault.jpg" alt="Centro médico - 19/09/16 (1)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2931" title="Centro médico - 19/09/16 (1)">Centro médico - 19/09/16 (1)</a></td>
+      <td>00:32:05</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2931" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2932</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2932" title="Centro médico - 19/09/16 (2)"><img width="100px" src="https://i.ytimg.com/vi/9x3yslxq-3g/mqdefault.jpg" alt="Centro médico - 19/09/16 (2)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2932" title="Centro médico - 19/09/16 (2)">Centro médico - 19/09/16 (2)</a></td>
+      <td>00:33:22</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2932" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2933</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2933" title="Centro médico - 20/09/16 (1)"><img width="100px" src="https://i.ytimg.com/vi/KqPupHTmK7o/mqdefault.jpg" alt="Centro médico - 20/09/16 (1)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2933" title="Centro médico - 20/09/16 (1)">Centro médico - 20/09/16 (1)</a></td>
+      <td>00:31:57</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2933" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2934</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2934" title="Centro médico - 20/09/16 (2)"><img width="100px" src="https://i.ytimg.com/vi/Ndd5gyg9TqI/mqdefault.jpg" alt="Centro médico - 20/09/16 (2)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2934" title="Centro médico - 20/09/16 (2)">Centro médico - 20/09/16 (2)</a></td>
+      <td>00:32:59</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2934" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2935</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2935" title="Centro médico - 21/09/16 (1)"><img width="100px" src="https://i.ytimg.com/vi/SGY2rx1G0Is/mqdefault.jpg" alt="Centro médico - 21/09/16 (1)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2935" title="Centro médico - 21/09/16 (1)">Centro médico - 21/09/16 (1)</a></td>
+      <td>00:31:39</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2935" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2936</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2936" title="Centro médico - 21/09/16 (2)"><img width="100px" src="https://i.ytimg.com/vi/Odb75qKF8q0/mqdefault.jpg" alt="Centro médico - 21/09/16 (2)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2936" title="Centro médico - 21/09/16 (2)">Centro médico - 21/09/16 (2)</a></td>
+      <td>00:33:33</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2936" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2937</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2937" title="Centro médico - 22/09/16 (1)"><img width="100px" src="https://i.ytimg.com/vi/WWm1FSQcElM/mqdefault.jpg" alt="Centro médico - 22/09/16 (1)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2937" title="Centro médico - 22/09/16 (1)">Centro médico - 22/09/16 (1)</a></td>
+      <td>00:31:50</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2937" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2938</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2938" title="Centro médico - 22/09/16 (2)"><img width="100px" src="https://i.ytimg.com/vi/u4fdslafSLw/mqdefault.jpg" alt="Centro médico - 22/09/16 (2)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2938" title="Centro médico - 22/09/16 (2)">Centro médico - 22/09/16 (2)</a></td>
+      <td>00:33:53</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2938" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2939</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2939" title="Centro médico - 23/09/16 (1)"><img width="100px" src="https://i.ytimg.com/vi/SZk_oZIATHA/mqdefault.jpg" alt="Centro médico - 23/09/16 (1)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2939" title="Centro médico - 23/09/16 (1)">Centro médico - 23/09/16 (1)</a></td>
+      <td>00:32:31</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2939" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2940</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2940" title="Centro médico - 23/09/16 (2)"><img width="100px" src="https://i.ytimg.com/vi/Bulsn2XtKRs/mqdefault.jpg" alt="Centro médico - 23/09/16 (2)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2940" title="Centro médico - 23/09/16 (2)">Centro médico - 23/09/16 (2)</a></td>
+      <td>00:31:21</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2940" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2941</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2941" title="Centro médico - 26/09/16 (1)"><img width="100px" src="https://i.ytimg.com/vi/HVaLUDJvGyw/mqdefault.jpg" alt="Centro médico - 26/09/16 (1)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2941" title="Centro médico - 26/09/16 (1)">Centro médico - 26/09/16 (1)</a></td>
+      <td>00:32:25</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2941" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2942</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2942" title="Centro médico - 26/09/16 (2)"><img width="100px" src="https://i.ytimg.com/vi/doI0wBTZIQ8/mqdefault.jpg" alt="Centro médico - 26/09/16 (2)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2942" title="Centro médico - 26/09/16 (2)">Centro médico - 26/09/16 (2)</a></td>
+      <td>00:33:26</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2942" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2943</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2943" title="Centro médico - 27/09/16 (1)"><img width="100px" src="https://i.ytimg.com/vi/8koiI5bdsmc/mqdefault.jpg" alt="Centro médico - 27/09/16 (1)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2943" title="Centro médico - 27/09/16 (1)">Centro médico - 27/09/16 (1)</a></td>
+      <td>00:32:55</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2943" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2944</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2944" title="Centro médico - 27/09/16 (2)"><img width="100px" src="https://i.ytimg.com/vi/jqDcvYf0aTU/mqdefault.jpg" alt="Centro médico - 27/09/16 (2)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2944" title="Centro médico - 27/09/16 (2)">Centro médico - 27/09/16 (2)</a></td>
+      <td>00:32:14</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2944" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2945</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2945" title="Centro médico - 28/09/16"><img width="100px" src="https://i.ytimg.com/vi/Y0x7GsA1G24/mqdefault.jpg" alt="Centro médico - 28/09/16"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2945" title="Centro médico - 28/09/16">Centro médico - 28/09/16</a></td>
+      <td>00:31:41</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2945" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2946</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2946" title="Centro médico - 29/09/16 (1)"><img width="100px" src="https://i.ytimg.com/vi/SgqeIBsYMC8/mqdefault.jpg" alt="Centro médico - 29/09/16 (1)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2946" title="Centro médico - 29/09/16 (1)">Centro médico - 29/09/16 (1)</a></td>
+      <td>00:31:50</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2946" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2947</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2947" title="Centro médico - 29/09/16 (2)"><img width="100px" src="https://i.ytimg.com/vi/O8gyaRjWwqM/mqdefault.jpg" alt="Centro médico - 29/09/16 (2)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2947" title="Centro médico - 29/09/16 (2)">Centro médico - 29/09/16 (2)</a></td>
+      <td>00:32:17</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2947" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2948</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2948" title="Centro médico - 30/09/16 (1)"><img width="100px" src="https://i.ytimg.com/vi/0LGG3ecHZ3I/mqdefault.jpg" alt="Centro médico - 30/09/16 (1)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2948" title="Centro médico - 30/09/16 (1)">Centro médico - 30/09/16 (1)</a></td>
+      <td>00:32:28</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2948" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2949</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2949" title="Centro médico - 30/09/16 (2)"><img width="100px" src="https://i.ytimg.com/vi/QAiy5BLt08M/mqdefault.jpg" alt="Centro médico - 30/09/16 (2)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2949" title="Centro médico - 30/09/16 (2)">Centro médico - 30/09/16 (2)</a></td>
+      <td>00:33:13</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2949" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2950</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2950" title="Centro médico - 03/10/16 (1)"><img width="100px" src="https://i.ytimg.com/vi/ihj23GVBXA0/mqdefault.jpg" alt="Centro médico - 03/10/16 (1)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2950" title="Centro médico - 03/10/16 (1)">Centro médico - 03/10/16 (1)</a></td>
+      <td>00:31:02</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2950" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2951</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2951" title="Centro médico - 03/10/16 (2)"><img width="100px" src="https://i.ytimg.com/vi/IwsBwEKBOls/mqdefault.jpg" alt="Centro médico - 03/10/16 (2)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2951" title="Centro médico - 03/10/16 (2)">Centro médico - 03/10/16 (2)</a></td>
+      <td>00:32:26</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2951" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2952</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2952" title="Centro médico - 04/10/16 (1)"><img width="100px" src="https://i.ytimg.com/vi/DaInEp2zxnE/mqdefault.jpg" alt="Centro médico - 04/10/16 (1)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2952" title="Centro médico - 04/10/16 (1)">Centro médico - 04/10/16 (1)</a></td>
+      <td>00:33:01</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2952" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2953</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2953" title="Centro médico - 04/10/16 (2)"><img width="100px" src="https://i.ytimg.com/vi/UT9za4X-IEA/mqdefault.jpg" alt="Centro médico - 04/10/16 (2)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2953" title="Centro médico - 04/10/16 (2)">Centro médico - 04/10/16 (2)</a></td>
+      <td>00:31:06</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2953" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2954</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2954" title="Centro médico - 05/10/16 (1)"><img width="100px" src="https://i.ytimg.com/vi/6KgZCfgCzTE/mqdefault.jpg" alt="Centro médico - 05/10/16 (1)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2954" title="Centro médico - 05/10/16 (1)">Centro médico - 05/10/16 (1)</a></td>
+      <td>00:31:20</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2954" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2955</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2955" title="Centro médico - 05/10/16 (2)"><img width="100px" src="https://i.ytimg.com/vi/VPGSKgdMoGA/mqdefault.jpg" alt="Centro médico - 05/10/16 (2)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2955" title="Centro médico - 05/10/16 (2)">Centro médico - 05/10/16 (2)</a></td>
+      <td>00:32:06</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2955" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2956</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2956" title="Centro médico - 06/10/16 (1)"><img width="100px" src="https://i.ytimg.com/vi/RpOm1oNSMOE/mqdefault.jpg" alt="Centro médico - 06/10/16 (1)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2956" title="Centro médico - 06/10/16 (1)">Centro médico - 06/10/16 (1)</a></td>
+      <td>00:31:46</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2956" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2957</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=2957" title="Centro médico - 06/10/16 (2)"><img width="100px" src="https://i.ytimg.com/vi/wtAEb3l4WYQ/mqdefault.jpg" alt="Centro médico - 06/10/16 (2)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=2957" title="Centro médico - 06/10/16 (2)">Centro médico - 06/10/16 (2)</a></td>
+      <td>00:33:51</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLbRAoCXUCOlYnH7SDEb6wbvCk_pZNz8wX" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=2957" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   </tbody>
+
+</table>
+</div>
+</body></html>

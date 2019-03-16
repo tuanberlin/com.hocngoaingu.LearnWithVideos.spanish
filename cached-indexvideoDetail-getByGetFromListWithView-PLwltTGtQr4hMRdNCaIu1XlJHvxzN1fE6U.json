@@ -1,0 +1,346 @@
+  <html>
+<head>
+      <title>Videos by List PLwltTGtQr4hMRdNCaIu1XlJHvxzN1fE6U</title>
+
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="icon" href="https://www.w3schools.com/tags/demo_icon.gif" type="image/gif" sizes="16x16">
+<link rel="stylesheet" type="text/css" href="views/videoDetail/mystyle.css">
+  <!-- Bootstrap v4.x stylesheet -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	<!-- bootstrap css theme -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/docs/css/bootstrap-v4.min.css">
+
+	<script src="https://mottie.github.io/tablesorter/docs/js/jquery-latest.min.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+	<!-- pager plugin -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.css">
+	<script src="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.js"></script>
+	<style>
+	.tablesorter-pager .btn-group-sm .btn {
+	  font-size: 1.2em; /* make pager arrows more visible */
+	}
+	</style>
+  <script>
+  $(function() {
+
+  $("table").tablesorter({
+    theme : "bootstrap",
+
+    widthFixed: true,
+
+    // widget code contained in the jquery.tablesorter.widgets.js file
+    // use the zebra stripe widget if you plan on hiding any rows (filter widget)
+    // the uitheme widget is NOT REQUIRED!
+    widgets : [ "filter", "columns", "zebra" ],
+
+    widgetOptions : {
+      // using the default zebra striping class name, so it actually isn't included in the theme variable above
+      // this is ONLY needed for bootstrap theming if you are using the filter widget, because rows are hidden
+      zebra : ["even", "odd"],
+
+      // class names added to columns when sorted
+      columns: [ "primary", "secondary", "tertiary" ],
+
+      // reset filters button
+      filter_reset : ".reset",
+
+      // extra css class name (string or array) added to the filter element (input or select)
+      filter_cssFilter: [
+        'form-control',
+        'form-control',
+        'form-control custom-select', // select needs custom class names :(
+        'form-control',
+        'form-control',
+        'form-control',
+        'form-control'
+      ]
+
+    }
+  })
+  .tablesorterPager({
+
+    // target the pager markup - see the HTML block below
+    container: $(".ts-pager"),
+
+    // target the pager page select dropdown - choose a page
+    cssGoto  : ".pagenum",
+
+    // remove rows from the table to speed up the sort of large tables.
+    // setting this to false, only hides the non-visible rows; needed if you plan to add/remove rows with the pager enabled.
+    removeRows: false,
+
+    // output string - default is '{page}/{totalPages}';
+    // possible variables: {page}, {totalPages}, {filteredPages}, {startRow}, {endRow}, {filteredRows} and {totalRows}
+    output: '{startRow} - {endRow} / {filteredRows} ({totalRows})'
+
+  });
+
+});
+  </script></head>
+<body>
+
+<div class="contentItem">
+	<div class="dropdown">
+       <a href="/v2/admin/"><button class="dropbtn">Home page</button></a>
+       <div class="dropdown-content">
+          <a href="?c=listDetail&a=getAllWithView&k=1">get All ListDetail</a>
+          <a title="Them list videos moi" target="_blank" href="youtube/">Add New</a>
+          <a title="Xoa trung lap video + listDetail" target="_blank" href="removeDuplicate.php">Remove Duplicate</a>
+          <a title="Them list videos moi" target="_blank" href="/v2/log/show.php">Log</a>
+      </div>
+  </div>
+  <div class="dropdown">
+   <a title="Them list videos moi" target="_blank" href="youtube/"><button class="dropbtn">Add New By Youtube</button></a>
+  </div>
+
+<div class="dropdown">
+   <a title="Tao Cache + remove cac videos va list bi trung lap" target="_blank" href="gen-cache.php"><button class="dropbtn">Gen cache</button></a>
+
+   <div class="dropdown-content">
+    <a title="Check videos playable, Khong nen thuc hien nhieu neu ko se bi khoa IP. Tuy vao DB co the chay mat 15p hoac hon" target="_blank" href="check-videos.php">Check Video playable(co the phai doi >15p)</a>
+</div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">get All VideosDetail</button>
+   <div class="dropdown-content">
+      <a href="?c=videoDetail&a=getAllWithView&k=0">get All VideosDetail(>10s)</a>
+      <a href="#">Add New</a>
+      <a href="#">Remove</a>
+  </div>
+</div>
+<div class="dropdown">
+   <button class="dropbtn">Xep theo CategoryID</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 Nuovi video (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 News (2)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Principianti (13)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Ascolta (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Gramar (26)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabolario (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 Nella lettura (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 Scrittura (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 Pronuncia (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 Parlando (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 Esami (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 Canzoni  (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 Film (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 Italiano per bambini (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Studiare all'estero (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 La vita in Italia (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Numeri (7)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 Acquisti (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 Il cibo (7)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Jobs (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 Salute (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Guarda (0)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List tang dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 Nuovi video (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Guarda (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 News (2)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 Nella lettura (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 Salute (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 Acquisti (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Jobs (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Numeri (7)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 Il cibo (7)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 La vita in Italia (8)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List giam dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Gramar (26)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Principianti (13)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 Italiano per bambini (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 Canzoni  (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Studiare all'estero (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Ascolta (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabolario (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 Scrittura (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 Pronuncia (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 Parlando (10)</a></div>
+</div>
+<br/>
+<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 new_videos L(0)</a> |<a title='Có 2 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 nachrichten L(2)</a> |<a title='Có 13 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 beginnners L(13)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 listening L(10)</a> |<a title='Có 26 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 gramar L(26)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 vocabulary L(10)</a> |<a title='Có 4 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 reading L(4)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 writing L(10)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 pronunciation L(10)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 speaking L(10)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 exams L(10)</a> |<a title='Có 11 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 songs L(11)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 film L(10)</a> |<a title='Có 12 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 kids L(12)</a> |<a title='Có 11 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 study L(11)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 italy L(8)</a> |<a title='Có 7 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 numbers L(7)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 shopping L(5)</a> |<a title='Có 7 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 food L(7)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 jobs L(5)</a> |<a title='Có 4 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 health L(4)</a> |<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 watched L(0)</a> |<br/>Số lượng Videos trong DB: 5377 Videos<br/>Số lượng Videos trong DB: 185 Videos</div>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kw" value="" placeholder="search here">
+	<input type="submit" name="submit" value="search name videos">
+</form>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kwl" value="" placeholder="search name List here">
+	<input type="submit" name="submit" value="search name List videos">
+</form><br/>
+<h1>Tat ca video co trong co so du lieu</h1>
+
+
+<table class="table table-bordered table-striped">
+  <thead> <!-- add class="thead-inverse" for a dark header -->
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Video count</th>
+      <th>Add too</th>
+      <th>Xoa</th>
+	</tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Video Duration</th>
+      <th>Add Videos to the List</th>
+      <th>Xoa</th>
+    </tr>
+    <tr>
+      <th colspan="7" class="ts-pager">
+        <div class="form-inline">
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary first" title="first">⇤</button>
+            <button type="button" class="btn btn-secondary prev" title="previous">←</button>
+          </div>
+          <span class="pagedisplay"></span>
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary next" title="next">→</button>
+            <button type="button" class="btn btn-secondary last" title="last">⇥</button>
+          </div>
+          <select class="form-control-sm custom-select px-1 pagesize" title="Select page size">
+            <option selected="selected" value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="all">All Rows</option>
+          </select>
+          <select class="form-control-sm custom-select px-4 mx-1 pagenum" title="Select page number"></select>
+        </div>
+      </th>
+    </tr>
+  </tfoot>
+  <tbody>
+	
+   <tr>
+      <td>5009</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5009" title="MEGA HAUL SALDI ❤ H&M-TEZENIS-KIKO...."><img width="100px" src="https://i.ytimg.com/vi/4xPfE7uMSyY/mqdefault.jpg" alt="MEGA HAUL SALDI ❤ H&M-TEZENIS-KIKO...."></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5009" title="MEGA HAUL SALDI ❤ H&M-TEZENIS-KIKO....">MEGA HAUL SALDI ❤ H&M-TEZENIS-KIKO....</a></td>
+      <td>00:07:48</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLwltTGtQr4hMRdNCaIu1XlJHvxzN1fE6U" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5009" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5010</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5010" title="I MIEI COSTUMI DA BAGNO ❤ TEZENIS-CALZEDONIA-GOLDENPOINT"><img width="100px" src="https://i.ytimg.com/vi/hSd88dGm-mc/mqdefault.jpg" alt="I MIEI COSTUMI DA BAGNO ❤ TEZENIS-CALZEDONIA-GOLDENPOINT"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5010" title="I MIEI COSTUMI DA BAGNO ❤ TEZENIS-CALZEDONIA-GOLDENPOINT">I MIEI COSTUMI DA BAGNO ❤ TEZENIS-CALZEDONIA-GOLDENPOINT</a></td>
+      <td>00:09:16</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLwltTGtQr4hMRdNCaIu1XlJHvxzN1fE6U" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5010" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5011</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5011" title="HAUL AUTUNNO TEZENIS-ZUIKI-ALIEXPRESS-SHAKA"><img width="100px" src="https://i.ytimg.com/vi/O5aahIFaNFo/mqdefault.jpg" alt="HAUL AUTUNNO TEZENIS-ZUIKI-ALIEXPRESS-SHAKA"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5011" title="HAUL AUTUNNO TEZENIS-ZUIKI-ALIEXPRESS-SHAKA">HAUL AUTUNNO TEZENIS-ZUIKI-ALIEXPRESS-SHAKA</a></td>
+      <td>00:10:54</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLwltTGtQr4hMRdNCaIu1XlJHvxzN1fE6U" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5011" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5012</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5012" title="Regali di Natale sotto i 10 Euro -10 Idee Low Cost"><img width="100px" src="https://i.ytimg.com/vi/fDrbwDvj9DU/mqdefault.jpg" alt="Regali di Natale sotto i 10 Euro -10 Idee Low Cost"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5012" title="Regali di Natale sotto i 10 Euro -10 Idee Low Cost">Regali di Natale sotto i 10 Euro -10 Idee Low Cost</a></td>
+      <td>00:12:06</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLwltTGtQr4hMRdNCaIu1XlJHvxzN1fE6U" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5012" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5013</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5013" title="Regali di Natale per Lui |Consigli Utili"><img width="100px" src="https://i.ytimg.com/vi/vo_l1YE0Y_M/mqdefault.jpg" alt="Regali di Natale per Lui |Consigli Utili"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5013" title="Regali di Natale per Lui |Consigli Utili">Regali di Natale per Lui |Consigli Utili</a></td>
+      <td>00:07:35</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLwltTGtQr4hMRdNCaIu1XlJHvxzN1fE6U" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5013" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5014</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5014" title="Paris Hilton Accessori SPESE PAZZE alla Lidl"><img width="100px" src="https://i.ytimg.com/vi/mmTKx_O5l3k/mqdefault.jpg" alt="Paris Hilton Accessori SPESE PAZZE alla Lidl"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5014" title="Paris Hilton Accessori SPESE PAZZE alla Lidl">Paris Hilton Accessori SPESE PAZZE alla Lidl</a></td>
+      <td>00:08:18</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLwltTGtQr4hMRdNCaIu1XlJHvxzN1fE6U" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5014" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5015</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5015" title="LE MIE APP PREFERITE DEL 2016/17"><img width="100px" src="https://i.ytimg.com/vi/gwTT1sfer38/mqdefault.jpg" alt="LE MIE APP PREFERITE DEL 2016/17"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5015" title="LE MIE APP PREFERITE DEL 2016/17">LE MIE APP PREFERITE DEL 2016/17</a></td>
+      <td>00:08:50</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLwltTGtQr4hMRdNCaIu1XlJHvxzN1fE6U" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5015" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5016</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5016" title="NON HO RESISTITO!!! HAUL SUPER SHOPPING DA H&M"><img width="100px" src="https://i.ytimg.com/vi/xQkrjd_fVd0/mqdefault.jpg" alt="NON HO RESISTITO!!! HAUL SUPER SHOPPING DA H&M"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5016" title="NON HO RESISTITO!!! HAUL SUPER SHOPPING DA H&M">NON HO RESISTITO!!! HAUL SUPER SHOPPING DA H&M</a></td>
+      <td>00:06:45</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLwltTGtQr4hMRdNCaIu1XlJHvxzN1fE6U" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5016" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5017</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5017" title="Come vestirsi per sembrare più MAGRE: 10 Trucchetti INFALLIBILI"><img width="100px" src="https://i.ytimg.com/vi/lZcs9UfTggo/mqdefault.jpg" alt="Come vestirsi per sembrare più MAGRE: 10 Trucchetti INFALLIBILI"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5017" title="Come vestirsi per sembrare più MAGRE: 10 Trucchetti INFALLIBILI">Come vestirsi per sembrare più MAGRE: 10 Trucchetti INFALLIBILI</a></td>
+      <td>00:06:16</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLwltTGtQr4hMRdNCaIu1XlJHvxzN1fE6U" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5017" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5018</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5018" title="HAUL SALDI VESTITI INDOSSATI H&M-TALLY WEIJL-PIAZZA ITALIA"><img width="100px" src="https://i.ytimg.com/vi/ay5CXe8e-NA/mqdefault.jpg" alt="HAUL SALDI VESTITI INDOSSATI H&M-TALLY WEIJL-PIAZZA ITALIA"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5018" title="HAUL SALDI VESTITI INDOSSATI H&M-TALLY WEIJL-PIAZZA ITALIA">HAUL SALDI VESTITI INDOSSATI H&M-TALLY WEIJL-PIAZZA ITALIA</a></td>
+      <td>00:09:52</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLwltTGtQr4hMRdNCaIu1XlJHvxzN1fE6U" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5018" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5019</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5019" title="MAI AVUTO COSI TANTA PAURA"><img width="100px" src="https://i.ytimg.com/vi/b8VrmeOTVTA/mqdefault.jpg" alt="MAI AVUTO COSI TANTA PAURA"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5019" title="MAI AVUTO COSI TANTA PAURA">MAI AVUTO COSI TANTA PAURA</a></td>
+      <td>00:10:17</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLwltTGtQr4hMRdNCaIu1XlJHvxzN1fE6U" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5019" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5020</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5020" title="Vestiti Super LOW COST Zara Shein Stradivarius Hm"><img width="100px" src="https://i.ytimg.com/vi/vSa9sj2Nk70/mqdefault.jpg" alt="Vestiti Super LOW COST Zara Shein Stradivarius Hm"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5020" title="Vestiti Super LOW COST Zara Shein Stradivarius Hm">Vestiti Super LOW COST Zara Shein Stradivarius Hm</a></td>
+      <td>00:06:15</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLwltTGtQr4hMRdNCaIu1XlJHvxzN1fE6U" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5020" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5021</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5021" title="COME COLLABORO CON LE AZIENDE?!?!HAUL Shein-Daniel Wellington"><img width="100px" src="https://i.ytimg.com/vi/YmceljI3CTM/mqdefault.jpg" alt="COME COLLABORO CON LE AZIENDE?!?!HAUL Shein-Daniel Wellington"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5021" title="COME COLLABORO CON LE AZIENDE?!?!HAUL Shein-Daniel Wellington">COME COLLABORO CON LE AZIENDE?!?!HAUL Shein-Daniel Wellington</a></td>
+      <td>00:05:32</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLwltTGtQr4hMRdNCaIu1XlJHvxzN1fE6U" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5021" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5022</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5022" title="SALDI ESSENCE I MIEI ACQUISTI E ANTEPRIME PRODOTTI CATRICE"><img width="100px" src="https://i.ytimg.com/vi/4Z7_gjve_q0/mqdefault.jpg" alt="SALDI ESSENCE I MIEI ACQUISTI E ANTEPRIME PRODOTTI CATRICE"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5022" title="SALDI ESSENCE I MIEI ACQUISTI E ANTEPRIME PRODOTTI CATRICE">SALDI ESSENCE I MIEI ACQUISTI E ANTEPRIME PRODOTTI CATRICE</a></td>
+      <td>00:16:32</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLwltTGtQr4hMRdNCaIu1XlJHvxzN1fE6U" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5022" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5023</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=5023" title="NUOVI PENNELLI SUPER LOW COST SOTTO I 10 EURO "><img width="100px" src="https://i.ytimg.com/vi/PaaudL8EMyc/mqdefault.jpg" alt="NUOVI PENNELLI SUPER LOW COST SOTTO I 10 EURO "></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=5023" title="NUOVI PENNELLI SUPER LOW COST SOTTO I 10 EURO ">NUOVI PENNELLI SUPER LOW COST SOTTO I 10 EURO </a></td>
+      <td>00:10:07</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLwltTGtQr4hMRdNCaIu1XlJHvxzN1fE6U" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=5023" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   </tbody>
+
+</table>
+</div>
+</body></html>

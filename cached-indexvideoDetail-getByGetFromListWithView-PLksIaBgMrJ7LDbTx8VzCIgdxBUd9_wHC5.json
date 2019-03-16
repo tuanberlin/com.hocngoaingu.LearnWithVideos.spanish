@@ -1,0 +1,576 @@
+  <html>
+<head>
+      <title>Videos by List PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5</title>
+
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="icon" href="https://www.w3schools.com/tags/demo_icon.gif" type="image/gif" sizes="16x16">
+<link rel="stylesheet" type="text/css" href="views/videoDetail/mystyle.css">
+  <!-- Bootstrap v4.x stylesheet -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	<!-- bootstrap css theme -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/docs/css/bootstrap-v4.min.css">
+
+	<script src="https://mottie.github.io/tablesorter/docs/js/jquery-latest.min.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+	<!-- pager plugin -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.css">
+	<script src="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.js"></script>
+	<style>
+	.tablesorter-pager .btn-group-sm .btn {
+	  font-size: 1.2em; /* make pager arrows more visible */
+	}
+	</style>
+  <script>
+  $(function() {
+
+  $("table").tablesorter({
+    theme : "bootstrap",
+
+    widthFixed: true,
+
+    // widget code contained in the jquery.tablesorter.widgets.js file
+    // use the zebra stripe widget if you plan on hiding any rows (filter widget)
+    // the uitheme widget is NOT REQUIRED!
+    widgets : [ "filter", "columns", "zebra" ],
+
+    widgetOptions : {
+      // using the default zebra striping class name, so it actually isn't included in the theme variable above
+      // this is ONLY needed for bootstrap theming if you are using the filter widget, because rows are hidden
+      zebra : ["even", "odd"],
+
+      // class names added to columns when sorted
+      columns: [ "primary", "secondary", "tertiary" ],
+
+      // reset filters button
+      filter_reset : ".reset",
+
+      // extra css class name (string or array) added to the filter element (input or select)
+      filter_cssFilter: [
+        'form-control',
+        'form-control',
+        'form-control custom-select', // select needs custom class names :(
+        'form-control',
+        'form-control',
+        'form-control',
+        'form-control'
+      ]
+
+    }
+  })
+  .tablesorterPager({
+
+    // target the pager markup - see the HTML block below
+    container: $(".ts-pager"),
+
+    // target the pager page select dropdown - choose a page
+    cssGoto  : ".pagenum",
+
+    // remove rows from the table to speed up the sort of large tables.
+    // setting this to false, only hides the non-visible rows; needed if you plan to add/remove rows with the pager enabled.
+    removeRows: false,
+
+    // output string - default is '{page}/{totalPages}';
+    // possible variables: {page}, {totalPages}, {filteredPages}, {startRow}, {endRow}, {filteredRows} and {totalRows}
+    output: '{startRow} - {endRow} / {filteredRows} ({totalRows})'
+
+  });
+
+});
+  </script></head>
+<body>
+
+<div class="contentItem">
+	<div class="dropdown">
+       <a href="/v2/admin/"><button class="dropbtn">Home page</button></a>
+       <div class="dropdown-content">
+          <a href="?c=listDetail&a=getAllWithView&k=1">get All ListDetail</a>
+          <a title="Them list videos moi" target="_blank" href="youtube/">Add New</a>
+          <a title="Xoa trung lap video + listDetail" target="_blank" href="removeDuplicate.php">Remove Duplicate</a>
+          <a title="Them list videos moi" target="_blank" href="/v2/log/show.php">Log</a>
+      </div>
+  </div>
+  <div class="dropdown">
+   <a title="Them list videos moi" target="_blank" href="youtube/"><button class="dropbtn">Add New By Youtube</button></a>
+  </div>
+
+<div class="dropdown">
+   <a title="Tao Cache + remove cac videos va list bi trung lap" target="_blank" href="gen-cache.php"><button class="dropbtn">Gen cache</button></a>
+
+   <div class="dropdown-content">
+    <a title="Check videos playable, Khong nen thuc hien nhieu neu ko se bi khoa IP. Tuy vao DB co the chay mat 15p hoac hon" target="_blank" href="check-videos.php">Check Video playable(co the phai doi >15p)</a>
+</div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">get All VideosDetail</button>
+   <div class="dropdown-content">
+      <a href="?c=videoDetail&a=getAllWithView&k=0">get All VideosDetail(>10s)</a>
+      <a href="#">Add New</a>
+      <a href="#">Remove</a>
+  </div>
+</div>
+<div class="dropdown">
+   <button class="dropbtn">Xep theo CategoryID</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 Nuovi video (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 News (2)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Principianti (13)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Ascolta (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Gramar (26)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabolario (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 Nella lettura (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 Scrittura (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 Pronuncia (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 Parlando (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 Esami (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 Canzoni  (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 Film (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 Italiano per bambini (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Studiare all'estero (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 La vita in Italia (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Numeri (7)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 Acquisti (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 Il cibo (7)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Jobs (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 Salute (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Guarda (0)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List tang dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 Nuovi video (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Guarda (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 News (2)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 Salute (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 Nella lettura (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 Acquisti (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Jobs (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Numeri (7)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 Il cibo (7)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 La vita in Italia (9)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List giam dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Gramar (26)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Principianti (13)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 Italiano per bambini (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 Canzoni  (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Studiare all'estero (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Ascolta (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabolario (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 Scrittura (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 Pronuncia (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 Parlando (10)</a></div>
+</div>
+<br/>
+<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 new_videos L(0)</a> |<a title='Có 2 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 nachrichten L(2)</a> |<a title='Có 13 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 beginnners L(13)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 listening L(10)</a> |<a title='Có 26 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 gramar L(26)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 vocabulary L(10)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 reading L(5)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 writing L(10)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 pronunciation L(10)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 speaking L(10)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 exams L(10)</a> |<a title='Có 11 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 songs L(11)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 film L(10)</a> |<a title='Có 12 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 kids L(12)</a> |<a title='Có 11 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 study L(11)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 italy L(9)</a> |<a title='Có 7 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 numbers L(7)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 shopping L(5)</a> |<a title='Có 7 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 food L(7)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 jobs L(6)</a> |<a title='Có 4 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 health L(4)</a> |<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 watched L(0)</a> |<br/>Số lượng Videos trong DB: 5489 Videos<br/>Số lượng Videos trong DB: 188 Videos</div>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kw" value="" placeholder="search here">
+	<input type="submit" name="submit" value="search name videos">
+</form>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kwl" value="" placeholder="search name List here">
+	<input type="submit" name="submit" value="search name List videos">
+</form><br/>
+<h1>Tat ca video co trong co so du lieu</h1>
+
+
+<table class="table table-bordered table-striped">
+  <thead> <!-- add class="thead-inverse" for a dark header -->
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Video count</th>
+      <th>Add too</th>
+      <th>Xoa</th>
+	</tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Video Duration</th>
+      <th>Add Videos to the List</th>
+      <th>Xoa</th>
+    </tr>
+    <tr>
+      <th colspan="7" class="ts-pager">
+        <div class="form-inline">
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary first" title="first">⇤</button>
+            <button type="button" class="btn btn-secondary prev" title="previous">←</button>
+          </div>
+          <span class="pagedisplay"></span>
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary next" title="next">→</button>
+            <button type="button" class="btn btn-secondary last" title="last">⇥</button>
+          </div>
+          <select class="form-control-sm custom-select px-1 pagesize" title="Select page size">
+            <option selected="selected" value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="all">All Rows</option>
+          </select>
+          <select class="form-control-sm custom-select px-4 mx-1 pagenum" title="Select page number"></select>
+        </div>
+      </th>
+    </tr>
+  </tfoot>
+  <tbody>
+	
+   <tr>
+      <td>927</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=927" title="Ad alta voce - Italo Calvino: Il sentiero dei nidi di ragno (1a parte) - RADIO 3"><img width="100px" src="https://i.ytimg.com/vi/njf6QAmnnzY/mqdefault.jpg" alt="Ad alta voce - Italo Calvino: Il sentiero dei nidi di ragno (1a parte) - RADIO 3"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=927" title="Ad alta voce - Italo Calvino: Il sentiero dei nidi di ragno (1a parte) - RADIO 3">Ad alta voce - Italo Calvino: Il sentiero dei nidi di ragno (1a parte) - RADIO 3</a></td>
+      <td>00:55:16</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=927" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>928</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=928" title="Ad alta voce - Italo Calvino: Il sentiero dei nidi di ragno (2a parte) - RADIO 3"><img width="100px" src="https://i.ytimg.com/vi/KrJ3PB8Mv94/mqdefault.jpg" alt="Ad alta voce - Italo Calvino: Il sentiero dei nidi di ragno (2a parte) - RADIO 3"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=928" title="Ad alta voce - Italo Calvino: Il sentiero dei nidi di ragno (2a parte) - RADIO 3">Ad alta voce - Italo Calvino: Il sentiero dei nidi di ragno (2a parte) - RADIO 3</a></td>
+      <td>01:05:36</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=928" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>929</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=929" title="Ad alta voce - Italo Calvino: Il sentiero dei nidi di ragno (3a parte) - RADIO 3"><img width="100px" src="https://i.ytimg.com/vi/Rj2EcwdQ-vw/mqdefault.jpg" alt="Ad alta voce - Italo Calvino: Il sentiero dei nidi di ragno (3a parte) - RADIO 3"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=929" title="Ad alta voce - Italo Calvino: Il sentiero dei nidi di ragno (3a parte) - RADIO 3">Ad alta voce - Italo Calvino: Il sentiero dei nidi di ragno (3a parte) - RADIO 3</a></td>
+      <td>01:17:56</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=929" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>930</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=930" title="Ad alta voce - Italo Calvino: Il sentiero dei nidi di ragno (4a parte) - RADIO 3"><img width="100px" src="https://i.ytimg.com/vi/OuREibVset0/mqdefault.jpg" alt="Ad alta voce - Italo Calvino: Il sentiero dei nidi di ragno (4a parte) - RADIO 3"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=930" title="Ad alta voce - Italo Calvino: Il sentiero dei nidi di ragno (4a parte) - RADIO 3">Ad alta voce - Italo Calvino: Il sentiero dei nidi di ragno (4a parte) - RADIO 3</a></td>
+      <td>01:21:49</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=930" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>931</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=931" title="Primo Levi: La tavola periodica. ARGON (1°)"><img width="100px" src="https://i.ytimg.com/vi/1FkTonUcNAc/mqdefault.jpg" alt="Primo Levi: La tavola periodica. ARGON (1°)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=931" title="Primo Levi: La tavola periodica. ARGON (1°)">Primo Levi: La tavola periodica. ARGON (1°)</a></td>
+      <td>00:43:42</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=931" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>932</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=932" title="Primo Levi: La tavola periodica. IDROGENO (2°)"><img width="100px" src="https://i.ytimg.com/vi/2_myqwbMfYU/mqdefault.jpg" alt="Primo Levi: La tavola periodica. IDROGENO (2°)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=932" title="Primo Levi: La tavola periodica. IDROGENO (2°)">Primo Levi: La tavola periodica. IDROGENO (2°)</a></td>
+      <td>00:20:11</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=932" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>933</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=933" title="Primo Levi: La tavola periodica. ZINCO (3°) - INTEGR."><img width="100px" src="https://i.ytimg.com/vi/-9mOpc_2PlM/mqdefault.jpg" alt="Primo Levi: La tavola periodica. ZINCO (3°) - INTEGR."></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=933" title="Primo Levi: La tavola periodica. ZINCO (3°) - INTEGR.">Primo Levi: La tavola periodica. ZINCO (3°) - INTEGR.</a></td>
+      <td>00:20:20</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=933" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>934</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=934" title="Primo Levi: La tavola periodica. ZINCO (3°) - RID."><img width="100px" src="https://i.ytimg.com/vi/LFp_shgsB6I/mqdefault.jpg" alt="Primo Levi: La tavola periodica. ZINCO (3°) - RID."></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=934" title="Primo Levi: La tavola periodica. ZINCO (3°) - RID.">Primo Levi: La tavola periodica. ZINCO (3°) - RID.</a></td>
+      <td>00:19:39</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=934" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>935</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=935" title="Primo Levi: La tavola periodica. FERRO (4°)"><img width="100px" src="https://i.ytimg.com/vi/oTQfRFHNUCg/mqdefault.jpg" alt="Primo Levi: La tavola periodica. FERRO (4°)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=935" title="Primo Levi: La tavola periodica. FERRO (4°)">Primo Levi: La tavola periodica. FERRO (4°)</a></td>
+      <td>00:27:49</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=935" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>936</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=936" title="Primo Levi: La tavola periodica. POTASSIO (5°)"><img width="100px" src="https://i.ytimg.com/vi/h1JbQogHjiE/mqdefault.jpg" alt="Primo Levi: La tavola periodica. POTASSIO (5°)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=936" title="Primo Levi: La tavola periodica. POTASSIO (5°)">Primo Levi: La tavola periodica. POTASSIO (5°)</a></td>
+      <td>00:27:15</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=936" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>937</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=937" title="Primo Levi: La tavola periodica. NICHEL (6°e 7°)"><img width="100px" src="https://i.ytimg.com/vi/J6-MCIMIkYY/mqdefault.jpg" alt="Primo Levi: La tavola periodica. NICHEL (6°e 7°)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=937" title="Primo Levi: La tavola periodica. NICHEL (6°e 7°)">Primo Levi: La tavola periodica. NICHEL (6°e 7°)</a></td>
+      <td>00:43:33</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=937" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>938</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=938" title="Primo Levi: La tavola periodica. FOSFORO (8° e 9°)"><img width="100px" src="https://i.ytimg.com/vi/5ExO6Pxweis/mqdefault.jpg" alt="Primo Levi: La tavola periodica. FOSFORO (8° e 9°)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=938" title="Primo Levi: La tavola periodica. FOSFORO (8° e 9°)">Primo Levi: La tavola periodica. FOSFORO (8° e 9°)</a></td>
+      <td>00:41:28</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=938" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>939</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=939" title="Primo Levi: La tavola periodica. ORO (10°)"><img width="100px" src="https://i.ytimg.com/vi/QEwBWZAPbRc/mqdefault.jpg" alt="Primo Levi: La tavola periodica. ORO (10°)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=939" title="Primo Levi: La tavola periodica. ORO (10°)">Primo Levi: La tavola periodica. ORO (10°)</a></td>
+      <td>00:27:21</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=939" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>940</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=940" title="Primo Levi: La tavola periodica. CERIO  (11°)"><img width="100px" src="https://i.ytimg.com/vi/DPqNliC3AIk/mqdefault.jpg" alt="Primo Levi: La tavola periodica. CERIO  (11°)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=940" title="Primo Levi: La tavola periodica. CERIO  (11°)">Primo Levi: La tavola periodica. CERIO  (11°)</a></td>
+      <td>00:19:20</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=940" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>941</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=941" title="Primo Levi: La tavola periodica. CROMO (12°)"><img width="100px" src="https://i.ytimg.com/vi/zb7pt2ozZXg/mqdefault.jpg" alt="Primo Levi: La tavola periodica. CROMO (12°)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=941" title="Primo Levi: La tavola periodica. CROMO (12°)">Primo Levi: La tavola periodica. CROMO (12°)</a></td>
+      <td>00:29:55</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=941" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>942</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=942" title="Primo Levi: La tavola periodica. ZOLFO, TITANIO, ARSENICO (13°)"><img width="100px" src="https://i.ytimg.com/vi/SVq2BWBx0Bc/mqdefault.jpg" alt="Primo Levi: La tavola periodica. ZOLFO, TITANIO, ARSENICO (13°)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=942" title="Primo Levi: La tavola periodica. ZOLFO, TITANIO, ARSENICO (13°)">Primo Levi: La tavola periodica. ZOLFO, TITANIO, ARSENICO (13°)</a></td>
+      <td>00:27:41</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=942" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>943</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=943" title="Primo Levi: La tavola periodica. AZOTO (14°)"><img width="100px" src="https://i.ytimg.com/vi/1UP3i-zyIcg/mqdefault.jpg" alt="Primo Levi: La tavola periodica. AZOTO (14°)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=943" title="Primo Levi: La tavola periodica. AZOTO (14°)">Primo Levi: La tavola periodica. AZOTO (14°)</a></td>
+      <td>00:20:37</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=943" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>944</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=944" title="Primo Levi: La tavola periodica. STAGNO, URANIO (15°)"><img width="100px" src="https://i.ytimg.com/vi/Xx0vZ1JVeXY/mqdefault.jpg" alt="Primo Levi: La tavola periodica. STAGNO, URANIO (15°)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=944" title="Primo Levi: La tavola periodica. STAGNO, URANIO (15°)">Primo Levi: La tavola periodica. STAGNO, URANIO (15°)</a></td>
+      <td>00:35:31</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=944" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>945</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=945" title="Primo Levi: La tavola periodica. ARGENTO (16°)"><img width="100px" src="https://i.ytimg.com/vi/fUeHfYgzuVk/mqdefault.jpg" alt="Primo Levi: La tavola periodica. ARGENTO (16°)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=945" title="Primo Levi: La tavola periodica. ARGENTO (16°)">Primo Levi: La tavola periodica. ARGENTO (16°)</a></td>
+      <td>00:24:28</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=945" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>946</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=946" title="Primo Levi: La tavola periodica. VANADIO (17°)"><img width="100px" src="https://i.ytimg.com/vi/qqLo6PO6LHA/mqdefault.jpg" alt="Primo Levi: La tavola periodica. VANADIO (17°)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=946" title="Primo Levi: La tavola periodica. VANADIO (17°)">Primo Levi: La tavola periodica. VANADIO (17°)</a></td>
+      <td>00:31:47</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=946" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>947</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=947" title="Primo Levi: La tavola periodica. CARBONIO (18°) (INTEGR.)"><img width="100px" src="https://i.ytimg.com/vi/M1dSKgdL7gI/mqdefault.jpg" alt="Primo Levi: La tavola periodica. CARBONIO (18°) (INTEGR.)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=947" title="Primo Levi: La tavola periodica. CARBONIO (18°) (INTEGR.)">Primo Levi: La tavola periodica. CARBONIO (18°) (INTEGR.)</a></td>
+      <td>00:25:02</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=947" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>948</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=948" title="Primo Levi: La tavola periodica. CARBONIO (18°) (RID.)"><img width="100px" src="https://i.ytimg.com/vi/AbgyRJ6G13g/mqdefault.jpg" alt="Primo Levi: La tavola periodica. CARBONIO (18°) (RID.)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=948" title="Primo Levi: La tavola periodica. CARBONIO (18°) (RID.)">Primo Levi: La tavola periodica. CARBONIO (18°) (RID.)</a></td>
+      <td>00:23:31</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=948" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>949</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=949" title="I Racconti di Ryunosuke Akutagawa:  Il filo del ragno e Gesù di Nanchino (INTEGR.)"><img width="100px" src="https://i.ytimg.com/vi/vATWrF5sgtI/mqdefault.jpg" alt="I Racconti di Ryunosuke Akutagawa:  Il filo del ragno e Gesù di Nanchino (INTEGR.)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=949" title="I Racconti di Ryunosuke Akutagawa:  Il filo del ragno e Gesù di Nanchino (INTEGR.)">I Racconti di Ryunosuke Akutagawa:  Il filo del ragno e Gesù di Nanchino (INTEGR.)</a></td>
+      <td>00:27:47</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=949" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>950</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=950" title="I Racconti di Ryunosuke Akutagawa:  Il filo del ragno e Gesù di Nanchino (RID.)"><img width="100px" src="https://i.ytimg.com/vi/C-DMuOQuw0c/mqdefault.jpg" alt="I Racconti di Ryunosuke Akutagawa:  Il filo del ragno e Gesù di Nanchino (RID.)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=950" title="I Racconti di Ryunosuke Akutagawa:  Il filo del ragno e Gesù di Nanchino (RID.)">I Racconti di Ryunosuke Akutagawa:  Il filo del ragno e Gesù di Nanchino (RID.)</a></td>
+      <td>00:27:05</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=950" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>951</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=951" title="I Racconti di Ryunosuke Akutagawa: IL FAZZOLETTO"><img width="100px" src="https://i.ytimg.com/vi/B3sVApSfyIA/mqdefault.jpg" alt="I Racconti di Ryunosuke Akutagawa: IL FAZZOLETTO"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=951" title="I Racconti di Ryunosuke Akutagawa: IL FAZZOLETTO">I Racconti di Ryunosuke Akutagawa: IL FAZZOLETTO</a></td>
+      <td>00:21:25</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=951" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>952</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=952" title="I Racconti di Ryunosuke Akutagawa: Rashomon"><img width="100px" src="https://i.ytimg.com/vi/LX3NCF624c4/mqdefault.jpg" alt="I Racconti di Ryunosuke Akutagawa: Rashomon"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=952" title="I Racconti di Ryunosuke Akutagawa: Rashomon">I Racconti di Ryunosuke Akutagawa: Rashomon</a></td>
+      <td>00:19:08</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=952" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>953</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=953" title="I Racconti di Ryunosuke Akutagawa: Nel Bosco"><img width="100px" src="https://i.ytimg.com/vi/ZRf8i5MKNfk/mqdefault.jpg" alt="I Racconti di Ryunosuke Akutagawa: Nel Bosco"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=953" title="I Racconti di Ryunosuke Akutagawa: Nel Bosco">I Racconti di Ryunosuke Akutagawa: Nel Bosco</a></td>
+      <td>00:25:16</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=953" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>954</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=954" title="I Racconti di Ryunosuke Akutagawa: La principessa di Rokunomiya"><img width="100px" src="https://i.ytimg.com/vi/uDwgqPRJWr0/mqdefault.jpg" alt="I Racconti di Ryunosuke Akutagawa: La principessa di Rokunomiya"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=954" title="I Racconti di Ryunosuke Akutagawa: La principessa di Rokunomiya">I Racconti di Ryunosuke Akutagawa: La principessa di Rokunomiya</a></td>
+      <td>00:21:25</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=954" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>955</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=955" title="Anna Maria Ortese: 01  IL MARE NON BAGNA NAPOLI - Introduzione - RADIO 3"><img width="100px" src="https://i.ytimg.com/vi/q27fyeppX-0/mqdefault.jpg" alt="Anna Maria Ortese: 01  IL MARE NON BAGNA NAPOLI - Introduzione - RADIO 3"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=955" title="Anna Maria Ortese: 01  IL MARE NON BAGNA NAPOLI - Introduzione - RADIO 3">Anna Maria Ortese: 01  IL MARE NON BAGNA NAPOLI - Introduzione - RADIO 3</a></td>
+      <td>00:05:11</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=955" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>956</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=956" title="Anna Maria Ortese: 02  IL MARE NON BAGNA NAPOLI - Un paio di occhiali - RADIO 3"><img width="100px" src="https://i.ytimg.com/vi/sbNN4EEDdrg/mqdefault.jpg" alt="Anna Maria Ortese: 02  IL MARE NON BAGNA NAPOLI - Un paio di occhiali - RADIO 3"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=956" title="Anna Maria Ortese: 02  IL MARE NON BAGNA NAPOLI - Un paio di occhiali - RADIO 3">Anna Maria Ortese: 02  IL MARE NON BAGNA NAPOLI - Un paio di occhiali - RADIO 3</a></td>
+      <td>00:43:50</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=956" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>957</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=957" title="Anna Maria Ortese: 03 IL MARE NON BAGNA NAPOLI - Interno familiare - RADIO 3"><img width="100px" src="https://i.ytimg.com/vi/WEA5reHt96Q/mqdefault.jpg" alt="Anna Maria Ortese: 03 IL MARE NON BAGNA NAPOLI - Interno familiare - RADIO 3"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=957" title="Anna Maria Ortese: 03 IL MARE NON BAGNA NAPOLI - Interno familiare - RADIO 3">Anna Maria Ortese: 03 IL MARE NON BAGNA NAPOLI - Interno familiare - RADIO 3</a></td>
+      <td>01:02:02</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=957" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>958</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=958" title="Anna Maria Ortese: 04 IL MARE NON BAGNA NAPOLI - Oro a Forcella - RADIO 3"><img width="100px" src="https://i.ytimg.com/vi/V3vO8hBcU6w/mqdefault.jpg" alt="Anna Maria Ortese: 04 IL MARE NON BAGNA NAPOLI - Oro a Forcella - RADIO 3"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=958" title="Anna Maria Ortese: 04 IL MARE NON BAGNA NAPOLI - Oro a Forcella - RADIO 3">Anna Maria Ortese: 04 IL MARE NON BAGNA NAPOLI - Oro a Forcella - RADIO 3</a></td>
+      <td>00:21:02</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=958" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>959</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=959" title="Anna Maria Ortese: 05 IL MARE NON BAGNA NAPOLI - La città involontaria - RADIO 3"><img width="100px" src="https://i.ytimg.com/vi/XZlbk5FxV_M/mqdefault.jpg" alt="Anna Maria Ortese: 05 IL MARE NON BAGNA NAPOLI - La città involontaria - RADIO 3"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=959" title="Anna Maria Ortese: 05 IL MARE NON BAGNA NAPOLI - La città involontaria - RADIO 3">Anna Maria Ortese: 05 IL MARE NON BAGNA NAPOLI - La città involontaria - RADIO 3</a></td>
+      <td>00:00:01</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=959" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>960</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=960" title="Anna Maria Ortese: 06 IL MARE NON BAGNA NAPOLI - Il silenzio della ragione (Parte 1) - RADIO 3"><img width="100px" src="https://i.ytimg.com/vi/QsXITZ6R7CA/mqdefault.jpg" alt="Anna Maria Ortese: 06 IL MARE NON BAGNA NAPOLI - Il silenzio della ragione (Parte 1) - RADIO 3"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=960" title="Anna Maria Ortese: 06 IL MARE NON BAGNA NAPOLI - Il silenzio della ragione (Parte 1) - RADIO 3">Anna Maria Ortese: 06 IL MARE NON BAGNA NAPOLI - Il silenzio della ragione (Parte 1) - RADIO 3</a></td>
+      <td>01:14:29</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=960" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>961</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=961" title="Anna Maria Ortese: 07 IL MARE NON BAGNA NAPOLI - Il silenzio della ragione (Parte 2) - RADIO 3"><img width="100px" src="https://i.ytimg.com/vi/yFsMbhFe024/mqdefault.jpg" alt="Anna Maria Ortese: 07 IL MARE NON BAGNA NAPOLI - Il silenzio della ragione (Parte 2) - RADIO 3"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=961" title="Anna Maria Ortese: 07 IL MARE NON BAGNA NAPOLI - Il silenzio della ragione (Parte 2) - RADIO 3">Anna Maria Ortese: 07 IL MARE NON BAGNA NAPOLI - Il silenzio della ragione (Parte 2) - RADIO 3</a></td>
+      <td>01:26:16</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=961" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>962</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=962" title="Beppe Fenoglio: I 23 giorni di Alba - Legge Omero Antonutti - RADIO 3"><img width="100px" src="https://i.ytimg.com/vi/cqbkcXGe10M/mqdefault.jpg" alt="Beppe Fenoglio: I 23 giorni di Alba - Legge Omero Antonutti - RADIO 3"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=962" title="Beppe Fenoglio: I 23 giorni di Alba - Legge Omero Antonutti - RADIO 3">Beppe Fenoglio: I 23 giorni di Alba - Legge Omero Antonutti - RADIO 3</a></td>
+      <td>00:41:39</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=962" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>963</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=963" title="Luigi Pirandello: Il fu Mattia Pascal - Legge Omero Antonutti -  (1a Parte) - RADIO 3"><img width="100px" src="https://i.ytimg.com/vi/MD3sWfWbFQ0/mqdefault.jpg" alt="Luigi Pirandello: Il fu Mattia Pascal - Legge Omero Antonutti -  (1a Parte) - RADIO 3"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=963" title="Luigi Pirandello: Il fu Mattia Pascal - Legge Omero Antonutti -  (1a Parte) - RADIO 3">Luigi Pirandello: Il fu Mattia Pascal - Legge Omero Antonutti -  (1a Parte) - RADIO 3</a></td>
+      <td>02:54:47</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=963" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>964</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=964" title="Luigi Pirandello: Il fu Mattia Pascal - Legge Omero Antonutti -  (2a ed ultima Parte) - RADIO 3"><img width="100px" src="https://i.ytimg.com/vi/l-iRxLoZP0E/mqdefault.jpg" alt="Luigi Pirandello: Il fu Mattia Pascal - Legge Omero Antonutti -  (2a ed ultima Parte) - RADIO 3"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=964" title="Luigi Pirandello: Il fu Mattia Pascal - Legge Omero Antonutti -  (2a ed ultima Parte) - RADIO 3">Luigi Pirandello: Il fu Mattia Pascal - Legge Omero Antonutti -  (2a ed ultima Parte) - RADIO 3</a></td>
+      <td>02:54:07</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLksIaBgMrJ7LDbTx8VzCIgdxBUd9_wHC5" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=964" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   </tbody>
+
+</table>
+</div>
+</body></html>
